@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Agentic Content Lab — Grow your influence as fast as your business</title>
+<meta name="description" content="Agentic Content Lab: your own AI content team, and the place where you learn to work alongside it.">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%2264%2032%20384%20384%22%20fill%3D%22%231C4E8E%22%3E%3Cpath%20d%3D%22M224%2096h64v32h-64zM192%20128h128v32H192zM128%20160h256v32H128zM64%20192h384v32H64zM128%20224h64v32h-64zM224%20224h64v32h-64zM320%20224h64v32h-64z%22%2F%3E%3Cpath%20opacity%3D%22.4%22%20d%3D%22M224%20288h64v32h-64z%22%2F%3E%3Cpath%20opacity%3D%22.16%22%20d%3D%22M192%20320h128v32H192z%22%2F%3E%3C%2Fsvg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,72,600,100;1,72,600,100;1,144,400,0&family=Hanken+Grotesk:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="lab.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- The Nave mark, cell for cell from website/nave/assets/nave-mark.svg (38 cells), and the crew from the panel's nave-mark.tsx / the hub -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="px-ship" viewBox="0 0 512 448"><rect x="224" y="96" width="32" height="32"/><rect x="256" y="96" width="32" height="32"/><rect x="192" y="128" width="32" height="32"/><rect x="224" y="128" width="32" height="32"/><rect x="256" y="128" width="32" height="32"/><rect x="288" y="128" width="32" height="32"/><rect x="128" y="160" width="32" height="32"/><rect x="160" y="160" width="32" height="32"/><rect x="192" y="160" width="32" height="32"/><rect x="224" y="160" width="32" height="32"/><rect x="256" y="160" width="32" height="32"/><rect x="288" y="160" width="32" height="32"/><rect x="320" y="160" width="32" height="32"/><rect x="352" y="160" width="32" height="32"/><rect x="64" y="192" width="32" height="32"/><rect x="96" y="192" width="32" height="32"/><rect x="128" y="192" width="32" height="32"/><rect x="160" y="192" width="32" height="32"/><rect x="192" y="192" width="32" height="32"/><rect x="224" y="192" width="32" height="32"/><rect x="256" y="192" width="32" height="32"/><rect x="288" y="192" width="32" height="32"/><rect x="320" y="192" width="32" height="32"/><rect x="352" y="192" width="32" height="32"/><rect x="384" y="192" width="32" height="32"/><rect x="416" y="192" width="32" height="32"/><rect x="128" y="224" width="32" height="32"/><rect x="160" y="224" width="32" height="32"/><rect x="224" y="224" width="32" height="32"/><rect x="256" y="224" width="32" height="32"/><rect x="320" y="224" width="32" height="32"/><rect x="352" y="224" width="32" height="32"/><rect x="224" y="288" width="32" height="32" opacity=".4"/><rect x="256" y="288" width="32" height="32" opacity=".4"/><rect x="192" y="320" width="32" height="32" opacity=".16"/><rect x="224" y="320" width="32" height="32" opacity=".16"/><rect x="256" y="320" width="32" height="32" opacity=".16"/><rect x="288" y="320" width="32" height="32" opacity=".16"/></symbol>
+<symbol id="px-writer" viewBox="0 0 24 20"><rect x="9" y="0" width="6" height="12"/><rect x="10" y="12" width="4" height="2"/><rect x="11" y="14" width="2" height="2"/><rect x="4" y="17" width="4" height="2"/><rect x="10" y="17" width="4" height="2"/><rect x="16" y="17" width="3" height="2"/></symbol>
+<symbol id="px-flag" viewBox="0 0 24 20"><rect x="5" y="1" width="2" height="17"/><rect x="7" y="1" width="13" height="3"/><rect x="7" y="4" width="10" height="2"/><rect x="7" y="6" width="13" height="3"/><rect x="2" y="18" width="8" height="2"/></symbol>
+<symbol id="px-brush" viewBox="0 0 24 20"><rect x="10" y="0" width="4" height="7"/><rect x="9" y="7" width="6" height="2"/><rect x="9" y="9" width="6" height="4"/><rect x="10" y="13" width="4" height="2"/><rect x="11" y="17" width="2" height="2"/><rect x="4" y="15" width="2" height="2"/><rect x="18" y="14" width="2" height="2"/></symbol>
+<symbol id="px-cam" viewBox="0 0 24 20"><rect x="4" y="1" width="5" height="4"/><rect x="13" y="1" width="5" height="4"/><rect x="3" y="6" width="18" height="9"/><rect x="8" y="8" width="8" height="6" opacity=".3"/><rect x="10" y="10" width="4" height="2"/><rect x="7" y="15" width="2" height="4"/><rect x="15" y="15" width="2" height="4"/></symbol>
+<symbol id="px-cut" viewBox="0 0 24 20"><rect x="4" y="1" width="2" height="2"/><rect x="6" y="3" width="2" height="2"/><rect x="8" y="5" width="2" height="2"/><rect x="16" y="1" width="2" height="2"/><rect x="14" y="3" width="2" height="2"/><rect x="12" y="5" width="2" height="2"/><rect x="10" y="7" width="4" height="2"/><rect x="8" y="9" width="2" height="2"/><rect x="14" y="9" width="2" height="2"/><rect x="5" y="11" width="4" height="2"/><rect x="4" y="13" width="3" height="3"/><rect x="15" y="11" width="4" height="2"/><rect x="17" y="13" width="3" height="3"/></symbol>
+<symbol id="px-dish" viewBox="0 0 24 20"><rect x="3" y="2" width="2" height="2"/><rect x="19" y="2" width="2" height="2"/><rect x="6" y="4" width="2" height="2"/><rect x="16" y="4" width="2" height="2"/><rect x="11" y="1" width="2" height="4"/><rect x="9" y="5" width="6" height="2"/><rect x="11" y="7" width="2" height="8"/><rect x="9" y="10" width="2" height="2"/><rect x="13" y="10" width="2" height="2"/><rect x="7" y="12" width="2" height="2"/><rect x="15" y="12" width="2" height="2"/><rect x="7" y="15" width="10" height="2"/><rect x="5" y="17" width="14" height="2"/></symbol>
+<symbol id="px-spark" viewBox="0 0 24 20"><rect x="2" y="1" width="2" height="2"/><rect x="20" y="1" width="2" height="2"/><rect x="1" y="8" width="3" height="2"/><rect x="20" y="8" width="3" height="2"/><rect x="9" y="0" width="6" height="2"/><rect x="7" y="2" width="10" height="2"/><rect x="6" y="4" width="12" height="6"/><rect x="7" y="10" width="10" height="2"/><rect x="9" y="12" width="6" height="2"/><rect x="9" y="15" width="6" height="1"/><rect x="9" y="17" width="6" height="1"/><rect x="10" y="19" width="4" height="1"/></symbol>
+</defs></svg>
+
+<nav class="bar" aria-label="On this page">
+  <a href="/" class="bar-home" aria-label="Enrique Marq, home"><svg viewBox="64 96 384 256" aria-hidden="true"><use href="#px-ship" width="512" height="448"/></svg><span>Enrique</span></a>
+  <a href="#inside">What you get</a>
+  <a href="#questions">Questions</a>
+  <a class="bar-join" href="https://www.skool.com/ai-growth-collective/about">Join</a>
+</nav>
+
+<main id="main">
+
+  <!-- 1. The thing: what it is, the outcome, one Join -->
+  <header class="hello">
+    <svg class="ship" viewBox="64 96 384 256" role="img" aria-label="Nave"><use href="#px-ship" width="512" height="448"/></svg>
+    <p class="kicker">Agentic Content Lab</p>
+    <h1>Grow your influence as fast as your&nbsp;business.</h1>
+    <p class="lede">Your own AI content team, and the place where you learn to work alongside it.</p>
+    <a class="btn" href="https://www.skool.com/ai-growth-collective/about"><span>Join Agentic Content Lab</span><svg class="btn-ship" viewBox="0 0 512 448" aria-hidden="true"><use href="#px-ship"/></svg></a>
+    <!-- PRICE: shown once the Skool page itself reads $65. Remove `hidden` on the three .price lines. -->
+    <p class="price" hidden>$65 to start</p>
+  </header>
+
+  <!-- 2. The problem, in his audience's words -->
+  <section class="part pain" aria-labelledby="pain-title">
+    <h2 id="pain-title">Have you built a business you’re proud of, but your content doesn’t show it?</h2>
+    <p>Another week ends, and you’re frustrated: you didn’t post as much as you know you should, because you don’t know what steps to take and it takes real effort.</p>
+    <p class="said">“I’ll post tomorrow.”</p>
+    <p>If you’re stressed because another week ended without hitting your content goals, and you know more people would love what you have to offer, I have a solution.</p>
+  </section>
+
+  <!-- 3. What you get -->
+  <section class="part inside" id="inside" aria-labelledby="inside-title">
+    <p class="label">What you get</p>
+    <h2 id="inside-title">Your content gets done every week, sounding like you, with your own AI content&nbsp;team.</h2>
+
+    <div class="get">
+      <h3><span class="n">01</span>Your AI content team, in the Nave app</h3>
+      <ul class="crew" aria-label="A specialist for every job">
+        <li><svg viewBox="0 0 24 20" aria-hidden="true"><use href="#px-writer"/></svg>Writers</li>
+        <li><svg viewBox="0 0 24 20" aria-hidden="true"><use href="#px-flag"/></svg>Strategist</li>
+        <li><svg viewBox="0 0 24 20" aria-hidden="true"><use href="#px-brush"/></svg>Designers</li>
+        <li><svg viewBox="0 0 24 20" aria-hidden="true"><use href="#px-cam"/></svg>Video editor</li>
+        <li><svg viewBox="0 0 24 20" aria-hidden="true"><use href="#px-cut"/></svg>Video cutter</li>
+        <li><svg viewBox="0 0 24 20" aria-hidden="true"><use href="#px-dish"/></svg>Publisher</li>
+        <li><svg viewBox="0 0 24 20" aria-hidden="true"><use href="#px-spark"/></svg>Weekly planner</li>
+      </ul>
+      <p>A specialist for every job, so you stop being the writer, the editor and the poster all at once, and your content gets done every week.</p>
+      <p>It knows your brand, your voice, your story, your look, so everything it makes sounds like you and you post without second-guessing.</p>
+      <a class="more" href="https://getnave.app"><i class="ic-nave"><svg viewBox="0 0 512 448" aria-hidden="true"><use href="#px-ship"/></svg></i>See the Nave app <span aria-hidden="true">→</span></a>
+    </div>
+
+    <div class="get">
+      <h3><span class="n">02</span>The training</h3>
+      <p>You learn how to put it to work alongside you, so you can show up consistently as yourself on social media.</p>
+    </div>
+
+    <div class="get">
+      <h3><span class="n">03</span>Two calls a week with me</h3>
+      <p>You’re never figuring it out alone: you get strategy and feedback every week.</p>
+    </div>
+
+    <div class="get">
+      <h3><span class="n">04</span>The community</h3>
+      <p>A room of people building the same thing, sharing opportunities and collaborations. You stay consistent because you’re not doing it alone.</p>
+    </div>
+  </section>
+
+  <!-- 4. How it's different -->
+  <section class="part different" aria-labelledby="diff-title">
+    <h2 id="diff-title">Anyone can get AI tools.</h2>
+    <p>In the Lab you get the AI content team I built, already set up for you, and you get me: two weekly calls, the group conversations and DMs, getting your message, your story and your strategy clear, so you show up as yourself, consistently.</p>
+    <dl class="two">
+      <div><dt>I’m the first experiment</dt><dd>I built it for my own content, I run every piece of it every day, and I’m the first experiment.</dd></div>
+      <div><dt>You own it</dt><dd>Your tools, your system, on the AI you already pay for.</dd></div>
+    </dl>
+  </section>
+
+  <!-- 5. A short founder note, his words -->
+  <section class="part note" aria-labelledby="note-title">
+    <p class="label" id="note-title">Why I built it</p>
+    <blockquote>
+      <p>At eighteen, I was grinding ten to twelve hours a day in my little cubicle in my house, just making content alone, messaging business owners, holding my side job. Super scared I would pour everything into what I was building, and nobody would ever know. I burned out.</p>
+      <p>Then one video, me sharing a tool I love, changed the direction of my entire life. This process should not be this painful, so I’m making it easier for you.</p>
+      <p class="why">Someone out there needs exactly what you have, and they’ll never get it if you can’t show up and say it.</p>
+    </blockquote>
+    <p class="sig">Enrique</p>
+    <a class="more" href="/me/">Read my story <span aria-hidden="true">→</span></a>
+  </section>
+
+  <!-- 6. Who it's for -->
+  <section class="part who" aria-labelledby="who-title">
+    <p class="label">Who it’s for</p>
+    <h2 id="who-title" class="sr">Who it’s for</h2>
+    <ul class="asks">
+      <li><b>Founders</b>Are you a founder who knows reputation is everything, but never has time to post?</li>
+      <li><b>Creators</b>Are you a creator who has ideas every day, but posts once a week?</li>
+      <li><b>Solopreneurs</b>Are you someone who knows people buy from who they trust, but you’re not showing up enough for them to get to know you?</li>
+    </ul>
+  </section>
+
+  <!-- 7. The three levels of access -->
+  <section class="part levels" aria-labelledby="levels-title">
+    <p class="label">Levels of access</p>
+    <h2 id="levels-title">Same outcome at every level. What changes is how close I&nbsp;am.</h2>
+    <div class="tiers">
+      <article class="tier">
+        <p class="tier-say">Start on your own</p>
+        <h3>Free resources</h3>
+        <p>My guides, skills and templates</p>
+        <p class="tier-price">Free</p>
+        <a class="tier-go" href="/me/#resources">Get the free library <span aria-hidden="true">→</span></a>
+      </article>
+      <article class="tier main">
+        <p class="tier-say">Build it with us</p>
+        <h3>Agentic Content Lab</h3>
+        <p>Your AI content team in the Nave app, the training, two calls a week with me, the community</p>
+        <p class="tier-price price" hidden>$65 to start</p>
+        <a class="tier-go solid" href="https://www.skool.com/ai-growth-collective/about">Join <span aria-hidden="true">→</span></a>
+      </article>
+      <article class="tier">
+        <p class="tier-say">Build it with me</p>
+        <h3>1:1 with me</h3>
+        <p>Calls on your strategy and your system</p>
+        <a class="tier-go" href="mailto:enrique@enriquemarq.com">Write to me <span aria-hidden="true">→</span></a>
+      </article>
+    </div>
+  </section>
+
+  <!-- 8. Questions -->
+  <section class="part faq" id="questions" aria-labelledby="faq-title">
+    <h2 id="faq-title">Questions</h2>
+    <details>
+      <summary>What is the Nave app?</summary>
+      <p>Everything in one app you own: editing, docs, strategy, publishing, running on the AI subscription you already have (Claude Code, Codex). <a href="https://getnave.app">getnave.app</a></p>
+    </details>
+    <details>
+      <summary>Do I pay for another app?</summary>
+      <p>No app subscription beyond the community: you bring your own Claude Code or Codex subscription and plug in the tools you already use.</p>
+    </details>
+    <details>
+      <summary>Why not an agency or an editor?</summary>
+      <p>Agencies and editors do the work, but they don’t know you: your voice, your personality, your story. Courses and AI tools leave you doing it alone. In the Lab you get the AI content team I run my own content on, working with you, and me, helping you show up as yourself with the right strategy.</p>
+    </details>
+    <details>
+      <summary>What if I stop?</summary>
+      <p>Your AI content team in the Nave app and the updates pause. Everything you made stays yours: your brand, your strategy, your pieces and your files. Come back any time to pick up where you left off.</p>
+    </details>
+    <details>
+      <summary>Can I work with you 1:1?</summary>
+      <p>Yes: calls on your strategy and your system. Write to me at <a href="mailto:enrique@enriquemarq.com">enrique@enriquemarq.com</a>.</p>
+    </details>
+  </section>
+
+  <!-- 9. The last call -->
+  <section class="part last" aria-labelledby="last-title">
+    <svg class="ship small" viewBox="64 96 384 256" aria-hidden="true"><use href="#px-ship" width="512" height="448"/></svg>
+    <h2 id="last-title">Join Agentic Content Lab.</h2>
+    <p>Click the link, and I’ll see you on our next call.</p>
+    <a class="btn" href="https://www.skool.com/ai-growth-collective/about"><span>Join Agentic Content Lab</span><svg class="btn-ship" viewBox="0 0 512 448" aria-hidden="true"><use href="#px-ship"/></svg></a>
+    <p class="price" hidden>$65 to start</p>
+  </section>
+</main>
+
+<footer class="foot">
+  <a href="/">enriquemarq.com</a>
+  <a href="/me/">My story</a>
+  <a href="mailto:enrique@enriquemarq.com">enrique@enriquemarq.com</a>
+</footer>
+</body>
+</html>

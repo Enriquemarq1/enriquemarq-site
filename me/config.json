@@ -1,0 +1,11 @@
+{
+  "mode": "live",
+  "endpoint": "https://xadknhmtkgsdeyaaeamz.supabase.co/functions/v1/submit-resource-lead",
+  "publicKey": "sb_publishable_oVQzfl2Rk30GfCrMUfdmEg_pI6XLQkW",
+  "links": {
+    "community": "https://www.skool.com/ai-growth-collective/about",
+    "zernio": "https://zernio.link/enrique",
+    "youtube": "https://www.youtube.com/@enriquemarq-0",
+    "repository": "https://github.com/agentic-ai-content/build-with-enrique"
+  }
+}
