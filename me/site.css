@@ -345,3 +345,26 @@ h1 .ln-hi{font-size:.52em;letter-spacing:-.015em;margin-bottom:.38em}
 a.act{color:inherit;text-decoration:none;font-weight:600}
 a.act:hover mark::before,a.act:hover mark{filter:brightness(1.08)}
 a.act:focus-visible{outline:2px solid var(--deep);outline-offset:3px;border-radius:4px}
+
+
+/* Oct 21: phone pass */
+a.act{white-space:nowrap}                                   /* "AI content team" never breaks across two lines */
+.mini{gap:6px;margin-top:12px}
+.mini a,.mini-soon{width:44px;height:44px;border-radius:12px} /* thumb-sized taps */
+.mini svg{width:22px;height:22px}
+.consent input{width:22px;height:22px}
+@media (max-width:480px){
+  .hello .pills{flex-wrap:nowrap;gap:8px}
+  .hello .pills>a,.find summary{padding:10px 14px 10px 11px;font-size:15px;gap:7px;white-space:nowrap}
+  .hello .pills svg,.find summary svg{width:19px;height:19px}
+  .find .chev{display:none}
+  .nave-go{letter-spacing:.12em;white-space:nowrap;font-size:12px}
+}
+@media (max-width:370px){
+  .hello .pills>a,.find summary{padding:9px 12px 9px 10px;font-size:14px}
+}
+
+@keyframes find-in-phone{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+@media (max-width:480px){
+  .find-list{left:0;transform:none;width:min(330px,calc(100vw - 32px));animation:find-in-phone .22s ease-out}
+}
