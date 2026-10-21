@@ -331,3 +331,11 @@ h1 .ln-hi{font-size:.52em;letter-spacing:-.015em;margin-bottom:.38em}
 .find-list b{display:block;font:600 15px/1.2 var(--sans)}
 .find-list small{display:block;font:400 13.5px/1.35 var(--sans);color:var(--mid)}
 .find-list .soon b{color:var(--mid)}.find-list .soon svg{opacity:.55}
+
+
+/* Oct 21: his platforms, small, always visible under the buttons */
+.mini{display:flex;justify-content:center;align-items:center;gap:16px;margin-top:16px}
+.mini a,.mini-soon{display:inline-flex;width:30px;height:30px;align-items:center;justify-content:center;border-radius:9px;transition:transform .2s}
+.mini a:hover{transform:translateY(-2px)}
+.mini svg{width:20px;height:20px}
+.mini-soon{opacity:.4}
