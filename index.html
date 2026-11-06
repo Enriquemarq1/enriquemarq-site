@@ -47,8 +47,15 @@ h1,h2,h3{margin:0;font-weight:600;color:var(--ink)}
 .time{min-height:20px;font-family:var(--mono);font-size:13px;color:var(--soft)}
 .me{margin-top:22px;width:84px;height:84px;border-radius:50%;overflow:hidden;background:#cfe2f6;box-shadow:0 0 0 4px rgba(255,255,255,.9),0 14px 30px -14px rgba(11,36,71,.45)}
 .me img{width:84px;height:84px;object-fit:cover}
-.tagline{margin-top:6px;font-size:15px;line-height:1.5;color:var(--soft)}
-.name{margin-top:14px;font:400 12.5px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--soft)}
+.tagline{margin-top:44px;font-size:25px;line-height:1.35;font-weight:700;letter-spacing:-.025em;color:#3A4450;text-wrap:balance}
+.tagline .ai{font-size:1.12em}
+.tagline br.m{display:none}
+.btn-soft{color:var(--ink);background:#EEF5FD;border:1px solid #DCE9F7}
+.btn-soft:hover{background:#E3EFFC;transform:translateY(-1px)}
+.acts-top .btn{height:42px;font-weight:500}
+.acts-top .ico{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;color:var(--soft)}
+.or{font-size:13px;color:var(--faint)}
+.name{margin-top:16px;font-size:21px;line-height:1.3;font-weight:650;letter-spacing:-.01em;color:var(--dark)}
 
 /* the line, with the Lab's ship taking the I of AI apart */
 h1.line{margin-top:58px;font-size:40px;font-weight:850;line-height:1.28;letter-spacing:-.04em;color:var(--dark);text-wrap:balance}
@@ -68,7 +75,7 @@ h1.line .soft{color:#3A4450;font-weight:750}
 .g::after{content:"";position:absolute;right:-.44em;top:-.16em;width:.62em;height:.42em;transform:rotate(14deg);
   background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 30'%3E%3Cpath d='M3 26 L6 7 L15 16 L22 3 L29 16 L38 7 L41 26 Z' fill='%23FFD23F' stroke='%230B2447' stroke-width='2.2' stroke-linejoin='round'/%3E%3Ccircle cx='6' cy='7' r='2.6' fill='%230B2447'/%3E%3Ccircle cx='22' cy='3' r='2.6' fill='%230B2447'/%3E%3Ccircle cx='38' cy='7' r='2.6' fill='%230B2447'/%3E%3C/svg%3E") center/contain no-repeat}
 
-.follow{display:flex;align-items:center;gap:10px;margin-top:26px}
+.follow{display:flex;align-items:center;gap:10px;margin-top:18px}
 .hand{font:400 22px/1 var(--hand);color:var(--dark);transform:rotate(-2deg)}
 .hand-arrow{width:34px;height:22px;fill:none;stroke:var(--dark);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .social{display:flex;gap:2px}
@@ -85,10 +92,12 @@ h1.line .soft{color:#3A4450;font-weight:750}
 .btn-glass{color:var(--ink);background:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.95);box-shadow:0 0 0 1px var(--line),0 8px 20px -14px rgba(11,36,71,.4);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
 .btn-glass:hover{background:#fff;transform:translateY(-1px)}
 .btn-glass .ico{fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;color:var(--soft)}
-.city{margin-top:20px;color:var(--faint)}
+.city{margin-top:16px;color:var(--faint)}
 
 /* sections */
 .sec{display:grid;grid-template-columns:96px 1fr;gap:28px;margin-top:88px}
+.sec.story{margin-top:48px}
+.story .body p{font-size:15px;line-height:1.65}
 .sec>h2{padding-top:3px;font:400 12px/1.5 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--faint)}
 .sec>.body{min-width:0}
 .story p+p{margin-top:14px}
@@ -141,7 +150,8 @@ footer .btn{height:38px;font-size:13.5px;font-weight:500}
 
 @media (max-width:640px){
   .wrap{padding:40px 20px 32px}
-  h1.line{margin-top:52px;font-size:30px}
+  .tagline{font-size:22px;margin-top:40px}
+  .tagline br.m{display:inline}
   .sec{grid-template-columns:1fr;gap:14px;margin-top:64px}
   .stack{grid-template-columns:repeat(4,1fr);gap:8px}
   .tool{padding:16px 4px 12px}
@@ -153,8 +163,12 @@ footer .btn{height:38px;font-size:13.5px;font-weight:500}
 @media (max-width:480px){
   .acts{flex-direction:column;gap:10px}
   .acts .btn{width:min(100%,300px);justify-content:center}
-  .follow{flex-direction:column;gap:2px}
-  .hand-arrow{transform:rotate(80deg)}
+  .acts-top{flex-direction:row}
+  .acts-top .btn{width:auto}
+  .follow{gap:4px}
+  .hand{font-size:18px}
+  .hand-arrow{width:26px}
+  .social a{width:38px;height:38px}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
@@ -171,9 +185,8 @@ footer .btn{height:38px;font-size:13.5px;font-weight:500}
     <div class="me">
       <picture><source type="image/webp" srcset="/assets/me/enrique-192.webp 2x, /assets/me/enrique-288.webp 3x"><img src="/assets/me/enrique-192.jpg" srcset="/assets/me/enrique-288.jpg 3x" alt="Enrique Marq" width="84" height="84" fetchpriority="high"></picture>
     </div>
-    <p class="name">Enrique Marq</p>
-    <p class="tagline">Building products, studying attention, sharing every lesson.</p>
-    <h1 class="line">I build things with <span class="ai"><span class="x3d">A<span class="i">I</span></span><span class="fx" aria-hidden="true"><span class="beam"></span><i style="left:calc(50% + 0.014em - 0.056em);top:0.309em;width:0.112em;height:0.112em;opacity:1;transform:rotate(-8deg)"></i><i style="left:calc(50% + -0.098em - 0.049em);top:0.238em;width:0.098em;height:0.098em;opacity:1;transform:rotate(12deg)"></i><i style="left:calc(50% + 0.112em - 0.049em);top:0.196em;width:0.098em;height:0.098em;opacity:0.95;transform:rotate(-16deg)"></i><i style="left:calc(50% + -0.028em - 0.049em);top:0.112em;width:0.098em;height:0.098em;opacity:0.9;transform:rotate(20deg)"></i><i style="left:calc(50% + 0.084em - 0.042em);top:0.042em;width:0.084em;height:0.084em;opacity:0.85;transform:rotate(-24deg)"></i><i style="left:calc(50% + -0.084em - 0.042em);top:-0.028em;width:0.084em;height:0.084em;opacity:0.75;transform:rotate(28deg)"></i><i style="left:calc(50% + 0.028em - 0.035em);top:-0.084em;width:0.070em;height:0.070em;opacity:0.65;transform:rotate(-32deg)"></i><i style="left:calc(50% + -0.042em - 0.032em);top:-0.147em;width:0.063em;height:0.063em;opacity:0.55;transform:rotate(36deg)"></i><span class="ufo"></span></span></span><br><span class="soft">and get them in front of</span> <span class="g">the right people.</span></h1>
+    <h1 class="name">Enrique Marq</h1>
+    <p class="tagline">Building <span class="ai"><span class="x3d">A<span class="i">I</span></span><span class="fx" aria-hidden="true"><span class="beam"></span><i style="left:calc(50% + 0.014em - 0.056em);top:0.309em;width:0.112em;height:0.112em;opacity:1;transform:rotate(-8deg)"></i><i style="left:calc(50% + -0.098em - 0.049em);top:0.238em;width:0.098em;height:0.098em;opacity:1;transform:rotate(12deg)"></i><i style="left:calc(50% + 0.112em - 0.049em);top:0.196em;width:0.098em;height:0.098em;opacity:0.95;transform:rotate(-16deg)"></i><i style="left:calc(50% + -0.028em - 0.049em);top:0.112em;width:0.098em;height:0.098em;opacity:0.9;transform:rotate(20deg)"></i><i style="left:calc(50% + 0.084em - 0.042em);top:0.042em;width:0.084em;height:0.084em;opacity:0.85;transform:rotate(-24deg)"></i><i style="left:calc(50% + -0.084em - 0.042em);top:-0.028em;width:0.084em;height:0.084em;opacity:0.75;transform:rotate(28deg)"></i><i style="left:calc(50% + 0.028em - 0.035em);top:-0.084em;width:0.070em;height:0.070em;opacity:0.65;transform:rotate(-32deg)"></i><i style="left:calc(50% + -0.042em - 0.032em);top:-0.147em;width:0.063em;height:0.063em;opacity:0.55;transform:rotate(36deg)"></i><span class="ufo"></span></span></span> products,<br> studying attention,<br class="m"> sharing every lesson.</p>
     <div class="follow">
       <span class="hand">follow the journey</span>
       <svg class="hand-arrow" viewBox="0 0 34 22" aria-hidden="true"><path d="M2 14 C 10 4, 22 4, 30 12"/><path d="M24 12 L 31 13 L 30 6"/></svg>
@@ -184,25 +197,22 @@ footer .btn{height:38px;font-size:13.5px;font-weight:500}
       <a href="https://www.linkedin.com/in/enrique-marq-lol/" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
     </nav>
     </div>
-    <div class="acts">
-      <a class="btn btn-main" href="https://www.skool.com/agentic-content-lab/about"><span class="lab" aria-hidden="true"></span>Join Agentic Content Lab</a>
-      <a class="btn btn-glass" href="https://getnave.app"><svg class="nave" viewBox="64 96 384 256" aria-hidden="true"><use href="#ship"/></svg>Get Nave</a>
-      <a class="btn btn-glass" href="https://getnave.app/guides/"><svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 3.2c1.8-.6 3.6-.4 5.5.8 1.9-1.2 3.7-1.4 5.5-.8v9.4c-1.8-.6-3.6-.4-5.5.8-1.9-1.2-3.7-1.4-5.5-.8z"/><path d="M8 4v9.4"/></svg>Free guides</a>
+    <div class="acts acts-top">
+      <a class="btn btn-soft" href="mailto:hey@enriquemarq.com">Contact me<svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><rect x="2" y="3.5" width="12" height="9" rx="2"/><path d="M2.5 4.5 8 9l5.5-4.5"/></svg></a>
+      <span class="or">or</span>
+      <a class="btn btn-glass" id="copy" href="mailto:hey@enriquemarq.com" data-email="hey@enriquemarq.com"><span id="copy-label" aria-live="polite">Copy email</span><svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><rect x="5.5" y="5.5" width="8" height="8" rx="2"/><path d="M10.5 3.5v-.5a1.5 1.5 0 0 0-1.5-1.5H4A1.5 1.5 0 0 0 2.5 3v5A1.5 1.5 0 0 0 4 9.5h.5"/></svg></a>
     </div>
     <p class="city mono">Sacramento, California</p>
   </header>
 
   <section class="sec story" id="about" aria-labelledby="journey-h">
-    <h2 id="journey-h">My journey</h2>
+    <h2 id="journey-h">About</h2>
     <div class="body">
-      <p>I love building things with AI and getting them in front of the right people. Most of my days go into building my own AI content team, actually using it, and then showing people how I did it and what's worth your time.</p>
-      <p>Right now that looks like three things.</p>
-      <p>I'm building <a href="https://getnave.app">Nave</a>, the app where my AI content team lives and works. Think of the Claude or ChatGPT app you already use, but with a whole content team inside.</p>
-      <p>I run <a href="https://www.skool.com/agentic-content-lab/about">Agentic Content Lab</a>, where I help founders and creators post more winning content, so the people who need them can find them. I guide them through setting up their own AI content team, and I'm in there every day, answering everything that comes up.</p>
-      <p>And I still run content for a few brands, including <a href="https://zernio.link/enrique" rel="sponsored noopener">Zernio</a>, a $5M/year SaaS. Between all of them, my AI team and I ship <b>500+ pieces a month</b>. Yes, it's one guy. Still feels a little unreal to say.</p>
-      <p>I really believe <b class="hl">AI amplifies one extremely capable person</b>, and I want that person to be you.</p>
-      <p>When I'm not building, you'll find me playing Valorant way too competitively, or daydreaming about getting into robotics.</p>
-      <p class="end">Follow the journey :)</p>
+      <p>I build things with AI, and I enjoy getting them in front of the right people. Most of my days go into my own AI content team: building it, using it, and showing you how.</p>
+      <p>Right now that looks like three things. I'm building <a href="https://getnave.app">Nave</a>, the app where my AI content team lives and works.</p>
+      <p>I run <a href="https://www.skool.com/agentic-content-lab/about">Agentic Content Lab</a>, where I help founders and creators set up their own AI content team and post more winning content. I'm in there every day.</p>
+      <p>And I run content for a few brands, including <a href="https://zernio.link/enrique" rel="sponsored noopener">Zernio</a>, a $5M/year SaaS. That's 500+ pieces a month. Yes, it's one guy.</p>
+      <p>When I'm not building, I'm playing Valorant way too competitively or daydreaming about robotics.</p>
     </div>
   </section>
 
@@ -225,7 +235,7 @@ footer .btn{height:38px;font-size:13.5px;font-weight:500}
   <section class="sec free" id="free" aria-labelledby="free-h">
     <h2 id="free-h">Free</h2>
     <div class="body">
-      <p class="lead">On my free channels, I share as much value as I can: how I build with AI, the strategies that actually work, and the whole journey.</p>
+      <p class="lead">On my free channels, I share as much value as I can: how I build with AI, the strategies that work, and the whole journey.</p>
     <!-- media:start (written by scripts/media.mjs from scripts/media.json; edit those, not this block) -->
     <ul class="vids">
       <!-- one video held in scripts/media.json until it is public on YouTube -->
@@ -273,7 +283,7 @@ footer .btn{height:38px;font-size:13.5px;font-weight:500}
   </section>
 
   <footer>
-    <a class="btn btn-glass" id="copy" href="mailto:hey@enriquemarq.com" data-email="hey@enriquemarq.com"><span id="copy-label" aria-live="polite">Copy email</span><svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><rect x="5.5" y="5.5" width="8" height="8" rx="2"/><path d="M10.5 3.5v-.5a1.5 1.5 0 0 0-1.5-1.5H4A1.5 1.5 0 0 0 2.5 3v5A1.5 1.5 0 0 0 4 9.5h.5"/></svg></a>
+    
     <span>© 2026 Enrique Marq<br>Made with my AI content team.</span>
   </footer>
 </main>
