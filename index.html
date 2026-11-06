@@ -47,6 +47,7 @@ h1,h2,h3{margin:0;font-weight:600;color:var(--ink)}
 .time{min-height:20px;font-family:var(--mono);font-size:13px;color:var(--soft)}
 .me{margin-top:22px;width:84px;height:84px;border-radius:50%;overflow:hidden;background:#cfe2f6;box-shadow:0 0 0 4px rgba(255,255,255,.9),0 14px 30px -14px rgba(11,36,71,.45)}
 .me img{width:84px;height:84px;object-fit:cover}
+.tagline{margin-top:6px;font-size:15px;line-height:1.5;color:var(--soft)}
 .name{margin-top:14px;font:400 12.5px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--soft)}
 
 /* the line, with the Lab's ship taking the I of AI apart */
@@ -92,6 +93,9 @@ h1.line .soft{color:#3A4450;font-weight:750}
 .sec>.body{min-width:0}
 .story p+p{margin-top:14px}
 .story b{font-weight:600;color:var(--ink)}
+.story a{color:var(--ink);font-weight:600;text-decoration:underline;text-decoration-color:var(--sky);text-decoration-thickness:2px;text-underline-offset:3px}
+.story a:hover{text-decoration-color:var(--blue)}
+.story b.hl{font-weight:800;color:#2D72C6}
 .story .key{margin-top:8px;font-size:19px;line-height:1.45;font-weight:800;letter-spacing:-.01em;color:#2D72C6}
 .story .key+p{margin-top:8px}
 .story .end{margin-top:18px;font:400 21px/1.2 var(--hand);color:var(--dark)}
@@ -139,7 +143,8 @@ footer .btn{height:38px;font-size:13.5px;font-weight:500}
   .wrap{padding:40px 20px 32px}
   h1.line{margin-top:52px;font-size:30px}
   .sec{grid-template-columns:1fr;gap:14px;margin-top:64px}
-  .stack{grid-template-columns:repeat(3,1fr)}
+  .stack{grid-template-columns:repeat(4,1fr);gap:8px}
+  .tool{padding:16px 4px 12px}
   .vid{grid-template-columns:104px 1fr;gap:14px}
   .vid img{width:104px;height:59px}
   .card{padding:18px}
@@ -167,6 +172,7 @@ footer .btn{height:38px;font-size:13.5px;font-weight:500}
       <picture><source type="image/webp" srcset="/assets/me/enrique-192.webp 2x, /assets/me/enrique-288.webp 3x"><img src="/assets/me/enrique-192.jpg" srcset="/assets/me/enrique-288.jpg 3x" alt="Enrique Marq" width="84" height="84" fetchpriority="high"></picture>
     </div>
     <p class="name">Enrique Marq</p>
+    <p class="tagline">Building products, studying attention, sharing every lesson.</p>
     <h1 class="line">I build things with <span class="ai"><span class="x3d">A<span class="i">I</span></span><span class="fx" aria-hidden="true"><span class="beam"></span><i style="left:calc(50% + 0.014em - 0.056em);top:0.309em;width:0.112em;height:0.112em;opacity:1;transform:rotate(-8deg)"></i><i style="left:calc(50% + -0.098em - 0.049em);top:0.238em;width:0.098em;height:0.098em;opacity:1;transform:rotate(12deg)"></i><i style="left:calc(50% + 0.112em - 0.049em);top:0.196em;width:0.098em;height:0.098em;opacity:0.95;transform:rotate(-16deg)"></i><i style="left:calc(50% + -0.028em - 0.049em);top:0.112em;width:0.098em;height:0.098em;opacity:0.9;transform:rotate(20deg)"></i><i style="left:calc(50% + 0.084em - 0.042em);top:0.042em;width:0.084em;height:0.084em;opacity:0.85;transform:rotate(-24deg)"></i><i style="left:calc(50% + -0.084em - 0.042em);top:-0.028em;width:0.084em;height:0.084em;opacity:0.75;transform:rotate(28deg)"></i><i style="left:calc(50% + 0.028em - 0.035em);top:-0.084em;width:0.070em;height:0.070em;opacity:0.65;transform:rotate(-32deg)"></i><i style="left:calc(50% + -0.042em - 0.032em);top:-0.147em;width:0.063em;height:0.063em;opacity:0.55;transform:rotate(36deg)"></i><span class="ufo"></span></span></span><br><span class="soft">and get them in front of</span> <span class="g">the right people.</span></h1>
     <div class="follow">
       <span class="hand">follow the journey</span>
@@ -189,11 +195,13 @@ footer .btn{height:38px;font-size:13.5px;font-weight:500}
   <section class="sec story" id="about" aria-labelledby="journey-h">
     <h2 id="journey-h">My journey</h2>
     <div class="body">
-      <p>Hi, I'm Enrique. For the past 3 years, I've helped people use AI to make MORE with less, and I built the AI content team I wish I'd had when very few people knew I existed.</p>
-      <p>Now, with that AI team, content feels easy and fun: I make <b>500+ pieces a month</b> across every platform for several brands, including <a href="https://zernio.link/enrique" rel="sponsored noopener">Zernio</a>, a $5M/year SaaS, as a one-person head of content.</p>
-      <p>That's when it clicked:</p>
-      <p class="key">AI amplifies one extremely capable person.</p>
-      <p>And I want that person to be you.</p>
+      <p>I love building things with AI and getting them in front of the right people. Most of my days go into building my own AI content team, actually using it, and then showing people how I did it and what's worth your time.</p>
+      <p>Right now that looks like three things.</p>
+      <p>I'm building <a href="https://getnave.app">Nave</a>, the app where my AI content team lives and works. Think of the Claude or ChatGPT app you already use, but with a whole content team inside.</p>
+      <p>I run <a href="https://www.skool.com/agentic-content-lab/about">Agentic Content Lab</a>, where I help founders and creators post more winning content, so the people who need them can find them. I guide them through setting up their own AI content team, and I'm in there every day, answering everything that comes up.</p>
+      <p>And I still run content for a few brands, including <a href="https://zernio.link/enrique" rel="sponsored noopener">Zernio</a>, a $5M/year SaaS. Between all of them, my AI team and I ship <b>500+ pieces a month</b>. Yes, it's one guy. Still feels a little unreal to say.</p>
+      <p>I really believe <b class="hl">AI amplifies one extremely capable person</b>, and I want that person to be you.</p>
+      <p>When I'm not building, you'll find me playing Valorant way too competitively, or daydreaming about getting into robotics.</p>
       <p class="end">Follow the journey :)</p>
     </div>
   </section>
@@ -248,13 +256,9 @@ footer .btn{height:38px;font-size:13.5px;font-weight:500}
       <li class="tool"><img src="/assets/stack/claude.svg" alt="" width="28" height="28" loading="lazy"><span>Claude Code</span></li>
       <li class="tool"><img src="/assets/stack/codex.svg" alt="" width="28" height="28" loading="lazy"><span>Codex</span></li>
       <li class="tool"><img src="/assets/stack/higgsfield.svg" alt="" width="28" height="28" loading="lazy"><span>Higgsfield</span></li>
-      <li class="tool"><img src="/assets/stack/elevenlabs.svg" alt="" width="28" height="28" loading="lazy"><span>ElevenLabs</span></li>
-      <li class="tool"><img src="/assets/stack/assemblyai.svg" alt="" width="28" height="28" loading="lazy"><span>AssemblyAI</span></li>
-      <li class="tool"><img src="/assets/stack/capcut.png" alt="" width="28" height="28" loading="lazy"><span>CapCut</span></li>
       <li class="tool"><img src="/assets/stack/obs.svg" alt="" width="28" height="28" loading="lazy"><span>OBS Studio</span></li>
       <li class="tool"><img src="/assets/stack/zernio.png" alt="" width="28" height="28" loading="lazy"><span>Zernio</span></li>
       <li class="tool"><img class="wide" src="/assets/stack/skool.svg" alt="" width="58" height="28" loading="lazy"><span>Skool</span></li>
-      <li class="tool"><img src="/assets/stack/kie.png" alt="" width="28" height="28" loading="lazy"><span>Kie.ai</span></li>
     </ul>
   </section>
 
