@@ -4,104 +4,252 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Enrique Marq</title>
-<meta name="description" content="What up friend. I love building with AI alongside incredible people.">
+<meta name="description" content="I build AI content teams that help founders and creators post more winning content, so the people who need them can find them.">
+<link rel="canonical" href="https://enriquemarq.com/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://enriquemarq.com/">
 <meta property="og:title" content="Enrique Marq">
-<meta property="og:description" content="What up friend. I love building with AI alongside incredible people.">
-<meta name="theme-color" content="#ffffff">
-<link rel="icon" type="image/svg+xml" href="assets/nave-mark.svg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,72,600,100;1,72,600,100;1,144,400,0&family=Hanken+Grotesk:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="preload" href="assets/latest-video.json" as="fetch" crossorigin>
-<link rel="stylesheet" href="assets/linktree.css">
+<meta property="og:description" content="I build AI content teams that help founders and creators post more winning content, so the people who need them can find them.">
+<meta property="og:image" content="https://enriquemarq.com/assets/share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#E2F0FF">
+<link rel="icon" type="image/svg+xml" href="/assets/nave-mark.svg">
+<link rel="preload" href="/assets/fonts/hanken-grotesk-var.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Hanken Grotesk";src:url(/assets/fonts/hanken-grotesk-var.woff2) format("woff2");font-weight:100 900;font-display:swap}
+@font-face{font-family:"DM Mono";src:url(/assets/fonts/dm-mono-400.woff2) format("woff2");font-weight:400;font-display:swap}
+:root{--ink:#0B2447;--text:#4A5768;--soft:#76839A;--faint:#9DA9B8;--line:#E3EBF4;--wash:#F3F8FE;--blue:#3F8EE6;--sky:#7DBDFB;
+  --sans:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;--mono:"DM Mono",ui-monospace,Consolas,monospace}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;color:var(--text);font:400 15px/1.7 var(--sans);-webkit-font-smoothing:antialiased;
+  background:radial-gradient(420px 260px at 50% 150px,rgba(255,255,255,.95),rgba(255,255,255,0) 70%) no-repeat,linear-gradient(180deg,#DCEDFF 0,#EBF5FF 200px,#fff 540px) no-repeat,#fff}
+a{color:inherit}
+img,svg{display:block}
+p{margin:0}
+ul{margin:0;padding:0;list-style:none}
+h1,h2,h3{margin:0;font-weight:600;color:var(--ink)}
+:focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:8px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:#fff;padding:10px 14px;border-radius:10px;z-index:9}.skip:focus{left:8px}
+.wrap{max-width:640px;margin:0 auto;padding:56px 24px 40px}
+.mono{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+
+/* top: quiet, centred */
+.top{display:flex;flex-direction:column;align-items:center;text-align:center}
+.time{min-height:20px;font-family:var(--mono);font-size:13px;color:var(--soft)}
+.me{margin-top:26px;width:88px;height:88px;border-radius:50%;overflow:hidden;background:#cfe2f6;box-shadow:0 0 0 4px rgba(255,255,255,.85),0 14px 30px -14px rgba(11,36,71,.45)}
+.me img{width:88px;height:88px;object-fit:cover}
+h1{margin-top:20px;font-size:21px;letter-spacing:-.01em;line-height:1.3}
+.line{margin-top:6px;max-width:390px;font-size:16px;line-height:1.55;color:var(--soft);text-wrap:balance}
+.social{display:flex;gap:4px;margin-top:20px}
+.social a{display:grid;place-items:center;width:44px;height:44px;border-radius:12px;color:#6B7A8F;transition:color .15s,background .15s}
+.social a:hover{color:var(--ink);background:rgba(255,255,255,.7)}
+.social svg{width:18px;height:18px;fill:currentColor}
+.acts{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:18px}
+.btn{display:inline-flex;align-items:center;gap:9px;height:44px;padding:0 18px;border-radius:12px;font:500 15px/1 var(--sans);text-decoration:none;cursor:pointer;transition:background .15s,box-shadow .15s,transform .15s}
+.btn svg{width:15px;height:15px;flex:none}
+.btn-main{background:var(--ink);color:#fff;box-shadow:0 10px 24px -12px rgba(11,36,71,.7)}
+.btn-main:hover{background:#12315c;transform:translateY(-1px)}
+.btn-main .ship{width:24px;height:16px;fill:var(--sky)}
+.btn-glass{color:var(--ink);background:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.95);box-shadow:0 0 0 1px var(--line),0 8px 20px -14px rgba(11,36,71,.4);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.btn-glass:hover{background:rgba(255,255,255,.9)}
+.btn-glass svg{fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;color:var(--soft)}
+.or{font-size:13px;color:var(--faint)}
+.city{margin-top:20px;color:var(--faint)}
+
+/* sections: label on the left, like a margin note */
+.sec{display:grid;grid-template-columns:92px 1fr;gap:28px;margin-top:84px}
+.sec>h2{padding-top:3px;font:400 12px/1.5 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--faint)}
+.sec>.body{min-width:0}
+.about p+p{margin-top:14px}
+.about a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--sky);text-decoration-thickness:2px;text-underline-offset:3px}
+.about a:hover{text-decoration-color:var(--blue)}
+.about b{font-weight:600;color:var(--ink)}
+.about .key{margin-top:8px;font-size:18px;line-height:1.45;font-weight:700;letter-spacing:-.005em;color:#2D72C6}
+.about .key+p{margin-top:8px}
+
+.card{display:grid;grid-template-columns:40px 1fr;gap:16px;padding:18px 20px;border:1px solid var(--line);border-radius:14px;background:#fff;text-decoration:none;transition:border-color .15s,box-shadow .15s,transform .15s}
+.card:hover{border-color:#C9DDF3;box-shadow:0 12px 28px -20px rgba(11,36,71,.45);transform:translateY(-1px)}
+.list>li+li{margin-top:10px}
+.ic{display:grid;place-items:center;width:40px;height:40px;border-radius:10px;background:var(--wash);box-shadow:inset 0 0 0 1px var(--line)}
+.ic img{width:22px;height:22px}
+.ic-lab::before{content:"";width:28px;height:28px;background:var(--blue);-webkit-mask:url(/assets/voyager-mask.png) center/contain no-repeat;mask:url(/assets/voyager-mask.png) center/contain no-repeat}
+.ic-nave svg{width:27px;height:18px;fill:#1C4E8E}
+.card h3{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 10px;font-size:15px;line-height:1.45}
+.card h3 .tag{font:400 11px/1.4 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--faint)}
+.card p{margin-top:4px;font-size:14.5px;line-height:1.6}
+.card.main{border-color:#CFE3F8;background:linear-gradient(180deg,#F5FAFF,#fff)}
+.card .go{display:inline-block;margin-top:10px;font-size:14px;font-weight:600;color:var(--blue)}
+
+.vids>li+li{margin-top:10px}
+.vid{display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:center;padding:12px;border:1px solid var(--line);border-radius:14px;text-decoration:none;transition:border-color .15s,box-shadow .15s,transform .15s}
+.vid:hover{border-color:#C9DDF3;box-shadow:0 12px 28px -20px rgba(11,36,71,.45);transform:translateY(-1px)}
+.vid img{width:120px;height:68px;object-fit:cover;border-radius:8px;background:var(--wash)}
+.vid-t{display:flex;flex-direction:column;gap:3px;min-width:0}
+.vid .kick,.vid .views{font:400 11px/1.4 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--faint)}
+.vid b{font-weight:500;font-size:14.5px;line-height:1.45;color:var(--ink)}
+.vid .views{display:flex;align-items:center;gap:6px;text-transform:none;letter-spacing:.02em}
+.vid .views svg{width:6px;height:6px;fill:currentColor}
+.note{margin-top:12px;font:400 11.5px/1.5 var(--mono);color:var(--faint)}
+
+.stack{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.tool{display:flex;flex-direction:column;align-items:center;gap:10px;padding:20px 6px 15px;border:1px solid var(--line);border-radius:14px;background:#fff;text-align:center}
+.tool img{width:28px;height:28px;object-fit:contain}
+.tool img.wide{width:58px}
+.tool span{font-size:12.5px;line-height:1.3;color:var(--soft)}
+
+/* the close: his one signature touch */
+.close{margin-top:108px;display:flex;flex-direction:column;align-items:center;text-align:center}
+.crown{width:44px;height:30px;margin-bottom:-3px;transform:rotate(-10deg) translate(-84px,-8px)}
+.x3d{display:inline-block;font-weight:900;font-size:46px;line-height:1;letter-spacing:-.01em;color:var(--sky);-webkit-text-stroke:1.3px var(--ink);paint-order:stroke fill;
+  filter:drop-shadow(1.5px 1.5px 0 #0B2447) drop-shadow(3px 3px 0 #3F8EE6) drop-shadow(1.5px 1.5px 0 #0B2447) drop-shadow(3px 3px 0 #1C4E8E) drop-shadow(1.5px 1.5px 0 #0B2447)}
+.close p{margin-top:18px;font-size:16px;color:var(--soft)}
+.close .btn{margin-top:22px}
+footer{margin-top:80px;text-align:center;font-size:12.5px;line-height:1.7;color:var(--faint)}
+
+@media (max-width:640px){
+  .wrap{padding:40px 20px 32px}
+  .sec{grid-template-columns:1fr;gap:14px;margin-top:60px}
+  .stack{grid-template-columns:repeat(3,1fr)}
+  .vid{grid-template-columns:104px 1fr;gap:14px}
+  .vid img{width:104px;height:59px}
+  .card{padding:16px;gap:14px}
+  .x3d{font-size:38px}
+  .crown{transform:rotate(-10deg) translate(-70px,-7px)}
+}
+@media (max-width:480px){
+  .acts{flex-direction:column;gap:10px}
+  .acts .or{display:none}
+  .acts .btn{width:min(100%,300px);justify-content:center}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
 </head>
 <body>
-<a class="skip" href="#links">Skip to the links</a>
+<a class="skip" href="#about">Skip to the page</a>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
-<!-- the Nave mark: all 38 cells of nave/assets/nave-mark.svg -->
-<symbol id="px-ship" viewBox="0 0 512 448"><rect x="224" y="96" width="32" height="32"/><rect x="256" y="96" width="32" height="32"/><rect x="192" y="128" width="32" height="32"/><rect x="224" y="128" width="32" height="32"/><rect x="256" y="128" width="32" height="32"/><rect x="288" y="128" width="32" height="32"/><rect x="128" y="160" width="32" height="32"/><rect x="160" y="160" width="32" height="32"/><rect x="192" y="160" width="32" height="32"/><rect x="224" y="160" width="32" height="32"/><rect x="256" y="160" width="32" height="32"/><rect x="288" y="160" width="32" height="32"/><rect x="320" y="160" width="32" height="32"/><rect x="352" y="160" width="32" height="32"/><rect x="64" y="192" width="32" height="32"/><rect x="96" y="192" width="32" height="32"/><rect x="128" y="192" width="32" height="32"/><rect x="160" y="192" width="32" height="32"/><rect x="192" y="192" width="32" height="32"/><rect x="224" y="192" width="32" height="32"/><rect x="256" y="192" width="32" height="32"/><rect x="288" y="192" width="32" height="32"/><rect x="320" y="192" width="32" height="32"/><rect x="352" y="192" width="32" height="32"/><rect x="384" y="192" width="32" height="32"/><rect x="416" y="192" width="32" height="32"/><rect x="128" y="224" width="32" height="32"/><rect x="160" y="224" width="32" height="32"/><rect x="224" y="224" width="32" height="32"/><rect x="256" y="224" width="32" height="32"/><rect x="320" y="224" width="32" height="32"/><rect x="352" y="224" width="32" height="32"/><rect x="224" y="288" width="32" height="32" opacity=".4"/><rect x="256" y="288" width="32" height="32" opacity=".4"/><rect x="192" y="320" width="32" height="32" opacity=".16"/><rect x="224" y="320" width="32" height="32" opacity=".16"/><rect x="256" y="320" width="32" height="32" opacity=".16"/><rect x="288" y="320" width="32" height="32" opacity=".16"/></symbol>
-<!-- his open hand for "what up", from the story page -->
-<symbol id="px-wave" viewBox="0 0 17 17"><g fill="#17427C"><rect x="7" y="0" width="2" height="1"/><rect x="4" y="1" width="3" height="1"/><rect x="9" y="1" width="3" height="1"/><rect x="3" y="2" width="1" height="1"/><rect x="6" y="2" width="1" height="1"/><rect x="9" y="2" width="1" height="1"/><rect x="12" y="2" width="1" height="1"/><rect x="3" y="3" width="1" height="1"/><rect x="6" y="3" width="1" height="1"/><rect x="9" y="3" width="1" height="1"/><rect x="12" y="3" width="3" height="1"/><rect x="3" y="4" width="1" height="1"/><rect x="6" y="4" width="1" height="1"/><rect x="9" y="4" width="1" height="1"/><rect x="12" y="4" width="1" height="1"/><rect x="15" y="4" width="1" height="1"/><rect x="3" y="5" width="1" height="1"/><rect x="6" y="5" width="1" height="1"/><rect x="9" y="5" width="1" height="1"/><rect x="12" y="5" width="1" height="1"/><rect x="15" y="5" width="1" height="1"/><rect x="3" y="6" width="1" height="1"/><rect x="6" y="6" width="1" height="1"/><rect x="9" y="6" width="1" height="1"/><rect x="12" y="6" width="1" height="1"/><rect x="15" y="6" width="1" height="1"/><rect x="3" y="7" width="1" height="1"/><rect x="6" y="7" width="1" height="1"/><rect x="9" y="7" width="1" height="1"/><rect x="12" y="7" width="1" height="1"/><rect x="15" y="7" width="1" height="1"/><rect x="3" y="8" width="1" height="1"/><rect x="6" y="8" width="1" height="1"/><rect x="9" y="8" width="1" height="1"/><rect x="12" y="8" width="1" height="1"/><rect x="15" y="8" width="1" height="1"/><rect x="1" y="9" width="3" height="1"/><rect x="15" y="9" width="1" height="1"/><rect x="0" y="10" width="1" height="1"/><rect x="15" y="10" width="1" height="1"/><rect x="0" y="11" width="1" height="1"/><rect x="15" y="11" width="1" height="1"/><rect x="0" y="12" width="1" height="1"/><rect x="15" y="12" width="1" height="1"/><rect x="1" y="13" width="3" height="1"/><rect x="15" y="13" width="1" height="1"/><rect x="3" y="14" width="1" height="1"/><rect x="15" y="14" width="1" height="1"/><rect x="4" y="15" width="1" height="1"/><rect x="14" y="15" width="1" height="1"/><rect x="5" y="16" width="9" height="1"/></g><g fill="#D9EAFC"><rect x="7" y="1" width="1" height="1"/><rect x="4" y="2" width="1" height="1"/><rect x="7" y="2" width="1" height="1"/><rect x="10" y="2" width="1" height="1"/><rect x="4" y="3" width="1" height="1"/><rect x="10" y="3" width="1" height="1"/><rect x="13" y="4" width="1" height="1"/><rect x="13" y="5" width="1" height="1"/><rect x="1" y="10" width="1" height="1"/></g><g fill="#61AEFA"><rect x="8" y="1" width="1" height="1"/><rect x="5" y="2" width="1" height="1"/><rect x="8" y="2" width="1" height="1"/><rect x="11" y="2" width="1" height="1"/><rect x="5" y="3" width="1" height="1"/><rect x="7" y="3" width="2" height="1"/><rect x="11" y="3" width="1" height="1"/><rect x="4" y="4" width="2" height="1"/><rect x="7" y="4" width="2" height="1"/><rect x="10" y="4" width="2" height="1"/><rect x="14" y="4" width="1" height="1"/><rect x="4" y="5" width="2" height="1"/><rect x="7" y="5" width="2" height="1"/><rect x="10" y="5" width="2" height="1"/><rect x="14" y="5" width="1" height="1"/><rect x="4" y="6" width="2" height="1"/><rect x="7" y="6" width="2" height="1"/><rect x="10" y="6" width="2" height="1"/><rect x="13" y="6" width="2" height="1"/><rect x="4" y="7" width="2" height="1"/><rect x="7" y="7" width="2" height="1"/><rect x="10" y="7" width="2" height="1"/><rect x="13" y="7" width="2" height="1"/><rect x="4" y="8" width="2" height="1"/><rect x="7" y="8" width="2" height="1"/><rect x="10" y="8" width="2" height="1"/><rect x="13" y="8" width="2" height="1"/><rect x="4" y="9" width="11" height="1"/><rect x="2" y="10" width="12" height="1"/><rect x="1" y="11" width="13" height="1"/><rect x="1" y="12" width="7" height="1"/><rect x="12" y="12" width="2" height="1"/><rect x="4" y="13" width="9" height="1"/><rect x="4" y="14" width="8" height="1"/></g><g fill="#3F93EA"><rect x="14" y="10" width="1" height="1"/><rect x="14" y="11" width="1" height="1"/><rect x="8" y="12" width="4" height="1"/><rect x="14" y="12" width="1" height="1"/><rect x="13" y="13" width="2" height="1"/><rect x="12" y="14" width="3" height="1"/><rect x="5" y="15" width="9" height="1"/></g></symbol>
-<!-- books on a shelf, his free library mark from the story page -->
-<symbol id="px-books" viewBox="0 0 16 14"><rect x="1" y="3" width="3" height="9"/><rect x="5" y="1" width="3" height="11"/><rect x="9" y="4" width="3" height="8"/><rect x="12" y="6" width="2" height="1"/><rect x="13" y="7" width="2" height="5"/><rect x="0" y="12" width="16" height="2"/></symbol>
-<!-- a code sign, drawn on his crew icons' 24x20 grid, for the developers' API -->
-<symbol id="px-code" viewBox="0 0 24 20"><rect x="6" y="5" width="2" height="2"/><rect x="4" y="7" width="2" height="2"/><rect x="2" y="9" width="2" height="2"/><rect x="4" y="11" width="2" height="2"/><rect x="6" y="13" width="2" height="2"/><rect x="16" y="5" width="2" height="2"/><rect x="18" y="7" width="2" height="2"/><rect x="20" y="9" width="2" height="2"/><rect x="18" y="11" width="2" height="2"/><rect x="16" y="13" width="2" height="2"/><rect x="13" y="3" width="2" height="3"/><rect x="12" y="6" width="2" height="3"/><rect x="11" y="9" width="2" height="3"/><rect x="10" y="12" width="2" height="3"/><rect x="9" y="15" width="2" height="2"/></symbol>
+<symbol id="ship" viewBox="64 96 384 256"><path d="M224 96h64v32h-64zM192 128h128v32H192zM128 160h256v32H128zM64 192h384v32H64zM128 224h64v32h-64zM224 224h64v32h-64zM320 224h64v32h-64z"/><path opacity=".4" d="M224 288h64v32h-64z"/><path opacity=".16" d="M192 320h128v32H192z"/></symbol>
 </defs></svg>
 
-<div class="page">
-<main>
-  <header>
-    <svg class="ship" viewBox="64 96 384 256" role="img" aria-label="Nave"><use href="#px-ship" width="512" height="448"/></svg>
+<main class="wrap">
+  <header class="top">
+    <p class="time" id="time" aria-label="Enrique's local time in Sacramento"></p>
+    <div class="me">
+      <picture><source type="image/webp" srcset="/assets/me/enrique-192.webp 2x, /assets/me/enrique-288.webp 3x"><img src="/assets/me/enrique-192.jpg" srcset="/assets/me/enrique-288.jpg 3x" alt="Enrique Marq" width="88" height="88" fetchpriority="high"></picture>
+    </div>
     <h1>Enrique Marq</h1>
-    <p class="line"><span class="hey">What up friend<svg class="hand" viewBox="0 0 17 17" aria-hidden="true"><use href="#px-wave"/></svg></span>I love building with AI alongside <mark>incredible people.</mark></p>
+    <p class="line">I build AI content teams that help founders and creators post more winning content, so the people who need them can find them.</p>
+    <nav class="social" aria-label="Follow me">
+      <a href="https://www.youtube.com/@enriquemarq-0" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+      <a href="https://instagram.com/enriquemarqai" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.03.084c-1.277.06-2.149.264-2.911.563a5.87 5.87 0 0 0-2.123 1.388A5.88 5.88 0 0 0 .616 4.162c-.296.764-.496 1.637-.552 2.914C.008 8.354-.005 8.764.002 12.023c.006 3.258.02 3.667.082 4.947.061 1.277.264 2.148.564 2.911a5.87 5.87 0 0 0 1.388 2.123 5.88 5.88 0 0 0 2.129 1.38c.763.295 1.636.496 2.913.552 1.277.056 1.688.069 4.946.063 3.258-.006 3.668-.021 4.948-.081 1.28-.061 2.147-.266 2.91-.564a5.88 5.88 0 0 0 2.122-1.388 5.88 5.88 0 0 0 1.38-2.128c.296-.764.497-1.636.552-2.913.056-1.281.069-1.69.063-4.948-.006-3.258-.021-3.667-.082-4.947-.06-1.28-.264-2.148-.563-2.911a5.89 5.89 0 0 0-1.388-2.123A5.87 5.87 0 0 0 19.838.617C19.074.32 18.202.12 16.924.064 15.647.009 15.236-.005 11.977.001 8.718.008 8.31.022 7.03.084m.14 21.693c-1.17-.051-1.805-.245-2.229-.408a3.74 3.74 0 0 1-1.382-.895 3.73 3.73 0 0 1-.9-1.378c-.164-.423-.362-1.058-.417-2.228-.06-1.265-.072-1.644-.079-4.848-.007-3.204.006-3.583.06-4.848.05-1.169.246-1.805.409-2.228.216-.562.476-.96.895-1.382a3.73 3.73 0 0 1 1.378-.9c.423-.165 1.058-.361 2.227-.417 1.266-.06 1.645-.072 4.848-.079 3.203-.007 3.584.005 4.85.061 1.168.05 1.804.244 2.227.408.561.216.96.475 1.382.895.421.42.681.818.9 1.379.166.421.362 1.056.417 2.226.06 1.266.074 1.645.08 4.848.005 3.203-.006 3.583-.061 4.848-.051 1.17-.245 1.805-.408 2.23-.216.56-.476.96-.896 1.38-.419.422-.818.682-1.378.9-.422.166-1.058.362-2.226.418-1.266.06-1.645.072-4.85.079-3.204.007-3.582-.006-4.848-.06M16.953 5.586a1.44 1.44 0 1 0 1.437-1.442 1.44 1.44 0 0 0-1.437 1.442M5.839 12.012a6.161 6.161 0 1 0 12.323-.024 6.162 6.162 0 0 0-12.323.024M8 12.008A4 4 0 1 1 12.008 16 4 4 0 0 1 8 12.008"/></svg></a>
+      <a href="https://www.tiktok.com/@enriquemarqai" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+      <a href="https://www.linkedin.com/in/enrique-marq-lol/" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+    </nav>
+    <div class="acts">
+      <a class="btn btn-main" href="https://www.skool.com/agentic-content-lab/about"><svg class="ship" viewBox="0 0 384 256" aria-hidden="true"><use href="#ship"/></svg>Join Agentic Content Lab</a>
+      <span class="or">or</span>
+      <a class="btn btn-glass" id="copy" href="mailto:hey@enriquemarq.com" data-email="hey@enriquemarq.com"><span id="copy-label" aria-live="polite">Copy email</span><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="5.5" y="5.5" width="8" height="8" rx="2"/><path d="M10.5 3.5v-.5a1.5 1.5 0 0 0-1.5-1.5H4A1.5 1.5 0 0 0 2.5 3v5A1.5 1.5 0 0 0 4 9.5h.5"/></svg></a>
+    </div>
+    <p class="city mono">Sacramento, California</p>
   </header>
 
-  <ul class="links" id="links" aria-label="Links">
-    <li>
-      <a class="go video" id="latest" href="https://www.youtube.com/@enriquemarq-0">
-        <span class="thumb">
-          <img id="latest-thumb" alt="" width="640" height="360" hidden>
-          <svg class="play" id="latest-play" viewBox="0 0 28 20" aria-hidden="true"><rect width="28" height="20" rx="6" fill="#FF0000"/><path d="M11 5.5v9l8-4.5z" fill="#fff"/></svg>
-        </span>
-        <span class="txt"><span class="kick">My latest YouTube video</span><b id="latest-title">Watch me build</b></span>
-        <span class="arr" aria-hidden="true">→</span>
-      </a>
-    </li>
-    <li>
-      <a class="go" href="/me">
-        <i class="ic ic-books" aria-hidden="true"><svg viewBox="0 0 16 14"><use href="#px-books"/></svg></i>
-        <span class="txt"><b>Me + free resources</b><small>My story and the free resource library</small></span>
-        <span class="arr" aria-hidden="true">→</span>
-      </a>
-    </li>
-    <li>
-      <a class="go" href="/lab">
-        <i class="ic ic-lab" aria-hidden="true"></i>
-        <span class="txt"><b>Agentic Content Lab</b><small>Your own AI content team, and the place where you learn to work alongside it</small></span>
-        <span class="arr" aria-hidden="true">→</span>
-      </a>
-    </li>
-    <li>
-      <a class="go" href="https://getnave.app">
-        <i class="ic ic-nave" aria-hidden="true"><svg viewBox="64 96 384 256"><use href="#px-ship" width="512" height="448"/></svg></i>
-        <span class="txt"><b>Nave</b><small>My Content OS</small></span>
-        <span class="arr" aria-hidden="true">→</span>
-      </a>
-    </li>
-    <li>
-      <a class="go" href="https://zernio.link/enrique" rel="sponsored noopener">
-        <i class="ic ic-zernio" aria-hidden="true"><img src="assets/zernio.png" alt="" width="64" height="64"></i>
-        <span class="txt"><b>Start with Zernio</b><small>Official partner creator</small><span class="tag">Affiliate link</span></span>
-        <span class="arr" aria-hidden="true">→</span>
-      </a>
-    </li>
-    <li>
-      <a class="go" href="/api">
-        <i class="ic ic-code" aria-hidden="true"><svg viewBox="0 0 24 20"><use href="#px-code"/></svg></i>
-        <span class="txt"><b>The social media API for developers</b></span>
-        <span class="arr" aria-hidden="true">→</span>
-      </a>
-    </li>
-  </ul>
+  <section class="sec about" id="about" aria-labelledby="about-h">
+    <h2 id="about-h">About</h2>
+    <div class="body">
+      <p>Hi, I'm Enrique. For the past 3 years, I've spent most of my time helping people use AI to make more with less.</p>
+      <p>That's how I started building my <a href="https://getnave.app">AI content team</a>. Today it lets me make <b>500+ pieces of content a month</b> for several brands I work with, including Zernio, a $5M/year SaaS, as a one-person head of content.</p>
+      <p>My conclusion:</p>
+      <p class="key">AI amplifies one extremely capable person.</p>
+      <p>I'm here to bring that feeling to everyone.</p>
+      <p>In my content, I show you how to make content that wins with AI, save hours doing it, and keep every piece true to you: how I use Claude Code, Claude and ChatGPT, my workflows, and whatever I find interesting and impactful day to day.</p>
+    </div>
+  </section>
 
-  <nav class="social" aria-label="Follow me">
-    <a href="https://www.youtube.com/@enriquemarq-0" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#FF0000" d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
-    <a href="https://instagram.com/enriquemarqai" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#E1306C" stroke-width="2.2"><rect x="2.6" y="2.6" width="18.8" height="18.8" rx="5.6"/><circle cx="12" cy="12" r="4.4"/><circle cx="17.5" cy="6.5" r="1.1" fill="#E1306C" stroke="none"/></svg></a>
-    <a href="https://www.linkedin.com/in/enrique-marq-lol/" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#0A66C2" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.848 3.37-1.848 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
-  </nav>
-  <p class="foot">enriquemarq.com</p>
+  <section class="sec" id="work" aria-labelledby="work-h">
+    <h2 id="work-h">Work</h2>
+    <ul class="body list">
+      <li><a class="card main" href="https://www.skool.com/agentic-content-lab/about">
+        <i class="ic ic-lab" aria-hidden="true"></i>
+        <div><h3>Agentic Content Lab</h3>
+        <p>Get your own AI content team and live coaching to post more winning content every week with ease, so the people who need you can find you.</p>
+        <span class="go">Join the Lab →</span></div>
+      </a></li>
+      <li><a class="card" href="https://getnave.app">
+        <i class="ic ic-nave" aria-hidden="true"><svg viewBox="0 0 384 256"><use href="#ship"/></svg></i>
+        <div><h3>Nave</h3>
+        <p>Your AI content team in one app. It researches, plans, writes, edits and publishes, growing with you every week.</p></div>
+      </a></li>
+      <li><a class="card" href="https://zernio.link/enrique" rel="sponsored noopener">
+        <i class="ic" aria-hidden="true"><img src="/assets/stack/zernio.png" alt="" width="22" height="22" loading="lazy"></i>
+        <div><h3>Zernio <span class="tag">Partner link</span></h3>
+        <p>Head of content. They grew from $45K a month to $5M a year while I ran their content.</p></div>
+      </a></li>
+    </ul>
+  </section>
+
+  <section class="sec" id="media" aria-labelledby="media-h">
+    <h2 id="media-h">Media</h2>
+    <div class="body">
+    <!-- media:start (written by scripts/media.mjs from scripts/media.json; edit those, not this block) -->
+    <ul class="vids">
+      <!-- one video held in scripts/media.json until it is public on YouTube -->
+      <li><a class="vid" href="https://www.youtube.com/watch?v=YWys7qhbylA">
+        <picture><source type="image/webp" srcset="assets/media/YWys7qhbylA.webp"><img src="assets/media/YWys7qhbylA.jpg" alt="" width="240" height="135" loading="lazy" decoding="async"></picture>
+        <span class="vid-t"><span class="kick">YouTube · Jul 2026</span><b>How to Use Claude Code to Edit Your Videos Like the 1% (It's Easy)</b><span class="views"><svg viewBox="0 0 8 8" aria-hidden="true"><path d="M1 0l6 4-6 4z"/></svg>40,698 views</span></span>
+      </a></li>
+      <li><a class="vid" href="https://www.youtube.com/watch?v=GSnKzuy-byk">
+        <picture><source type="image/webp" srcset="assets/media/GSnKzuy-byk.webp"><img src="assets/media/GSnKzuy-byk.jpg" alt="" width="240" height="135" loading="lazy" decoding="async"></picture>
+        <span class="vid-t"><span class="kick">YouTube · Mar 2026</span><b>Claude Code Just Changed Content Creation Forever (full-guide)</b><span class="views"><svg viewBox="0 0 8 8" aria-hidden="true"><path d="M1 0l6 4-6 4z"/></svg>25,921 views</span></span>
+      </a></li>
+      <li><a class="vid" href="https://www.youtube.com/watch?v=Uh_XLEkkSRE">
+        <picture><source type="image/webp" srcset="assets/media/Uh_XLEkkSRE.webp"><img src="assets/media/Uh_XLEkkSRE.jpg" alt="" width="240" height="135" loading="lazy" decoding="async"></picture>
+        <span class="vid-t"><span class="kick">YouTube · Oct 2026</span><b>pov: you're 20 and meeting your $5M/yr startup team in San Francisco (vlog)</b><span class="views"><svg viewBox="0 0 8 8" aria-hidden="true"><path d="M1 0l6 4-6 4z"/></svg>542 views</span></span>
+      </a></li>
+    </ul>
+    <p class="note">Views read from YouTube on November 5, 2026.</p>
+    <!-- media:end -->
+    </div>
+  </section>
+
+  <section class="sec" id="stack" aria-labelledby="stack-h">
+    <h2 id="stack-h">Stack</h2>
+    <ul class="body stack">
+      <li class="tool"><img src="/assets/nave-mark.svg" alt="" width="28" height="28" loading="lazy"><span>Nave</span></li>
+      <li class="tool"><img src="/assets/stack/nave-editor.svg" alt="" width="28" height="28" loading="lazy"><span>Nave Editor</span></li>
+      <li class="tool"><img src="/assets/stack/claude.svg" alt="" width="28" height="28" loading="lazy"><span>Claude Code</span></li>
+      <li class="tool"><img src="/assets/stack/codex.svg" alt="" width="28" height="28" loading="lazy"><span>Codex</span></li>
+      <li class="tool"><img src="/assets/stack/higgsfield.svg" alt="" width="28" height="28" loading="lazy"><span>Higgsfield</span></li>
+      <li class="tool"><img src="/assets/stack/elevenlabs.svg" alt="" width="28" height="28" loading="lazy"><span>ElevenLabs</span></li>
+      <li class="tool"><img src="/assets/stack/assemblyai.svg" alt="" width="28" height="28" loading="lazy"><span>AssemblyAI</span></li>
+      <li class="tool"><img src="/assets/stack/capcut.png" alt="" width="28" height="28" loading="lazy"><span>CapCut</span></li>
+      <li class="tool"><img src="/assets/stack/obs.svg" alt="" width="28" height="28" loading="lazy"><span>OBS Studio</span></li>
+      <li class="tool"><img src="/assets/stack/zernio.png" alt="" width="28" height="28" loading="lazy"><span>Zernio</span></li>
+      <li class="tool"><img class="wide" src="/assets/stack/skool.svg" alt="" width="58" height="28" loading="lazy"><span>Skool</span></li>
+      <li class="tool"><img src="/assets/stack/kie.png" alt="" width="28" height="28" loading="lazy"><span>Kie.ai</span></li>
+    </ul>
+  </section>
+
+  <section class="close" aria-labelledby="close-h">
+    <svg class="crown" viewBox="0 0 44 30" aria-hidden="true"><path d="M3 26 L6 7 L15 16 L22 3 L29 16 L38 7 L41 26 Z" fill="#7DBDFB" stroke="#0B2447" stroke-width="2.2" stroke-linejoin="round"/><circle cx="6" cy="7" r="2.6" fill="#0B2447"/><circle cx="22" cy="3" r="2.6" fill="#0B2447"/><circle cx="38" cy="7" r="2.6" fill="#0B2447"/></svg>
+    <h2 id="close-h" class="x3d">ONE PERSON.</h2>
+    <p>AI amplifies one extremely capable person.</p>
+    <a class="btn btn-main" href="https://www.skool.com/agentic-content-lab/about"><svg class="ship" viewBox="0 0 384 256" aria-hidden="true"><use href="#ship"/></svg>Join Agentic Content Lab</a>
+  </section>
+
+  <footer>© 2026 Enrique Marq<br>Made with my AI content team.</footer>
 </main>
-</div>
 
 <script>
-// His latest video comes from assets/latest-video.json, written at build time by scripts/latest-youtube.mjs.
-// Without it the card stays a link to his channel.
-fetch('assets/latest-video.json',{cache:'no-cache'}).then(r=>r.ok?r.json():Promise.reject()).then(v=>{
-  if(!v||!v.id||!v.title||!/^https:\/\/www\.youtube\.com\//.test(v.url))return;
-  const a=document.getElementById('latest'),t=document.getElementById('latest-title'),img=document.getElementById('latest-thumb');
-  a.href=v.url;t.textContent=v.title;a.setAttribute('aria-label','My latest YouTube video: '+v.title);
-  if(v.thumbnail){img.onload=()=>{img.hidden=false;document.getElementById('latest-play').style.display='none'};img.src=v.thumbnail}
-}).catch(()=>{});
+(function(){
+  var t=document.getElementById('time');
+  try{var f=new Intl.DateTimeFormat('en-US',{hour:'numeric',minute:'2-digit',timeZone:'America/Los_Angeles'});
+    var tick=function(){t.textContent=f.format(new Date())};tick();setInterval(tick,20000)}catch(e){}
+  var c=document.getElementById('copy'),l=document.getElementById('copy-label');
+  if(c&&navigator.clipboard)c.addEventListener('click',function(e){e.preventDefault();
+    navigator.clipboard.writeText(c.dataset.email).then(function(){l.textContent='Copied';setTimeout(function(){l.textContent='Copy email'},1800)},function(){location.href=c.href})});
+})();
 </script>
 </body>
 </html>
