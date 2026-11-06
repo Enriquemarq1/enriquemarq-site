@@ -8,8 +8,8 @@
 /api/  https://zernio.com/social-media-api?via=enrique  302
 /youtube  https://www.youtube.com/@enriquemarq-0  302
 /youtube/  https://www.youtube.com/@enriquemarq-0  302
-/free  https://github.com/agentic-ai-content/build-with-enrique  302
-/free/  https://github.com/agentic-ai-content/build-with-enrique  302
+/free  https://getnave.app/guides/  302
+/free/  https://getnave.app/guides/  302
 # /me was his story page until November 5, 2026; it and everything under it land on the one page.
 /me  /  301
 /me/*  /  301

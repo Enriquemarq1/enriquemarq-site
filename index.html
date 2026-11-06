@@ -20,12 +20,18 @@
 <style>
 @font-face{font-family:"Hanken Grotesk";src:url(/assets/fonts/hanken-grotesk-var.woff2) format("woff2");font-weight:100 900;font-display:swap}
 @font-face{font-family:"DM Mono";src:url(/assets/fonts/dm-mono-400.woff2) format("woff2");font-weight:400;font-display:swap}
-:root{--ink:#0B2447;--text:#4A5768;--soft:#76839A;--faint:#9DA9B8;--line:#E3EBF4;--wash:#F3F8FE;--blue:#3F8EE6;--sky:#7DBDFB;
-  --sans:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;--mono:"DM Mono",ui-monospace,Consolas,monospace}
+@font-face{font-family:"Patrick Hand";src:url(/assets/fonts/patrick-hand.woff2) format("woff2");font-weight:400;font-display:swap}
+:root{--ink:#0B2447;--dark:#0B1220;--text:#4A5768;--soft:#76839A;--faint:#9DA9B8;--line:#E3EBF4;--wash:#F3F8FE;--blue:#3F8EE6;--sky:#7DBDFB;--lab:#61AEFA;
+  --sans:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;--mono:"DM Mono",ui-monospace,Consolas,monospace;--hand:"Patrick Hand","Segoe Print",cursive}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
-body{margin:0;color:var(--text);font:400 15px/1.7 var(--sans);-webkit-font-smoothing:antialiased;
-  background:radial-gradient(420px 260px at 50% 150px,rgba(255,255,255,.95),rgba(255,255,255,0) 70%) no-repeat,linear-gradient(180deg,#DCEDFF 0,#EBF5FF 200px,#fff 540px) no-repeat,#fff}
+/* his banner's look: a white grid, his blue coming in from both sides, white in the middle */
+body{margin:0;color:var(--text);font:400 15px/1.7 var(--sans);-webkit-font-smoothing:antialiased;background:#fff}
+.sky{position:absolute;inset:0 0 auto 0;height:980px;pointer-events:none;z-index:-1;
+  background:radial-gradient(ellipse 560px 420px at 50% 330px,rgba(255,255,255,.96),rgba(255,255,255,0) 100%),
+  linear-gradient(90deg,rgba(125,189,251,.55) 0%,rgba(172,216,247,.25) 14%,rgba(255,255,255,0) 32%,rgba(255,255,255,0) 68%,rgba(172,216,247,.25) 86%,rgba(125,189,251,.55) 100%),
+  linear-gradient(rgba(11,18,32,.06) 1px,transparent 1px) 0 -10px/56px 56px,linear-gradient(90deg,rgba(11,18,32,.06) 1px,transparent 1px) -6px 0/56px 56px;
+  -webkit-mask-image:linear-gradient(180deg,#000 55%,transparent 100%);mask-image:linear-gradient(180deg,#000 55%,transparent 100%)}
 a{color:inherit}
 img,svg{display:block}
 p{margin:0}
@@ -33,58 +39,80 @@ ul{margin:0;padding:0;list-style:none}
 h1,h2,h3{margin:0;font-weight:600;color:var(--ink)}
 :focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:8px}
 .skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:#fff;padding:10px 14px;border-radius:10px;z-index:9}.skip:focus{left:8px}
-.wrap{max-width:640px;margin:0 auto;padding:56px 24px 40px}
+.wrap{position:relative;max-width:680px;margin:0 auto;padding:52px 24px 40px}
 .mono{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase}
 
-/* top: quiet, centred */
+/* top */
 .top{display:flex;flex-direction:column;align-items:center;text-align:center}
 .time{min-height:20px;font-family:var(--mono);font-size:13px;color:var(--soft)}
-.me{margin-top:26px;width:88px;height:88px;border-radius:50%;overflow:hidden;background:#cfe2f6;box-shadow:0 0 0 4px rgba(255,255,255,.85),0 14px 30px -14px rgba(11,36,71,.45)}
-.me img{width:88px;height:88px;object-fit:cover}
-h1{margin-top:20px;font-size:21px;letter-spacing:-.01em;line-height:1.3}
-.line{margin-top:6px;max-width:390px;font-size:16px;line-height:1.55;color:var(--soft);text-wrap:balance}
-.social{display:flex;gap:4px;margin-top:20px}
-.social a{display:grid;place-items:center;width:44px;height:44px;border-radius:12px;color:#6B7A8F;transition:color .15s,background .15s}
-.social a:hover{color:var(--ink);background:rgba(255,255,255,.7)}
+.me{margin-top:22px;width:84px;height:84px;border-radius:50%;overflow:hidden;background:#cfe2f6;box-shadow:0 0 0 4px rgba(255,255,255,.9),0 14px 30px -14px rgba(11,36,71,.45)}
+.me img{width:84px;height:84px;object-fit:cover}
+.name{margin-top:14px;font:400 12.5px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--soft)}
+
+/* the line, with the Lab's ship taking the I of AI apart */
+h1.line{margin-top:58px;font-size:40px;font-weight:850;line-height:1.28;letter-spacing:-.04em;color:var(--dark);text-wrap:balance}
+h1.line .soft{color:#3A4450;font-weight:750}
+.ai{position:relative;display:inline-block;margin-left:.04em;font-size:1.08em;line-height:1}
+.x3d{display:inline-block;font-weight:900;letter-spacing:-.005em;line-height:1;color:var(--sky);-webkit-text-stroke:.04em var(--ink);paint-order:stroke fill;
+  filter:drop-shadow(.03em .03em 0 #0B2447) drop-shadow(.045em .045em 0 #3F8EE6) drop-shadow(.015em .015em 0 #0B2447)}
+.x3d .i{display:inline-block;padding:0 .056em;margin:0 -.056em;-webkit-mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2028%2093%22%20preserveAspectRatio%3D%22none%22%3E%3Cg%20fill%3D%22%23000%22%3E%3Crect%20x%3D%220%22%20y%3D%2246%22%20width%3D%2228%22%20height%3D%2247%22/%3E%3Crect%20x%3D%224%22%20y%3D%2218%22%20width%3D%224%22%20height%3D%224%22/%3E%3Crect%20x%3D%2212%22%20y%3D%2222%22%20width%3D%224%22%20height%3D%224%22/%3E%3Crect%20x%3D%2212%22%20y%3D%2226%22%20width%3D%224%22%20height%3D%224%22/%3E%3Crect%20x%3D%2216%22%20y%3D%2226%22%20width%3D%224%22%20height%3D%224%22/%3E%3Crect%20x%3D%224%22%20y%3D%2230%22%20width%3D%224%22%20height%3D%224%22/%3E%3Crect%20x%3D%2212%22%20y%3D%2230%22%20width%3D%224%22%20height%3D%224%22/%3E%3Crect%20x%3D%224%22%20y%3D%2234%22%20width%3D%224%22%20height%3D%224%22/%3E%3Crect%20x%3D%2212%22%20y%3D%2234%22%20width%3D%224%22%20height%3D%224%22/%3E%3Crect%20x%3D%2216%22%20y%3D%2234%22%20width%3D%224%22%20height%3D%224%22/%3E%3Crect%20x%3D%224%22%20y%3D%2238%22%20width%3D%224%22%20height%3D%224%22/%3E%3Crect%20x%3D%228%22%20y%3D%2238%22%20width%3D%224%22%20height%3D%224%22/%3E%3Crect%20x%3D%2212%22%20y%3D%2238%22%20width%3D%224%22%20height%3D%224%22/%3E%3Crect%20x%3D%2220%22%20y%3D%2238%22%20width%3D%224%22%20height%3D%224%22/%3E%3Crect%20x%3D%224%22%20y%3D%2242%22%20width%3D%224%22%20height%3D%224%22/%3E%3Crect%20x%3D%2212%22%20y%3D%2242%22%20width%3D%224%22%20height%3D%224%22/%3E%3Crect%20x%3D%2216%22%20y%3D%2242%22%20width%3D%224%22%20height%3D%224%22/%3E%3Crect%20x%3D%2220%22%20y%3D%2242%22%20width%3D%224%22%20height%3D%224%22/%3E%3C/g%3E%3C/svg%3E") 0 0/100% 100% no-repeat;mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2028%2093%22%20preserveAspectRatio%3D%22none%22%3E%3Cg%20fill%3D%22%23000%22%3E%3Crect%20x%3D%220%22%20y%3D%2246%22%20width%3D%2228%22%20height%3D%2247%22/%3E%3Crect%20x%3D%224%22%20y%3D%2218%22%20width%3D%224%22%20height%3D%224%22/%3E%3Crect%20x%3D%2212%22%20y%3D%2222%22%20width%3D%224%22%20height%3D%224%22/%3E%3Crect%20x%3D%2212%22%20y%3D%2226%22%20width%3D%224%22%20height%3D%224%22/%3E%3Crect%20x%3D%2216%22%20y%3D%2226%22%20width%3D%224%22%20height%3D%224%22/%3E%3Crect%20x%3D%224%22%20y%3D%2230%22%20width%3D%224%22%20height%3D%224%22/%3E%3Crect%20x%3D%2212%22%20y%3D%2230%22%20width%3D%224%22%20height%3D%224%22/%3E%3Crect%20x%3D%224%22%20y%3D%2234%22%20width%3D%224%22%20height%3D%224%22/%3E%3Crect%20x%3D%2212%22%20y%3D%2234%22%20width%3D%224%22%20height%3D%224%22/%3E%3Crect%20x%3D%2216%22%20y%3D%2234%22%20width%3D%224%22%20height%3D%224%22/%3E%3Crect%20x%3D%224%22%20y%3D%2238%22%20width%3D%224%22%20height%3D%224%22/%3E%3Crect%20x%3D%228%22%20y%3D%2238%22%20width%3D%224%22%20height%3D%224%22/%3E%3Crect%20x%3D%2212%22%20y%3D%2238%22%20width%3D%224%22%20height%3D%224%22/%3E%3Crect%20x%3D%2220%22%20y%3D%2238%22%20width%3D%224%22%20height%3D%224%22/%3E%3Crect%20x%3D%224%22%20y%3D%2242%22%20width%3D%224%22%20height%3D%224%22/%3E%3Crect%20x%3D%2212%22%20y%3D%2242%22%20width%3D%224%22%20height%3D%224%22/%3E%3Crect%20x%3D%2216%22%20y%3D%2242%22%20width%3D%224%22%20height%3D%224%22/%3E%3Crect%20x%3D%2220%22%20y%3D%2242%22%20width%3D%224%22%20height%3D%224%22/%3E%3C/g%3E%3C/svg%3E") 0 0/100% 100% no-repeat}
+.fx{position:absolute;right:-.056em;top:-.14em;width:.38em;height:1.3em;pointer-events:none}
+.fx .ufo{position:absolute;left:calc(50% - .785em - .03em);top:calc(.28em - .477em - 1.163em);width:1.57em;height:1.57em;background:var(--lab);
+  -webkit-mask:url(/assets/voyager-mask.png) center/contain no-repeat;mask:url(/assets/voyager-mask.png) center/contain no-repeat}
+.fx .beam{position:absolute;left:calc(50% - .233em - .03em);top:-.225em;width:.466em;height:.645em;clip-path:polygon(32% 0,68% 0,100% 100%,0 100%);
+  background:linear-gradient(180deg,rgba(97,174,250,.55),rgba(125,189,251,.32) 60%,rgba(172,216,247,.12))}
+.fx i{position:absolute;background:var(--sky);border:.017em solid var(--ink);box-shadow:.017em .017em 0 var(--blue)}
+.g{font-weight:900;background:linear-gradient(180deg,#6DB0F6,#3580DA);-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:.04em}
+.g{position:relative;display:inline-block;white-space:nowrap}
+.g::after{content:"";position:absolute;right:-.44em;top:-.16em;width:.62em;height:.42em;transform:rotate(14deg);
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 30'%3E%3Cpath d='M3 26 L6 7 L15 16 L22 3 L29 16 L38 7 L41 26 Z' fill='%23FFD23F' stroke='%230B2447' stroke-width='2.2' stroke-linejoin='round'/%3E%3Ccircle cx='6' cy='7' r='2.6' fill='%230B2447'/%3E%3Ccircle cx='22' cy='3' r='2.6' fill='%230B2447'/%3E%3Ccircle cx='38' cy='7' r='2.6' fill='%230B2447'/%3E%3C/svg%3E") center/contain no-repeat}
+
+.follow{display:flex;align-items:center;gap:10px;margin-top:26px}
+.hand{font:400 22px/1 var(--hand);color:var(--dark);transform:rotate(-2deg)}
+.hand-arrow{width:34px;height:22px;fill:none;stroke:var(--dark);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.social{display:flex;gap:2px}
+.social a{display:grid;place-items:center;width:42px;height:42px;border-radius:12px;color:#5E6E84;transition:color .15s,background .15s}
+.social a:hover{color:var(--ink);background:rgba(255,255,255,.8)}
 .social svg{width:18px;height:18px;fill:currentColor}
-.acts{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:18px}
-.btn{display:inline-flex;align-items:center;gap:9px;height:44px;padding:0 18px;border-radius:12px;font:500 15px/1 var(--sans);text-decoration:none;cursor:pointer;transition:background .15s,box-shadow .15s,transform .15s}
+.acts{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:22px}
+.btn{display:inline-flex;align-items:center;gap:9px;height:46px;padding:0 18px;border-radius:13px;font:600 15px/1 var(--sans);text-decoration:none;cursor:pointer;transition:background .15s,box-shadow .15s,transform .15s}
 .btn svg{width:15px;height:15px;flex:none}
 .btn-main{background:var(--ink);color:#fff;box-shadow:0 10px 24px -12px rgba(11,36,71,.7)}
 .btn-main:hover{background:#12315c;transform:translateY(-1px)}
-.btn-main .ship{width:24px;height:16px;fill:var(--sky)}
-.btn-glass{color:var(--ink);background:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.95);box-shadow:0 0 0 1px var(--line),0 8px 20px -14px rgba(11,36,71,.4);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
-.btn-glass:hover{background:rgba(255,255,255,.9)}
-.btn-glass svg{fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;color:var(--soft)}
-.or{font-size:13px;color:var(--faint)}
+.btn .lab{width:26px;height:18px;flex:none;background:var(--sky);-webkit-mask:url(/assets/voyager-mask.png) center/contain no-repeat;mask:url(/assets/voyager-mask.png) center/contain no-repeat}
+.btn .nave{width:22px;height:15px;fill:#1C4E8E}
+.btn-glass{color:var(--ink);background:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.95);box-shadow:0 0 0 1px var(--line),0 8px 20px -14px rgba(11,36,71,.4);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.btn-glass:hover{background:#fff;transform:translateY(-1px)}
+.btn-glass .ico{fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;color:var(--soft)}
 .city{margin-top:20px;color:var(--faint)}
 
-/* sections: label on the left, like a margin note */
-.sec{display:grid;grid-template-columns:92px 1fr;gap:28px;margin-top:84px}
+/* sections */
+.sec{display:grid;grid-template-columns:96px 1fr;gap:28px;margin-top:88px}
 .sec>h2{padding-top:3px;font:400 12px/1.5 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--faint)}
 .sec>.body{min-width:0}
-.about p+p{margin-top:14px}
-.about a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--sky);text-decoration-thickness:2px;text-underline-offset:3px}
-.about a:hover{text-decoration-color:var(--blue)}
-.about b{font-weight:600;color:var(--ink)}
-.about .key{margin-top:8px;font-size:18px;line-height:1.45;font-weight:700;letter-spacing:-.005em;color:#2D72C6}
-.about .key+p{margin-top:8px}
+.story p+p{margin-top:14px}
+.story b{font-weight:600;color:var(--ink)}
+.story .key{margin-top:8px;font-size:19px;line-height:1.45;font-weight:800;letter-spacing:-.01em;color:#2D72C6}
+.story .key+p{margin-top:8px}
+.story .end{margin-top:18px;font:400 21px/1.2 var(--hand);color:var(--dark)}
 
-.card{display:grid;grid-template-columns:40px 1fr;gap:16px;padding:18px 20px;border:1px solid var(--line);border-radius:14px;background:#fff;text-decoration:none;transition:border-color .15s,box-shadow .15s,transform .15s}
-.card:hover{border-color:#C9DDF3;box-shadow:0 12px 28px -20px rgba(11,36,71,.45);transform:translateY(-1px)}
-.list>li+li{margin-top:10px}
-.ic{display:grid;place-items:center;width:40px;height:40px;border-radius:10px;background:var(--wash);box-shadow:inset 0 0 0 1px var(--line)}
-.ic img{width:22px;height:22px}
-.ic-lab::before{content:"";width:28px;height:28px;background:var(--blue);-webkit-mask:url(/assets/voyager-mask.png) center/contain no-repeat;mask:url(/assets/voyager-mask.png) center/contain no-repeat}
+.focus{display:grid;gap:12px}
+.card{display:block;padding:22px 22px 20px;border:1px solid var(--line);border-radius:16px;background:#fff;text-decoration:none;transition:border-color .15s,box-shadow .15s,transform .15s}
+.card:hover{border-color:#C9DDF3;box-shadow:0 14px 30px -20px rgba(11,36,71,.45);transform:translateY(-1px)}
+.card.main{border-color:#CFE3F8;background:linear-gradient(180deg,#F3F9FF,#fff)}
+.card .hd{display:flex;align-items:center;gap:12px}
+.ic{display:grid;place-items:center;width:42px;height:42px;border-radius:11px;background:var(--wash);box-shadow:inset 0 0 0 1px var(--line);flex:none}
+.ic-lab::before{content:"";width:30px;height:30px;background:var(--lab);-webkit-mask:url(/assets/voyager-mask.png) center/contain no-repeat;mask:url(/assets/voyager-mask.png) center/contain no-repeat}
 .ic-nave svg{width:27px;height:18px;fill:#1C4E8E}
-.card h3{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 10px;font-size:15px;line-height:1.45}
-.card h3 .tag{font:400 11px/1.4 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--faint)}
-.card p{margin-top:4px;font-size:14.5px;line-height:1.6}
-.card.main{border-color:#CFE3F8;background:linear-gradient(180deg,#F5FAFF,#fff)}
-.card .go{display:inline-block;margin-top:10px;font-size:14px;font-weight:600;color:var(--blue)}
+.card h3{font-size:17px;line-height:1.35;letter-spacing:-.01em}
+.card .kick{display:block;font:400 11px/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--faint)}
+.card p{margin-top:12px;font-size:15px;line-height:1.6}
+.card .go{display:inline-block;margin-top:12px;font-size:14.5px;font-weight:700;color:var(--blue)}
 
+.free p.lead{margin-bottom:16px}
+.free .btn{margin-top:16px}
 .vids>li+li{margin-top:10px}
-.vid{display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:center;padding:12px;border:1px solid var(--line);border-radius:14px;text-decoration:none;transition:border-color .15s,box-shadow .15s,transform .15s}
+.vid{display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:center;padding:12px;border:1px solid var(--line);border-radius:14px;background:#fff;text-decoration:none;transition:border-color .15s,box-shadow .15s,transform .15s}
 .vid:hover{border-color:#C9DDF3;box-shadow:0 12px 28px -20px rgba(11,36,71,.45);transform:translateY(-1px)}
 .vid img{width:120px;height:68px;object-fit:cover;border-radius:8px;background:var(--wash)}
 .vid-t{display:flex;flex-direction:column;gap:3px;min-width:0}
@@ -100,29 +128,28 @@ h1{margin-top:20px;font-size:21px;letter-spacing:-.01em;line-height:1.3}
 .tool img.wide{width:58px}
 .tool span{font-size:12.5px;line-height:1.3;color:var(--soft)}
 
-/* the close: his one signature touch */
-.close{margin-top:108px;display:flex;flex-direction:column;align-items:center;text-align:center}
-.crown{width:44px;height:30px;margin-bottom:-3px;transform:rotate(-10deg) translate(-84px,-8px)}
-.x3d{display:inline-block;font-weight:900;font-size:46px;line-height:1;letter-spacing:-.01em;color:var(--sky);-webkit-text-stroke:1.3px var(--ink);paint-order:stroke fill;
-  filter:drop-shadow(1.5px 1.5px 0 #0B2447) drop-shadow(3px 3px 0 #3F8EE6) drop-shadow(1.5px 1.5px 0 #0B2447) drop-shadow(3px 3px 0 #1C4E8E) drop-shadow(1.5px 1.5px 0 #0B2447)}
-.close p{margin-top:18px;font-size:16px;color:var(--soft)}
-.close .btn{margin-top:22px}
-footer{margin-top:80px;text-align:center;font-size:12.5px;line-height:1.7;color:var(--faint)}
+.close{margin-top:110px;display:flex;flex-direction:column;align-items:center;text-align:center}
+.close h2{font-size:34px;font-weight:850;letter-spacing:-.04em;color:var(--dark);line-height:1.2}
+.close p{margin-top:14px;font-size:16px;color:var(--soft)}
+.close .acts{margin-top:22px}
+footer{margin-top:80px;display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;font-size:12.5px;line-height:1.7;color:var(--faint)}
+footer .btn{height:38px;font-size:13.5px;font-weight:500}
 
 @media (max-width:640px){
   .wrap{padding:40px 20px 32px}
-  .sec{grid-template-columns:1fr;gap:14px;margin-top:60px}
+  h1.line{margin-top:52px;font-size:30px}
+  .sec{grid-template-columns:1fr;gap:14px;margin-top:64px}
   .stack{grid-template-columns:repeat(3,1fr)}
   .vid{grid-template-columns:104px 1fr;gap:14px}
   .vid img{width:104px;height:59px}
-  .card{padding:16px;gap:14px}
-  .x3d{font-size:38px}
-  .crown{transform:rotate(-10deg) translate(-70px,-7px)}
+  .card{padding:18px}
+  .close h2{font-size:28px}
 }
 @media (max-width:480px){
   .acts{flex-direction:column;gap:10px}
-  .acts .or{display:none}
   .acts .btn{width:min(100%,300px);justify-content:center}
+  .follow{flex-direction:column;gap:2px}
+  .hand-arrow{transform:rotate(80deg)}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
@@ -132,66 +159,65 @@ footer{margin-top:80px;text-align:center;font-size:12.5px;line-height:1.7;color:
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
 <symbol id="ship" viewBox="64 96 384 256"><path d="M224 96h64v32h-64zM192 128h128v32H192zM128 160h256v32H128zM64 192h384v32H64zM128 224h64v32h-64zM224 224h64v32h-64zM320 224h64v32h-64z"/><path opacity=".4" d="M224 288h64v32h-64z"/><path opacity=".16" d="M192 320h128v32H192z"/></symbol>
 </defs></svg>
-
+<div class="sky" aria-hidden="true"></div>
 <main class="wrap">
   <header class="top">
     <p class="time" id="time" aria-label="Enrique's local time in Sacramento"></p>
     <div class="me">
-      <picture><source type="image/webp" srcset="/assets/me/enrique-192.webp 2x, /assets/me/enrique-288.webp 3x"><img src="/assets/me/enrique-192.jpg" srcset="/assets/me/enrique-288.jpg 3x" alt="Enrique Marq" width="88" height="88" fetchpriority="high"></picture>
+      <picture><source type="image/webp" srcset="/assets/me/enrique-192.webp 2x, /assets/me/enrique-288.webp 3x"><img src="/assets/me/enrique-192.jpg" srcset="/assets/me/enrique-288.jpg 3x" alt="Enrique Marq" width="84" height="84" fetchpriority="high"></picture>
     </div>
-    <h1>Enrique Marq</h1>
-    <p class="line">I build AI content teams that help founders and creators post more winning content, so the people who need them can find them.</p>
-    <nav class="social" aria-label="Follow me">
+    <p class="name">Enrique Marq</p>
+    <h1 class="line">I build things with <span class="ai"><span class="x3d">A<span class="i">I</span></span><span class="fx" aria-hidden="true"><span class="beam"></span><i style="left:calc(50% + 0.014em - 0.056em);top:0.309em;width:0.112em;height:0.112em;opacity:1;transform:rotate(-8deg)"></i><i style="left:calc(50% + -0.098em - 0.049em);top:0.238em;width:0.098em;height:0.098em;opacity:1;transform:rotate(12deg)"></i><i style="left:calc(50% + 0.112em - 0.049em);top:0.196em;width:0.098em;height:0.098em;opacity:0.95;transform:rotate(-16deg)"></i><i style="left:calc(50% + -0.028em - 0.049em);top:0.112em;width:0.098em;height:0.098em;opacity:0.9;transform:rotate(20deg)"></i><i style="left:calc(50% + 0.084em - 0.042em);top:0.042em;width:0.084em;height:0.084em;opacity:0.85;transform:rotate(-24deg)"></i><i style="left:calc(50% + -0.084em - 0.042em);top:-0.028em;width:0.084em;height:0.084em;opacity:0.75;transform:rotate(28deg)"></i><i style="left:calc(50% + 0.028em - 0.035em);top:-0.084em;width:0.070em;height:0.070em;opacity:0.65;transform:rotate(-32deg)"></i><i style="left:calc(50% + -0.042em - 0.032em);top:-0.147em;width:0.063em;height:0.063em;opacity:0.55;transform:rotate(36deg)"></i><span class="ufo"></span></span></span><br><span class="soft">and get them in front of</span> <span class="g">the right people.</span></h1>
+    <div class="follow">
+      <span class="hand">follow the journey</span>
+      <svg class="hand-arrow" viewBox="0 0 34 22" aria-hidden="true"><path d="M2 14 C 10 4, 22 4, 30 12"/><path d="M24 12 L 31 13 L 30 6"/></svg>
+      <nav class="social" aria-label="Follow me">
       <a href="https://www.youtube.com/@enriquemarq-0" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
       <a href="https://instagram.com/enriquemarqai" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.03.084c-1.277.06-2.149.264-2.911.563a5.87 5.87 0 0 0-2.123 1.388A5.88 5.88 0 0 0 .616 4.162c-.296.764-.496 1.637-.552 2.914C.008 8.354-.005 8.764.002 12.023c.006 3.258.02 3.667.082 4.947.061 1.277.264 2.148.564 2.911a5.87 5.87 0 0 0 1.388 2.123 5.88 5.88 0 0 0 2.129 1.38c.763.295 1.636.496 2.913.552 1.277.056 1.688.069 4.946.063 3.258-.006 3.668-.021 4.948-.081 1.28-.061 2.147-.266 2.91-.564a5.88 5.88 0 0 0 2.122-1.388 5.88 5.88 0 0 0 1.38-2.128c.296-.764.497-1.636.552-2.913.056-1.281.069-1.69.063-4.948-.006-3.258-.021-3.667-.082-4.947-.06-1.28-.264-2.148-.563-2.911a5.89 5.89 0 0 0-1.388-2.123A5.87 5.87 0 0 0 19.838.617C19.074.32 18.202.12 16.924.064 15.647.009 15.236-.005 11.977.001 8.718.008 8.31.022 7.03.084m.14 21.693c-1.17-.051-1.805-.245-2.229-.408a3.74 3.74 0 0 1-1.382-.895 3.73 3.73 0 0 1-.9-1.378c-.164-.423-.362-1.058-.417-2.228-.06-1.265-.072-1.644-.079-4.848-.007-3.204.006-3.583.06-4.848.05-1.169.246-1.805.409-2.228.216-.562.476-.96.895-1.382a3.73 3.73 0 0 1 1.378-.9c.423-.165 1.058-.361 2.227-.417 1.266-.06 1.645-.072 4.848-.079 3.203-.007 3.584.005 4.85.061 1.168.05 1.804.244 2.227.408.561.216.96.475 1.382.895.421.42.681.818.9 1.379.166.421.362 1.056.417 2.226.06 1.266.074 1.645.08 4.848.005 3.203-.006 3.583-.061 4.848-.051 1.17-.245 1.805-.408 2.23-.216.56-.476.96-.896 1.38-.419.422-.818.682-1.378.9-.422.166-1.058.362-2.226.418-1.266.06-1.645.072-4.85.079-3.204.007-3.582-.006-4.848-.06M16.953 5.586a1.44 1.44 0 1 0 1.437-1.442 1.44 1.44 0 0 0-1.437 1.442M5.839 12.012a6.161 6.161 0 1 0 12.323-.024 6.162 6.162 0 0 0-12.323.024M8 12.008A4 4 0 1 1 12.008 16 4 4 0 0 1 8 12.008"/></svg></a>
       <a href="https://www.tiktok.com/@enriquemarqai" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
       <a href="https://www.linkedin.com/in/enrique-marq-lol/" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
     </nav>
+    </div>
     <div class="acts">
-      <a class="btn btn-main" href="https://www.skool.com/agentic-content-lab/about"><svg class="ship" viewBox="0 0 384 256" aria-hidden="true"><use href="#ship"/></svg>Join Agentic Content Lab</a>
-      <span class="or">or</span>
-      <a class="btn btn-glass" id="copy" href="mailto:hey@enriquemarq.com" data-email="hey@enriquemarq.com"><span id="copy-label" aria-live="polite">Copy email</span><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="5.5" y="5.5" width="8" height="8" rx="2"/><path d="M10.5 3.5v-.5a1.5 1.5 0 0 0-1.5-1.5H4A1.5 1.5 0 0 0 2.5 3v5A1.5 1.5 0 0 0 4 9.5h.5"/></svg></a>
+      <a class="btn btn-main" href="https://www.skool.com/agentic-content-lab/about"><span class="lab" aria-hidden="true"></span>Join Agentic Content Lab</a>
+      <a class="btn btn-glass" href="https://getnave.app"><svg class="nave" viewBox="64 96 384 256" aria-hidden="true"><use href="#ship"/></svg>Get Nave</a>
+      <a class="btn btn-glass" href="https://getnave.app/guides/"><svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 3.2c1.8-.6 3.6-.4 5.5.8 1.9-1.2 3.7-1.4 5.5-.8v9.4c-1.8-.6-3.6-.4-5.5.8-1.9-1.2-3.7-1.4-5.5-.8z"/><path d="M8 4v9.4"/></svg>Free guides</a>
     </div>
     <p class="city mono">Sacramento, California</p>
   </header>
 
-  <section class="sec about" id="about" aria-labelledby="about-h">
-    <h2 id="about-h">About</h2>
+  <section class="sec story" id="about" aria-labelledby="journey-h">
+    <h2 id="journey-h">My journey</h2>
     <div class="body">
-      <p>Hi, I'm Enrique. For the past 3 years, I've spent most of my time helping people use AI to make more with less.</p>
-      <p>That's how I started building my <a href="https://getnave.app">AI content team</a>. Today it lets me make <b>500+ pieces of content a month</b> for several brands I work with, including Zernio, a $5M/year SaaS, as a one-person head of content.</p>
-      <p>My conclusion:</p>
+      <p>Hi, I'm Enrique. For the past 3 years, I've helped people use AI to make MORE with less, and I built the AI content team I wish I'd had when very few people knew I existed.</p>
+      <p>Now, with that AI team, content feels easy and fun: I make <b>500+ pieces a month</b> across every platform for several brands, including <a href="https://zernio.link/enrique" rel="sponsored noopener">Zernio</a>, a $5M/year SaaS, as a one-person head of content.</p>
+      <p>That's when it clicked:</p>
       <p class="key">AI amplifies one extremely capable person.</p>
-      <p>I'm here to bring that feeling to everyone.</p>
-      <p>That's why I share how to post more winning content on social media: the strategies that work, and how to use the AI you already have, like Claude Code and ChatGPT, to create your content and run your social media. So you save hours, stay true to you, and the people who need you find you.</p>
+      <p>And I want that person to be you.</p>
+      <p class="end">Follow the journey :)</p>
     </div>
   </section>
 
-  <section class="sec" id="work" aria-labelledby="work-h">
-    <h2 id="work-h">Work</h2>
-    <ul class="body list">
-      <li><a class="card main" href="https://www.skool.com/agentic-content-lab/about">
-        <i class="ic ic-lab" aria-hidden="true"></i>
-        <div><h3>Agentic Content Lab</h3>
+  <section class="sec" id="building" aria-labelledby="building-h">
+    <h2 id="building-h">Building now</h2>
+    <div class="body focus">
+      <a class="card main" href="https://www.skool.com/agentic-content-lab/about">
+        <span class="hd"><i class="ic ic-lab" aria-hidden="true"></i><span><span class="kick">Community + live coaching</span><h3>Agentic Content Lab</h3></span></span>
         <p>Get your own AI content team and live coaching to post more winning content every week with ease, so the people who need you can find you.</p>
-        <span class="go">Join the Lab →</span></div>
-      </a></li>
-      <li><a class="card" href="https://getnave.app">
-        <i class="ic ic-nave" aria-hidden="true"><svg viewBox="0 0 384 256"><use href="#ship"/></svg></i>
-        <div><h3>Nave</h3>
-        <p>Your AI content team in one app. It researches, plans, writes, edits and publishes, growing with you every week.</p></div>
-      </a></li>
-      <li><a class="card" href="https://zernio.link/enrique" rel="sponsored noopener">
-        <i class="ic" aria-hidden="true"><img src="/assets/stack/zernio.png" alt="" width="22" height="22" loading="lazy"></i>
-        <div><h3>Zernio <span class="tag">Partner link</span></h3>
-        <p>Head of content. They grew from $45K a month to $5M a year while I ran their content.</p></div>
-      </a></li>
-    </ul>
+        <span class="go">Join the Lab →</span>
+      </a>
+      <a class="card" href="https://getnave.app">
+        <span class="hd"><i class="ic ic-nave" aria-hidden="true"><svg viewBox="64 96 384 256"><use href="#ship"/></svg></i><span><span class="kick">The app</span><h3>Nave</h3></span></span>
+        <p>The app where your AI content team lives and works, like the Claude or ChatGPT app you already use. One place to research, plan, write, edit and publish.</p>
+        <span class="go">Get Nave →</span>
+      </a>
+    </div>
   </section>
 
-  <section class="sec" id="media" aria-labelledby="media-h">
-    <h2 id="media-h">Media</h2>
+  <section class="sec free" id="free" aria-labelledby="free-h">
+    <h2 id="free-h">Free</h2>
     <div class="body">
+      <p class="lead">On my free channels, I share as much value as I can: how I build with AI, the strategies that actually work, and the whole journey.</p>
     <!-- media:start (written by scripts/media.mjs from scripts/media.json; edit those, not this block) -->
     <ul class="vids">
       <!-- one video held in scripts/media.json until it is public on YouTube -->
@@ -210,6 +236,7 @@ footer{margin-top:80px;text-align:center;font-size:12.5px;line-height:1.7;color:
     </ul>
     <p class="note">Views read from YouTube on November 5, 2026.</p>
     <!-- media:end -->
+      <a class="btn btn-glass" href="https://getnave.app/guides/"><svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 3.2c1.8-.6 3.6-.4 5.5.8 1.9-1.2 3.7-1.4 5.5-.8v9.4c-1.8-.6-3.6-.4-5.5.8-1.9-1.2-3.7-1.4-5.5-.8z"/><path d="M8 4v9.4"/></svg>Free guides</a>
     </div>
   </section>
 
@@ -232,13 +259,19 @@ footer{margin-top:80px;text-align:center;font-size:12.5px;line-height:1.7;color:
   </section>
 
   <section class="close" aria-labelledby="close-h">
-    <svg class="crown" viewBox="0 0 44 30" aria-hidden="true"><path d="M3 26 L6 7 L15 16 L22 3 L29 16 L38 7 L41 26 Z" fill="#7DBDFB" stroke="#0B2447" stroke-width="2.2" stroke-linejoin="round"/><circle cx="6" cy="7" r="2.6" fill="#0B2447"/><circle cx="22" cy="3" r="2.6" fill="#0B2447"/><circle cx="38" cy="7" r="2.6" fill="#0B2447"/></svg>
-    <h2 id="close-h" class="x3d">ONE PERSON.</h2>
-    <p>AI amplifies one extremely capable person.</p>
-    <a class="btn btn-main" href="https://www.skool.com/agentic-content-lab/about"><svg class="ship" viewBox="0 0 384 256" aria-hidden="true"><use href="#ship"/></svg>Join Agentic Content Lab</a>
+    <h2 id="close-h">AI amplifies one extremely capable person.</h2>
+    <p>And I want that person to be you.</p>
+    <div class="acts">
+      <a class="btn btn-main" href="https://www.skool.com/agentic-content-lab/about"><span class="lab" aria-hidden="true"></span>Join Agentic Content Lab</a>
+      <a class="btn btn-glass" href="https://getnave.app"><svg class="nave" viewBox="64 96 384 256" aria-hidden="true"><use href="#ship"/></svg>Get Nave</a>
+      <a class="btn btn-glass" href="https://getnave.app/guides/"><svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 3.2c1.8-.6 3.6-.4 5.5.8 1.9-1.2 3.7-1.4 5.5-.8v9.4c-1.8-.6-3.6-.4-5.5.8-1.9-1.2-3.7-1.4-5.5-.8z"/><path d="M8 4v9.4"/></svg>Free guides</a>
+    </div>
   </section>
 
-  <footer>© 2026 Enrique Marq<br>Made with my AI content team.</footer>
+  <footer>
+    <a class="btn btn-glass" id="copy" href="mailto:hey@enriquemarq.com" data-email="hey@enriquemarq.com"><span id="copy-label" aria-live="polite">Copy email</span><svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><rect x="5.5" y="5.5" width="8" height="8" rx="2"/><path d="M10.5 3.5v-.5a1.5 1.5 0 0 0-1.5-1.5H4A1.5 1.5 0 0 0 2.5 3v5A1.5 1.5 0 0 0 4 9.5h.5"/></svg></a>
+    <span>© 2026 Enrique Marq<br>Made with my AI content team.</span>
+  </footer>
 </main>
 
 <script>
