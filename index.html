@@ -88,7 +88,7 @@ h1.line .soft{color:#3A4450;font-weight:750}
 .btn-main{background:var(--ink);color:#fff;box-shadow:0 10px 24px -12px rgba(11,36,71,.7)}
 .btn-main:hover{background:#12315c;transform:translateY(-1px)}
 .btn .lab{width:26px;height:18px;flex:none;background:var(--sky);-webkit-mask:url(/assets/voyager-mask.png) center/contain no-repeat;mask:url(/assets/voyager-mask.png) center/contain no-repeat}
-.btn .nave{width:22px;height:15px;fill:#1C4E8E}
+.btn .nave{width:24px;height:24px}
 .btn-glass{color:var(--ink);background:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.95);box-shadow:0 0 0 1px var(--line),0 8px 20px -14px rgba(11,36,71,.4);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
 .btn-glass:hover{background:#fff;transform:translateY(-1px)}
 .btn-glass .ico{fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;color:var(--soft)}
@@ -116,7 +116,7 @@ h1.line .soft{color:#3A4450;font-weight:750}
 .card .hd{display:flex;align-items:center;gap:12px}
 .ic{display:grid;place-items:center;width:42px;height:42px;border-radius:11px;background:var(--wash);box-shadow:inset 0 0 0 1px var(--line);flex:none}
 .ic-lab::before{content:"";width:30px;height:30px;background:var(--lab);-webkit-mask:url(/assets/voyager-mask.png) center/contain no-repeat;mask:url(/assets/voyager-mask.png) center/contain no-repeat}
-.ic-nave svg{width:27px;height:18px;fill:#1C4E8E}
+.ic-nave img{width:30px;height:30px}
 .card h3{font-size:17px;line-height:1.35;letter-spacing:-.01em}
 .card .kick{display:block;font:400 11px/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--faint)}
 .card p{margin-top:12px;font-size:15px;line-height:1.6}
@@ -171,6 +171,37 @@ footer .btn{height:38px;font-size:13.5px;font-weight:500}
   .social a{width:38px;height:38px}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* logos beside the names in About */
+.story a .lg{display:inline-block;width:1.15em;height:1.15em;margin:0 .28em 0 .05em;vertical-align:-.22em;object-fit:contain}
+.story a .lg-round{border-radius:5px}
+.story a img.lg[src*="nave-mark"]{width:1.5em;height:1.5em;margin:0 .18em 0 0;vertical-align:-.42em}
+.lg-lab{background:var(--lab);-webkit-mask:url(/assets/voyager-mask.png) center/contain no-repeat;mask:url(/assets/voyager-mask.png) center/contain no-repeat}
+/* Valorant: press the word, his card opens (brought back from the old /me page) */
+.peek-host{position:relative}
+.peek{all:unset;position:relative;cursor:pointer;color:var(--ink);font-weight:600;padding:0 .85em 0 0;background:radial-gradient(circle,#FF4655 1.4px,transparent 1.8px) 0 100%/7px 4px repeat-x;-webkit-tap-highlight-color:transparent}
+.peek::after{content:"";position:absolute;right:.1em;top:.45em;width:.42em;height:.42em;border-radius:50%;background:#FF4655;animation:dot 2.8s ease-out infinite}
+.peek[aria-expanded="true"]::after{animation:none}
+.peek:focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:4px}
+@keyframes dot{0%{box-shadow:0 0 0 0 rgba(255,70,85,.5)}70%,100%{box-shadow:0 0 0 .5em rgba(255,70,85,0)}}
+.pop{position:absolute;left:50%;bottom:calc(100% + 14px);z-index:5;width:min(452px,calc(100vw - 32px));padding:18px 18px 16px;background:#fff;border:1.5px solid #0A0D12;border-radius:18px;text-align:left;font:400 15px/1.5 var(--sans);color:#3A4450;box-shadow:7px 7px 0 #FF4655;opacity:0;transform:translate(-50%,8px);transition:opacity .22s ease,transform .25s ease}
+.pop.on{opacity:1;transform:translate(-50%,0)}
+.pop[hidden]{display:none}
+.pop>span{display:block}
+.valo-top img{width:auto;height:54px}
+.valo-say{margin-top:12px;text-wrap:pretty}
+.valo-say+.valo-say{margin-top:8px}
+.valo-cast{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;margin-top:14px}
+.agent{display:grid;justify-items:center;align-content:start;gap:3px;padding:10px 4px;border-radius:14px;background:#F2F8FF;text-align:center}
+.agent img{width:64px;height:64px;border-radius:14px;object-fit:cover;margin-bottom:5px}
+.agent-clove img{background:linear-gradient(160deg,#4B1D80,#C347C7)}
+.agent-omen img{background:linear-gradient(160deg,#433178,#344673)}
+.agent-skye img{background:linear-gradient(160deg,#2F4C3A,#6FA27E)}
+.agent-rank img{border-radius:0}
+.agent b{font:600 14.5px/1.1 var(--sans);color:#0A0D12}
+.agent small{font:500 9px/1.3 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:#5E6874}
+.valo-fine{margin-top:12px;font-size:11px;line-height:1.4;color:#7B8794}
+@media (max-width:480px){.pop{padding:14px}.valo-cast{gap:5px}.agent img{width:54px;height:54px}}
 </style>
 </head>
 <body>
@@ -209,10 +240,23 @@ footer .btn{height:38px;font-size:13.5px;font-weight:500}
     <h2 id="journey-h">About</h2>
     <div class="body">
       <p>I enjoy building things with AI and getting them in front of the right people.</p>
-      <p>Right now that looks like three things. I'm building <a href="https://getnave.app">Nave</a>, the best AI content team in the world, the one that handles all the content on my socials.</p>
-      <p>I run <a href="https://www.skool.com/agentic-content-lab/about">Agentic Content Lab</a>, where I help founders and creators set up a team like mine and post more winning content. I'm in there every day.</p>
-      <p>And I'm head of content for a few brands, including <a href="https://zernio.link/enrique" rel="sponsored noopener">Zernio</a>, a $5M/year SaaS. That adds up to me making 500+ pieces a month across multiple platforms, my own brand included, all handled by me.</p>
-      <p>When I'm not glued to my PC with a dozen AI agents running, you'll find me playing Valorant, <b>the best &#127918; game in the world right now</b>, or chilling with the people I care about.</p>
+      <p>Right now that looks like three things. I'm building <a href="https://getnave.app"><img class="lg" src="/assets/nave-mark.svg" alt="" width="20" height="20">Nave</a>, the best AI content team in the world, the one that handles all the content on my socials.</p>
+      <p>I run <a href="https://www.skool.com/agentic-content-lab/about"><span class="lg lg-lab" aria-hidden="true"></span>Agentic Content Lab</a>, where I help founders and creators set up a team like mine and post more relevant content, so the people who need them can find them. I'm in there every day.</p>
+      <p>And I'm head of content for a few brands, including <a href="https://zernio.link/enrique" rel="sponsored noopener"><img class="lg lg-round" src="/assets/stack/zernio.png" alt="" width="20" height="20">Zernio</a>, a $5M/year SaaS. That adds up to me making 500+ pieces a month across multiple platforms, my own brand included, all handled by me.</p>
+      <p class="peek-host">When I'm not glued to my PC with a dozen AI agents running, you'll find me playing <button class="peek" type="button" aria-expanded="false" aria-controls="valo">Valorant</button>, the best &#127918; game in the world right now, or chilling with the people I care about.
+        <span class="pop valo" id="valo" hidden>
+          <span class="valo-top"><img src="/assets/valorant/valorant-logo.svg" alt="Valorant" width="1035" height="697"></span>
+          <span class="valo-say">Valorant is currently my favorite freaking game. I'm super competitive in this game, and I think that's one of the key things why I love this game so much. Super fun to play. And it's kind of like Counter-Strike. We have characters and different powers that are needed.</span>
+          <span class="valo-say">Before this game, I was a competitive Fortnite player by the way lol. I made three thousand in earnings. I played when I was fourteen to sixteen.</span>
+          <span class="valo-cast">
+            <span class="agent agent-clove"><img src="/assets/valorant/clove.webp" alt="Clove" width="192" height="192" loading="lazy"><b>Clove</b><small>Smokes</small></span>
+            <span class="agent agent-omen"><img src="/assets/valorant/omen.webp" alt="Omen" width="192" height="192" loading="lazy"><b>Omen</b><small>Smokes</small></span>
+            <span class="agent agent-skye"><img src="/assets/valorant/skye.webp" alt="Skye" width="192" height="192" loading="lazy"><b>Skye</b><small>I also play</small></span>
+            <span class="agent agent-rank"><img src="/assets/valorant/diamond-3.webp" alt="" width="128" height="128" loading="lazy"><b>Diamond 3</b><small>My rank</small></span>
+          </span>
+          <span class="valo-fine">Valorant and its characters belong to Riot Games. This page isn't endorsed by Riot Games.</span>
+        </span>
+      </p>
     </div>
   </section>
 
@@ -225,7 +269,7 @@ footer .btn{height:38px;font-size:13.5px;font-weight:500}
         <span class="go">Join the Lab →</span>
       </a>
       <a class="card" href="https://getnave.app">
-        <span class="hd"><i class="ic ic-nave" aria-hidden="true"><svg viewBox="64 96 384 256"><use href="#ship"/></svg></i><span><span class="kick">The app</span><h3>Nave</h3></span></span>
+        <span class="hd"><i class="ic ic-nave" aria-hidden="true"><img src="/assets/nave-mark.svg" alt="" width="30" height="30"></i><span><span class="kick">My AI content team</span><h3>Nave</h3></span></span>
         <p>The app where your AI content team lives and works, like the Claude or ChatGPT app you already use. One place to research, plan, write, edit and publish.</p>
         <span class="go">Get Nave →</span>
       </a>
@@ -277,7 +321,7 @@ footer .btn{height:38px;font-size:13.5px;font-weight:500}
     <p>And I want that person to be you.</p>
     <div class="acts">
       <a class="btn btn-main" href="https://www.skool.com/agentic-content-lab/about"><span class="lab" aria-hidden="true"></span>Join Agentic Content Lab</a>
-      <a class="btn btn-glass" href="https://getnave.app"><svg class="nave" viewBox="64 96 384 256" aria-hidden="true"><use href="#ship"/></svg>Get Nave</a>
+      <a class="btn btn-glass" href="https://getnave.app"><img class="nave" src="/assets/nave-mark.svg" alt="" width="24" height="24">Get Nave</a>
       <a class="btn btn-glass" href="https://getnave.app/guides/"><svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 3.2c1.8-.6 3.6-.4 5.5.8 1.9-1.2 3.7-1.4 5.5-.8v9.4c-1.8-.6-3.6-.4-5.5.8-1.9-1.2-3.7-1.4-5.5-.8z"/><path d="M8 4v9.4"/></svg>Free guides</a>
     </div>
   </section>
@@ -296,6 +340,11 @@ footer .btn{height:38px;font-size:13.5px;font-weight:500}
   var c=document.getElementById('copy'),l=document.getElementById('copy-label');
   if(c&&navigator.clipboard)c.addEventListener('click',function(e){e.preventDefault();
     navigator.clipboard.writeText(c.dataset.email).then(function(){l.textContent='Copied';setTimeout(function(){l.textContent='Copy email'},1800)},function(){location.href=c.href})});
+  var pk=document.querySelector('.peek'),pop=document.getElementById('valo');
+  if(pk&&pop){var shut=function(){pop.classList.remove('on');pk.setAttribute('aria-expanded','false');setTimeout(function(){if(!pop.classList.contains('on'))pop.hidden=true},250)};
+    pk.addEventListener('click',function(e){e.stopPropagation();if(pop.classList.contains('on'))return shut();pop.hidden=false;requestAnimationFrame(function(){pop.classList.add('on')});pk.setAttribute('aria-expanded','true')});
+    document.addEventListener('click',function(e){if(!pop.contains(e.target))shut()});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')shut()});}
 })();
 </script>
 </body>
