@@ -179,9 +179,7 @@ footer .btn{height:38px;font-size:13.5px;font-weight:500}
 .lg-lab{background:var(--lab);-webkit-mask:url(/assets/voyager-mask.png) center/contain no-repeat;mask:url(/assets/voyager-mask.png) center/contain no-repeat}
 /* Valorant: press the word, his card opens (brought back from the old /me page) */
 .peek-host{position:relative}
-.peek{all:unset;position:relative;cursor:pointer;color:var(--ink);font-weight:600;padding:0 .85em 0 0;background:radial-gradient(circle,#FF4655 1.4px,transparent 1.8px) 0 100%/7px 4px repeat-x;-webkit-tap-highlight-color:transparent}
-.peek::after{content:"";position:absolute;right:.1em;top:.45em;width:.42em;height:.42em;border-radius:50%;background:#FF4655;animation:dot 2.8s ease-out infinite}
-.peek[aria-expanded="true"]::after{animation:none}
+.peek{all:unset;cursor:default;-webkit-tap-highlight-color:transparent}
 .peek:focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:4px}
 @keyframes dot{0%{box-shadow:0 0 0 0 rgba(255,70,85,.5)}70%,100%{box-shadow:0 0 0 .5em rgba(255,70,85,0)}}
 .pop{position:absolute;left:50%;bottom:calc(100% + 14px);z-index:5;width:min(452px,calc(100vw - 32px));padding:18px 18px 16px;background:#fff;border:1.5px solid #0A0D12;border-radius:18px;text-align:left;font:400 15px/1.5 var(--sans);color:#3A4450;box-shadow:7px 7px 0 #FF4655;opacity:0;transform:translate(-50%,8px);transition:opacity .22s ease,transform .25s ease}
@@ -191,7 +189,7 @@ footer .btn{height:38px;font-size:13.5px;font-weight:500}
 .valo-top img{width:auto;height:54px}
 .valo-say{margin-top:12px;text-wrap:pretty}
 .valo-say+.valo-say{margin-top:8px}
-.valo-cast{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;margin-top:14px}
+.valo-cast{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;margin:12px 0 2px}
 .agent{display:grid;justify-items:center;align-content:start;gap:3px;padding:10px 4px;border-radius:14px;background:#F2F8FF;text-align:center}
 .agent img{width:64px;height:64px;border-radius:14px;object-fit:cover;margin-bottom:5px}
 .agent-clove img{background:linear-gradient(160deg,#4B1D80,#C347C7)}
@@ -255,16 +253,16 @@ footer .btn{height:38px;font-size:13.5px;font-weight:500}
       <p>I run <a href="https://www.skool.com/agentic-content-lab/about"><span class="lg lg-lab" aria-hidden="true"></span>Agentic Content Lab</a>, where I help founders and creators set up a team like mine and post more relevant content, so the people who need them can find them. I'm in there every day.</p>
       <p>And I'm head of content for a few brands, including <a href="https://zernio.link/enrique" rel="sponsored noopener"><img class="lg lg-round" src="/assets/stack/zernio.png" alt="" width="20" height="20">Zernio</a>, a $5M/year SaaS. That adds up to me making 500+ pieces a month across multiple platforms, my own brand included, all handled by me.</p>
       <p class="peek-host">When I'm not glued to my PC with a dozen AI agents running, you'll find me playing <button class="peek" type="button" aria-expanded="false" aria-controls="valo">Valorant</button>, the best &#127918; game in the world right now, or chilling with the people I care about.
-        <span class="pop valo" id="valo" hidden>
+        <span class="pop valo" id="valo" role="tooltip" hidden>
           <span class="valo-top"><img src="/assets/valorant/valorant-logo.svg" alt="Valorant" width="1035" height="697"></span>
-          <span class="valo-say">Valorant is currently my favorite freaking game. I'm super competitive in this game, and I think that's one of the key things why I love this game so much. Super fun to play. And it's kind of like Counter-Strike. We have characters and different powers that are needed.</span>
-          <span class="valo-say">Before this game, I was a competitive Fortnite player by the way lol. I made three thousand in earnings. I played when I was fourteen to sixteen.</span>
+          <span class="valo-say">For the ones who don't know what the heck Valorant is: it's kind of like Counter-Strike. Attackers against defenders, five on each team, and every character has their own powers.</span>
+          <span class="valo-say">It's incredibly fun to play. I freaking love this game, and I'm super competitive on it. These are my favorite agents to play:</span>
           <span class="valo-cast">
-            <span class="agent agent-clove"><img src="/assets/valorant/clove.webp" alt="Clove" width="192" height="192" loading="lazy"><b>Clove</b><small>Smokes</small></span>
-            <span class="agent agent-omen"><img src="/assets/valorant/omen.webp" alt="Omen" width="192" height="192" loading="lazy"><b>Omen</b><small>Smokes</small></span>
-            <span class="agent agent-skye"><img src="/assets/valorant/skye.webp" alt="Skye" width="192" height="192" loading="lazy"><b>Skye</b><small>I also play</small></span>
-            <span class="agent agent-rank"><img src="/assets/valorant/diamond-3.webp" alt="" width="128" height="128" loading="lazy"><b>Diamond 3</b><small>My rank</small></span>
+            <span class="agent agent-clove"><img src="/assets/valorant/clove.webp" alt="Clove" width="128" height="128" loading="lazy"><b>Clove</b><small>Smokes</small></span>
+            <span class="agent agent-omen"><img src="/assets/valorant/omen.webp" alt="Omen" width="128" height="128" loading="lazy"><b>Omen</b><small>Smokes</small></span>
+            <span class="agent agent-skye"><img src="/assets/valorant/skye.webp" alt="Skye" width="128" height="128" loading="lazy"><b>Skye</b><small>Flashes</small></span>
           </span>
+          <span class="valo-say">Before this game, I was a competitive Fortnite player by the way lol. I made money on the game at 15 years old.</span>
           <span class="valo-fine">Valorant and its characters belong to Riot Games. This page isn't endorsed by Riot Games.</span>
         </span>
       </p>
@@ -371,9 +369,14 @@ footer .btn{height:38px;font-size:13.5px;font-weight:500}
   if(c&&navigator.clipboard)c.addEventListener('click',function(e){e.preventDefault();
     navigator.clipboard.writeText(c.dataset.email).then(function(){l.textContent='Copied';setTimeout(function(){l.textContent='Copy email'},1800)},function(){location.href=c.href})});
   var pk=document.querySelector('.peek'),pop=document.getElementById('valo');
-  if(pk&&pop){var shut=function(){pop.classList.remove('on');pk.setAttribute('aria-expanded','false');setTimeout(function(){if(!pop.classList.contains('on'))pop.hidden=true},250)};
-    pk.addEventListener('click',function(e){e.stopPropagation();if(pop.classList.contains('on'))return shut();pop.hidden=false;requestAnimationFrame(function(){pop.classList.add('on')});pk.setAttribute('aria-expanded','true')});
-    document.addEventListener('click',function(e){if(!pop.contains(e.target))shut()});
+  if(pk&&pop){var tm,open=function(){clearTimeout(tm);pop.hidden=false;requestAnimationFrame(function(){pop.classList.add('on')});pk.setAttribute('aria-expanded','true')},
+    shut=function(){clearTimeout(tm);pop.classList.remove('on');pk.setAttribute('aria-expanded','false');tm=setTimeout(function(){if(!pop.classList.contains('on'))pop.hidden=true},250)},
+    later=function(){clearTimeout(tm);tm=setTimeout(shut,180)};
+    var hover=window.matchMedia('(hover:hover)').matches;
+    if(hover){pk.addEventListener('mouseenter',open);pk.addEventListener('mouseleave',later);pop.addEventListener('mouseenter',function(){clearTimeout(tm)});pop.addEventListener('mouseleave',later)}
+    pk.addEventListener('focus',open);pk.addEventListener('blur',later);
+    pk.addEventListener('click',function(e){e.stopPropagation();if(!hover){pop.classList.contains('on')?shut():open()}});
+    document.addEventListener('click',function(e){if(!pop.contains(e.target)&&e.target!==pk)shut()});
     document.addEventListener('keydown',function(e){if(e.key==='Escape')shut()});}
 })();
 </script>
