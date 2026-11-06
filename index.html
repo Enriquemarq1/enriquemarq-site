@@ -221,6 +221,40 @@ footer .btn{height:38px;font-size:13.5px;font-weight:500}
 .ic-guides{background:#DCEEFF;box-shadow:inset 0 0 0 1.5px #0B2447,2px 2px 0 #0B2447,3.5px 3.5px 0 #3F8EE6}
 .ic-guides svg{width:22px;height:22px;fill:#7DBDFB;stroke:#0B2447;stroke-width:1.3;stroke-linejoin:round}
 .card.guides .go{color:#2D72C6}
+
+/* his own blue emoji, drawn like the 3D type */
+.emo{display:inline-block;width:1.45em;height:1em;vertical-align:-.18em;overflow:visible;filter:drop-shadow(1.5px 1.5px 0 #3F8EE6)}
+.emo-leaf{width:1.15em;height:1.15em;vertical-align:-.22em}
+/* the stack as the way it works: record, make in Nave, publish */
+.flow{display:grid;grid-template-columns:1fr 26px 1.7fr 26px 1fr;align-items:center;margin-top:16px}
+.step{display:flex;flex-direction:column;gap:8px;min-width:0}
+.step-k{font:400 11px/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--faint)}
+.tile{display:flex;flex-direction:column;align-items:center;gap:6px;padding:18px 10px 14px;border:1px solid var(--line);border-radius:14px;background:#fff;text-align:center}
+.tile img{width:26px;height:26px;object-fit:contain}
+.tile b{font-size:14px;color:var(--ink);font-weight:650}
+.tile small{font-size:11.5px;line-height:1.35;color:var(--soft)}
+.link{height:2px;margin:22px 4px 0;background:repeating-linear-gradient(90deg,#7DB6F2 0 5px,transparent 5px 9px);position:relative}
+.link::after{content:"";position:absolute;right:-2px;top:-4px;border-left:7px solid #7DB6F2;border-top:5px solid transparent;border-bottom:5px solid transparent}
+.box{padding:14px;border-radius:16px;background:linear-gradient(180deg,#EAF4FF,#F7FBFF);border:1px solid #CFE3F8;box-shadow:0 14px 30px -22px rgba(28,78,142,.6)}
+.box-hd{display:flex;align-items:center;gap:10px;padding-bottom:10px;border-bottom:1px dashed #C9DDF3}
+.box-hd img{width:34px;height:34px}
+.box-hd b{display:block;font-size:15px;color:var(--ink);font-weight:700;line-height:1.2}
+.box-hd small{display:block;font:400 10.5px/1.4 var(--mono);letter-spacing:.07em;text-transform:uppercase;color:var(--soft)}
+.rows{display:grid;gap:8px;margin-top:10px}
+.rows li{display:grid;grid-template-columns:96px 1fr;align-items:center;gap:8px}
+.rk{font-size:12px;color:var(--soft)}
+.chips{display:flex;flex-wrap:wrap;gap:5px}
+.chip{display:inline-flex;align-items:center;gap:6px;height:28px;padding:0 10px 0 7px;border-radius:9px;background:#fff;border:1px solid var(--line);font-size:12.5px;font-weight:600;color:var(--ink);white-space:nowrap}
+.chip img{width:16px;height:16px;object-fit:contain}
+.teach{display:flex;align-items:center;gap:12px;margin-top:14px;padding:12px 16px;border:1px dashed #C9DDF3;border-radius:14px;font-size:13.5px;color:var(--text)}
+.teach img.wide{width:48px;height:auto}
+@media (max-width:640px){
+  .flow{grid-template-columns:1fr}
+  .link{width:2px;height:22px;margin:6px auto;background:repeating-linear-gradient(180deg,#7DB6F2 0 5px,transparent 5px 9px)}
+  .link::after{right:-4px;top:auto;bottom:-4px;border-left:5px solid transparent;border-right:5px solid transparent;border-top:7px solid #7DB6F2;border-bottom:0}
+  .tile{flex-direction:row;justify-content:flex-start;text-align:left;padding:12px 14px;gap:12px}
+  .tile small{margin-left:auto}
+}
 </style>
 </head>
 <body>
@@ -262,7 +296,7 @@ footer .btn{height:38px;font-size:13.5px;font-weight:500}
       <p>Right now that looks like three things. I'm building <a href="https://getnave.app"><img class="lg" src="/assets/nave-mark.svg" alt="" width="20" height="20">Nave</a>, the best AI content team in the world. It runs the content for my own brand and for several brands I work with.</p>
       <p>I run <a href="https://www.skool.com/agentic-content-lab/about"><span class="lg lg-lab" aria-hidden="true"></span>Agentic Content Lab</a>, where I help founders and creators set up the same AI content team I use to post MORE relevant content every week, consistently, so the people who need them can find them. I'm in there every day.</p>
       <p>And I'm head of content for a few brands, including <a href="https://zernio.link/enrique" rel="sponsored noopener"><img class="lg lg-round" src="/assets/stack/zernio.png" alt="" width="20" height="20">Zernio</a>, a $5M/year SaaS. That adds up to me making 500+ pieces a month across multiple platforms, my own brand included, all handled by me with Nave.</p>
-      <p class="peek-host">When I'm not glued to my PC with a dozen AI agents running, you'll find me playing Valorant, the best <button class="peek" type="button" aria-expanded="false" aria-controls="valo" aria-label="Valorant, my favorite game">&#127918;</button> game in the world right now, or chilling with the people I care about &#9752;&#65039;
+      <p class="peek-host">When I'm not glued to my PC with a dozen AI agents running, you'll find me playing Valorant, the best <button class="peek" type="button" aria-expanded="false" aria-controls="valo" aria-label="Valorant, my favorite game"><svg class="emo" viewBox="0 0 40 26" aria-hidden="true"><path d="M11 3h18c5.5 0 8.6 4 9.6 10.5.8 5.6-.9 9.5-4.3 9.5-2.6 0-4-1.8-5.4-4.2H11.1C9.7 21.2 8.3 23 5.7 23 2.3 23 .6 19.1 1.4 13.5 2.4 7 5.5 3 11 3z" fill="#7DBDFB" stroke="#0B2447" stroke-width="2" stroke-linejoin="round"/><path d="M8.5 10.5v6M5.5 13.5h6" stroke="#0B2447" stroke-width="2.2" stroke-linecap="round"/><circle cx="29" cy="11" r="1.9" fill="#0B2447"/><circle cx="32.6" cy="14.6" r="1.9" fill="#0B2447"/><circle cx="25.4" cy="14.6" r="1.9" fill="#FFFFFF" stroke="#0B2447" stroke-width="1.2"/></svg></button> game in the world right now, or chilling with the people I care about <svg class="emo emo-leaf" viewBox="0 0 30 30" aria-hidden="true"><g fill="#7DBDFB" stroke="#0B2447" stroke-width="1.8" stroke-linejoin="round"><path d="M15 13c-3.5-1-7.5-3.5-6.6-7.2.8-3 4.6-3 5.6-.6 1-2.4 4.8-2.4 5.6.6.9 3.7-3.1 6.2-4.6 7.2z"/><path d="M14 15c-1 3.5-3.5 7.5-7.2 6.6-3-.8-3-4.6-.6-5.6-2.4-1-2.4-4.8.6-5.6 3.7-.9 6.2 3.1 7.2 4.6z"/><path d="M16 15c1 3.5 3.5 7.5 7.2 6.6 3-.8 3-4.6.6-5.6 2.4-1 2.4-4.8-.6-5.6-3.7-.9-6.2 3.1-7.2 4.6z"/></g><path d="M15 15c.6 4.5 2 8.5 4.5 12" fill="none" stroke="#0B2447" stroke-width="2" stroke-linecap="round"/></svg>
         <span class="pop valo" id="valo" role="tooltip" hidden>
           <span class="valo-top"><img src="/assets/valorant/valorant-logo.svg" alt="Valorant" width="1035" height="697"></span>
           <span class="valo-say">For the ones who don't know what the heck Valorant is: it's kind of like Counter-Strike. Attackers against defenders, five on each team, and every character has their own powers.</span>
@@ -272,7 +306,7 @@ footer .btn{height:38px;font-size:13.5px;font-weight:500}
             <span class="agent agent-omen"><img src="/assets/valorant/omen.webp" alt="Omen" width="128" height="128" loading="lazy"><b>Omen</b><small>Smokes</small></span>
             <span class="agent agent-skye"><img src="/assets/valorant/skye.webp" alt="Skye" width="128" height="128" loading="lazy"><b>Skye</b><small>Flashes</small></span>
           </span>
-          <span class="valo-say">Before this game, I was a competitive Fortnite player by the way lol. I made money on the game at 15 years old.</span>
+          <span class="valo-say">Before this game, by the way, I was a competitive Fortnite player from thirteen to fifteen years old. Then I quit, but I was able to make pretty good money out of it lol.</span>
           <span class="valo-fine">Valorant and its characters belong to Riot Games. This page isn't endorsed by Riot Games.</span>
         </span>
       </p>
@@ -334,16 +368,33 @@ footer .btn{height:38px;font-size:13.5px;font-weight:500}
 
   <section class="sec" id="stack" aria-labelledby="stack-h">
     <h2 id="stack-h">Stack</h2>
-    <ul class="body stack">
-      <li class="tool"><img src="/assets/nave-mark.svg" alt="" width="28" height="28" loading="lazy"><span>Nave</span></li>
-      <li class="tool"><img src="/assets/stack/nave-editor.svg" alt="" width="28" height="28" loading="lazy"><span>Nave Editor</span></li>
-      <li class="tool"><img src="/assets/stack/claude.svg" alt="" width="28" height="28" loading="lazy"><span>Claude Code</span></li>
-      <li class="tool"><img src="/assets/stack/codex.svg" alt="" width="28" height="28" loading="lazy"><span>Codex</span></li>
-      <li class="tool"><img src="/assets/stack/higgsfield.svg" alt="" width="28" height="28" loading="lazy"><span>Higgsfield</span></li>
-      <li class="tool"><img src="/assets/stack/obs.svg" alt="" width="28" height="28" loading="lazy"><span>OBS Studio</span></li>
-      <li class="tool"><img src="/assets/stack/zernio.png" alt="" width="28" height="28" loading="lazy"><span>Zernio</span></li>
-      <li class="tool"><img class="wide" src="/assets/stack/skool.svg" alt="" width="58" height="28" loading="lazy"><span>Skool</span></li>
-    </ul>
+    <div class="body">
+      <p class="lead">How I run it all: I record, my AI content team inside Nave does the work, and Zernio posts it everywhere.</p>
+      <div class="flow">
+        <div class="step">
+          <span class="step-k">1 · Record</span>
+          <span class="tile"><img src="/assets/stack/obs.svg" alt="" width="26" height="22" loading="lazy"><b>OBS Studio</b><small>my screen and my face</small></span>
+        </div>
+        <span class="link" aria-hidden="true"></span>
+        <div class="step step-nave">
+          <span class="step-k">2 · Make</span>
+          <div class="box">
+            <div class="box-hd"><img src="/assets/nave-mark.svg" alt="" width="34" height="34"><span><b>Nave</b><small>my AI content team</small></span></div>
+            <ul class="rows">
+              <li><span class="rk">Thinks with</span><span class="chips"><span class="chip"><img src="/assets/stack/claude.svg" alt="" width="16" height="22" loading="lazy">Claude Code</span><span class="chip"><img src="/assets/stack/codex.svg" alt="" width="16" height="22" loading="lazy">Codex</span></span></li>
+              <li><span class="rk">Edits in</span><span class="chips"><span class="chip"><img src="/assets/stack/nave-editor.svg" alt="" width="16" height="22" loading="lazy">Nave Editor</span></span></li>
+              <li><span class="rk">Generates with</span><span class="chips"><span class="chip"><img src="/assets/stack/higgsfield.svg" alt="" width="16" height="22" loading="lazy">Higgsfield</span></span></li>
+            </ul>
+          </div>
+        </div>
+        <span class="link" aria-hidden="true"></span>
+        <div class="step">
+          <span class="step-k">3 · Publish</span>
+          <span class="tile"><img src="/assets/stack/zernio.png" alt="" width="26" height="22" loading="lazy"><b>Zernio</b><small>every platform, one place</small></span>
+        </div>
+      </div>
+      <p class="teach"><img class="wide" src="/assets/stack/skool.svg" alt="" width="48" height="22" loading="lazy"><span>Where I teach all of it: Agentic Content Lab, on Skool.</span></p>
+    </div>
   </section>
 
   <section class="close" aria-labelledby="close-h">
