@@ -225,36 +225,6 @@ footer .btn{height:38px;font-size:13.5px;font-weight:500}
 /* his own blue emoji, drawn like the 3D type */
 .emo{display:inline-block;width:1.45em;height:1em;vertical-align:-.18em;overflow:visible;filter:drop-shadow(1.5px 1.5px 0 #3F8EE6)}
 .emo-leaf{width:1.15em;height:1.15em;vertical-align:-.22em}
-/* the stack as the way it works: record, make in Nave, publish */
-.flow{display:grid;grid-template-columns:1fr 26px 1.7fr 26px 1fr;align-items:center;margin-top:16px}
-.step{display:flex;flex-direction:column;gap:8px;min-width:0}
-.step-k{font:400 11px/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--faint)}
-.tile{display:flex;flex-direction:column;align-items:center;gap:6px;padding:18px 10px 14px;border:1px solid var(--line);border-radius:14px;background:#fff;text-align:center}
-.tile img{width:26px;height:26px;object-fit:contain}
-.tile b{font-size:14px;color:var(--ink);font-weight:650}
-.tile small{font-size:11.5px;line-height:1.35;color:var(--soft)}
-.link{height:2px;margin:22px 4px 0;background:repeating-linear-gradient(90deg,#7DB6F2 0 5px,transparent 5px 9px);position:relative}
-.link::after{content:"";position:absolute;right:-2px;top:-4px;border-left:7px solid #7DB6F2;border-top:5px solid transparent;border-bottom:5px solid transparent}
-.box{padding:14px;border-radius:16px;background:linear-gradient(180deg,#EAF4FF,#F7FBFF);border:1px solid #CFE3F8;box-shadow:0 14px 30px -22px rgba(28,78,142,.6)}
-.box-hd{display:flex;align-items:center;gap:10px;padding-bottom:10px;border-bottom:1px dashed #C9DDF3}
-.box-hd img{width:34px;height:34px}
-.box-hd b{display:block;font-size:15px;color:var(--ink);font-weight:700;line-height:1.2}
-.box-hd small{display:block;font:400 10.5px/1.4 var(--mono);letter-spacing:.07em;text-transform:uppercase;color:var(--soft)}
-.rows{display:grid;gap:8px;margin-top:10px}
-.rows li{display:grid;grid-template-columns:96px 1fr;align-items:center;gap:8px}
-.rk{font-size:12px;color:var(--soft)}
-.chips{display:flex;flex-wrap:wrap;gap:5px}
-.chip{display:inline-flex;align-items:center;gap:6px;height:28px;padding:0 10px 0 7px;border-radius:9px;background:#fff;border:1px solid var(--line);font-size:12.5px;font-weight:600;color:var(--ink);white-space:nowrap}
-.chip img{width:16px;height:16px;object-fit:contain}
-.teach{display:flex;align-items:center;gap:12px;margin-top:14px;padding:12px 16px;border:1px dashed #C9DDF3;border-radius:14px;font-size:13.5px;color:var(--text)}
-.teach img.wide{width:48px;height:auto}
-@media (max-width:640px){
-  .flow{grid-template-columns:1fr}
-  .link{width:2px;height:22px;margin:6px auto;background:repeating-linear-gradient(180deg,#7DB6F2 0 5px,transparent 5px 9px)}
-  .link::after{right:-4px;top:auto;bottom:-4px;border-left:5px solid transparent;border-right:5px solid transparent;border-top:7px solid #7DB6F2;border-bottom:0}
-  .tile{flex-direction:row;justify-content:flex-start;text-align:left;padding:12px 14px;gap:12px}
-  .tile small{margin-left:auto}
-}
 </style>
 </head>
 <body>
@@ -369,33 +339,16 @@ footer .btn{height:38px;font-size:13.5px;font-weight:500}
 
   <section class="sec" id="stack" aria-labelledby="stack-h">
     <h2 id="stack-h">Stack</h2>
-    <div class="body">
-      <p class="lead">How I run it all: I record, my AI content team inside Nave does the work, and Zernio posts it everywhere.</p>
-      <div class="flow">
-        <div class="step">
-          <span class="step-k">1 · Record</span>
-          <span class="tile"><img src="/assets/stack/obs.svg" alt="" width="26" height="22" loading="lazy"><b>OBS Studio</b><small>my screen and my face</small></span>
-        </div>
-        <span class="link" aria-hidden="true"></span>
-        <div class="step step-nave">
-          <span class="step-k">2 · Make</span>
-          <div class="box">
-            <div class="box-hd"><img src="/assets/nave-mark.svg" alt="" width="34" height="34"><span><b>Nave</b><small>my AI content team</small></span></div>
-            <ul class="rows">
-              <li><span class="rk">Thinks with</span><span class="chips"><span class="chip"><img src="/assets/stack/claude.svg" alt="" width="16" height="22" loading="lazy">Claude Code</span><span class="chip"><img src="/assets/stack/codex.svg" alt="" width="16" height="22" loading="lazy">Codex</span></span></li>
-              <li><span class="rk">Edits in</span><span class="chips"><span class="chip"><img src="/assets/stack/nave-editor.svg" alt="" width="16" height="22" loading="lazy">Nave Editor</span></span></li>
-              <li><span class="rk">Generates with</span><span class="chips"><span class="chip"><img src="/assets/stack/higgsfield.svg" alt="" width="16" height="22" loading="lazy">Higgsfield</span></span></li>
-            </ul>
-          </div>
-        </div>
-        <span class="link" aria-hidden="true"></span>
-        <div class="step">
-          <span class="step-k">3 · Publish</span>
-          <span class="tile"><img src="/assets/stack/zernio.png" alt="" width="26" height="22" loading="lazy"><b>Zernio</b><small>every platform, one place</small></span>
-        </div>
-      </div>
-      <p class="teach"><img class="wide" src="/assets/stack/skool.svg" alt="" width="48" height="22" loading="lazy"><span>Where I teach all of it: Agentic Content Lab, on Skool.</span></p>
-    </div>
+    <ul class="body stack">
+      <li class="tool"><img src="/assets/nave-mark.svg" alt="" width="28" height="28" loading="lazy"><span>Nave</span></li>
+      <li class="tool"><img src="/assets/stack/nave-editor.svg" alt="" width="28" height="28" loading="lazy"><span>Nave Editor</span></li>
+      <li class="tool"><img src="/assets/stack/claude.svg" alt="" width="28" height="28" loading="lazy"><span>Claude Code</span></li>
+      <li class="tool"><img src="/assets/stack/codex.svg" alt="" width="28" height="28" loading="lazy"><span>Codex</span></li>
+      <li class="tool"><img src="/assets/stack/higgsfield.svg" alt="" width="28" height="28" loading="lazy"><span>Higgsfield</span></li>
+      <li class="tool"><img src="/assets/stack/obs.svg" alt="" width="28" height="28" loading="lazy"><span>OBS Studio</span></li>
+      <li class="tool"><img src="/assets/stack/zernio.png" alt="" width="28" height="28" loading="lazy"><span>Zernio</span></li>
+      <li class="tool"><img class="wide" src="/assets/stack/skool.svg" alt="" width="58" height="28" loading="lazy"><span>Skool</span></li>
+    </ul>
   </section>
 
   <section class="close" aria-labelledby="close-h">
