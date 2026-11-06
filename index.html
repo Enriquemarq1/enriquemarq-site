@@ -179,7 +179,8 @@ footer .btn{height:38px;font-size:13.5px;font-weight:500}
 .lg-lab{background:var(--lab);-webkit-mask:url(/assets/voyager-mask.png) center/contain no-repeat;mask:url(/assets/voyager-mask.png) center/contain no-repeat}
 /* Valorant: press the word, his card opens (brought back from the old /me page) */
 .peek-host{position:relative}
-.peek{all:unset;cursor:default;-webkit-tap-highlight-color:transparent}
+.peek{all:unset;display:inline-block;cursor:pointer;transition:transform .2s cubic-bezier(.2,.8,.2,1.5);-webkit-tap-highlight-color:transparent}
+.peek:hover,.peek[aria-expanded="true"]{transform:scale(1.25) rotate(-8deg)}
 .peek:focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:4px}
 @keyframes dot{0%{box-shadow:0 0 0 0 rgba(255,70,85,.5)}70%,100%{box-shadow:0 0 0 .5em rgba(255,70,85,0)}}
 .pop{position:absolute;left:50%;bottom:calc(100% + 14px);z-index:5;width:min(452px,calc(100vw - 32px));padding:18px 18px 16px;background:#fff;border:1.5px solid #0A0D12;border-radius:18px;text-align:left;font:400 15px/1.5 var(--sans);color:#3A4450;box-shadow:7px 7px 0 #FF4655;opacity:0;transform:translate(-50%,8px);transition:opacity .22s ease,transform .25s ease}
@@ -261,7 +262,7 @@ footer .btn{height:38px;font-size:13.5px;font-weight:500}
       <p>Right now that looks like three things. I'm building <a href="https://getnave.app"><img class="lg" src="/assets/nave-mark.svg" alt="" width="20" height="20">Nave</a>, the best AI content team in the world. It runs the content for my own brand and for several brands I work with.</p>
       <p>I run <a href="https://www.skool.com/agentic-content-lab/about"><span class="lg lg-lab" aria-hidden="true"></span>Agentic Content Lab</a>, where I help founders and creators set up the same AI content team I use to post MORE relevant content every week, consistently, so the people who need them can find them. I'm in there every day.</p>
       <p>And I'm head of content for a few brands, including <a href="https://zernio.link/enrique" rel="sponsored noopener"><img class="lg lg-round" src="/assets/stack/zernio.png" alt="" width="20" height="20">Zernio</a>, a $5M/year SaaS. That adds up to me making 500+ pieces a month across multiple platforms, my own brand included, all handled by me with Nave.</p>
-      <p class="peek-host">When I'm not glued to my PC with a dozen AI agents running, you'll find me playing <button class="peek" type="button" aria-expanded="false" aria-controls="valo">Valorant</button>, the best &#127918; game in the world right now, or chilling with the people I care about.
+      <p class="peek-host">When I'm not glued to my PC with a dozen AI agents running, you'll find me playing Valorant, the best <button class="peek" type="button" aria-expanded="false" aria-controls="valo" aria-label="Valorant, my favorite game">&#127918;</button> game in the world right now, or chilling with the people I care about &#9752;&#65039;
         <span class="pop valo" id="valo" role="tooltip" hidden>
           <span class="valo-top"><img src="/assets/valorant/valorant-logo.svg" alt="Valorant" width="1035" height="697"></span>
           <span class="valo-say">For the ones who don't know what the heck Valorant is: it's kind of like Counter-Strike. Attackers against defenders, five on each team, and every character has their own powers.</span>
