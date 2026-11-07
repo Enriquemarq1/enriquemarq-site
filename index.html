@@ -255,22 +255,10 @@ footer .btn{height:38px;font-size:13.5px;font-weight:500}
 .close-card .acts{margin-top:20px}
 @media (max-width:640px){.close-card{padding:44px 18px 30px}.close h2{font-size:28px}.close-hand{font-size:20px}}
 .follow-close{justify-content:center;margin-top:22px;padding-top:18px;border-top:1px dashed #C9DDF3}
-/* Free resource tour (Nov 7): /free/<slug> opens this page, scrolls it top to bottom, then opens the resource card. Data: /assets/free/resources.json */
-.free-chip{position:fixed;left:50%;bottom:max(18px,env(safe-area-inset-bottom));z-index:40;transform:translateX(-50%);margin:0;height:48px;padding:0 18px 0 14px;white-space:nowrap}
-.free-chip[hidden]{display:none}
-.free-veil{position:fixed;inset:0;z-index:50;display:grid;place-items:center;padding:18px;background:rgba(11,36,71,.28);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);opacity:0;transition:opacity .35s}
-.free-veil.on{opacity:1}
-.free-veil[hidden]{display:none}
-.free-card{position:relative;width:min(440px,100%);max-height:calc(100dvh - 36px);overflow:auto;padding:18px 18px 16px;border:1px solid var(--line);border-radius:20px;background:#fff;box-shadow:0 30px 70px -24px rgba(11,36,71,.55);text-align:center;transform:translateY(14px) scale(.98);transition:transform .45s cubic-bezier(.2,.8,.2,1)}
-.free-veil.on .free-card{transform:none}
-.free-card img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:12px;border:1px solid var(--line)}
-.free-card .kick{margin-top:16px}
-.free-card h2{margin:6px 0 0;font:850 24px/1.15 var(--sans);letter-spacing:-.03em;color:var(--dark)}
-.free-card p{margin:8px auto 0;max-width:30em;font-size:15.5px;line-height:1.55;color:var(--text)}
-.free-card .btn-main{display:flex;justify-content:center;width:100%;height:52px;margin-top:18px;font-size:16px}
-.free-keep{display:inline-flex;align-items:center;justify-content:center;min-height:46px;margin-top:6px;padding:0 14px;border:0;background:none;font:500 14.5px/1 var(--sans);color:var(--soft);cursor:pointer;text-decoration:underline;text-underline-offset:3px}
-.free-keep:hover{color:var(--ink)}
-@media (prefers-reduced-motion:reduce){.free-veil,.free-card{transition:none}}
+/* Free AI guides (Nov 7, v2): /free-ai-guides opens this page, scrolls fast to Building now and lights up the Free AI guides card. */
+@keyframes fg-pulse{0%{box-shadow:0 0 0 0 rgba(63,142,230,.55),0 18px 40px -18px rgba(63,142,230,.6)}70%{box-shadow:0 0 0 14px rgba(63,142,230,0),0 18px 40px -18px rgba(63,142,230,.6)}100%{box-shadow:0 0 0 0 rgba(63,142,230,0),0 18px 40px -18px rgba(63,142,230,.6)}}
+.card.guides.fg-on{border-color:var(--blue);outline:2px solid var(--blue);outline-offset:3px;box-shadow:0 0 0 6px rgba(125,189,251,.28),0 18px 40px -18px rgba(63,142,230,.6);animation:fg-pulse 1.1s ease-out 3}
+@media (prefers-reduced-motion:reduce){.card.guides.fg-on{animation:none}}
 </style>
 </head>
 <body>
@@ -445,52 +433,28 @@ footer .btn{height:38px;font-size:13.5px;font-weight:500}
 })();
 </script>
 <script>
-// Free resource tour (Nov 7). /free/<slug> lands here as /?free=<slug> (/free alone: ?free=latest, the newest).
-// A short top-to-bottom tour pauses on who he is, then the resource card opens. Any wheel, touch, key or click stops it
-// at once and leaves the chip to open the card. Reduced motion: no scrolling, the card opens straight away.
+// Free AI guides (Nov 7, v2). /free-ai-guides lands here as /?free=guides (the old /free links too).
+// One fast eased scroll (~1.2 s) to Building now, then the Free AI guides card lights up: a blue ring, three soft pulses, and it stays.
+// Any wheel, touch, key or click during the scroll stops it where it is. Reduced motion: it jumps there at once.
 (function(){
-  var q=new URLSearchParams(location.search).get('free'); if(!q) return;
-  fetch('/assets/free/resources.json').then(function(r){return r.json()}).then(function(list){
-    var res=q==='latest'?list[0]:(list.filter(function(x){return x.slug===q})[0]||list[0]); if(!res) return;
-    var esc=function(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;')};
-    var chip=document.createElement('button');chip.type='button';chip.className='btn btn-glass free-chip';
-    chip.innerHTML='<span class="gico" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M2.5 3.2c1.8-.6 3.6-.4 5.5.8 1.9-1.2 3.7-1.4 5.5-.8v9.4c-1.8-.6-3.6-.4-5.5.8-1.9-1.2-3.7-1.4-5.5-.8z"/><path d="M8 4v9.4"/></svg></span><span>Skip to the free guide</span>';
-    var veil=document.createElement('div');veil.className='free-veil';veil.hidden=true;
-    veil.innerHTML='<div class="free-card" role="dialog" aria-modal="true" aria-labelledby="free-t">'+
-      '<img width="'+res.imgWidth+'" height="'+res.imgHeight+'" alt="'+esc(res.alt)+'">'+
-      '<span class="kick">'+esc(res.kick)+'</span><h2 id="free-t">'+esc(res.title)+'</h2><p>'+esc(res.line)+'</p>'+
-      '<a class="btn btn-main"><span class="lab" aria-hidden="true"></span>'+esc(res.cta)+'</a>'+
-      '<button class="free-keep" type="button">Keep exploring</button></div>';
-    veil.querySelector('img').setAttribute('src',res.img);veil.querySelector('.btn-main').setAttribute('href',res.href);
-    document.body.appendChild(chip);document.body.appendChild(veil);
-    var cta=veil.querySelector('.btn-main'),keep=veil.querySelector('.free-keep'),last=null;
-    var root=document.documentElement,running=true,raf=0,timer=0,was=root.style.scrollBehavior;
-    var open=function(){stop();chip.hidden=true;last=document.activeElement;veil.hidden=false;requestAnimationFrame(function(){veil.classList.add('on')});cta.focus({preventScroll:true})};
-    var close=function(){veil.classList.remove('on');setTimeout(function(){veil.hidden=true},300);chip.hidden=false;chip.lastChild.textContent='The free guide';if(last&&last.focus)last.focus({preventScroll:true})};
-    chip.addEventListener('click',open);keep.addEventListener('click',close);
-    veil.addEventListener('click',function(e){if(e.target===veil)close()});
-    document.addEventListener('keydown',function(e){if(!veil.hidden&&e.key==='Escape')close()});
-    function stop(){if(!running)return;running=false;cancelAnimationFrame(raf);clearTimeout(timer);root.style.scrollBehavior=was;
-      ['wheel','touchstart','keydown','pointerdown'].forEach(function(t){removeEventListener(t,interrupt,true)});
-      if(veil.hidden)chip.lastChild.textContent='Open the free guide'}
-    function interrupt(e){if(e.target&&e.target.closest&&(e.target.closest('.free-chip')||e.target.closest('.free-veil')))return;stop()}
-    if(matchMedia('(prefers-reduced-motion: reduce)').matches){open();return}
-
-    // the tour: stops on his photo and line, About, Building now, Free, and the ONE PERSON close
+  if(!new URLSearchParams(location.search).get('free')) return;
+  var card=document.querySelector('.card.guides'); if(!card) return;
+  var root=document.documentElement,was=root.style.scrollBehavior,running=true,raf=0;
+  var light=function(){card.classList.add('fg-on')};
+  var target=function(){var r=card.getBoundingClientRect(),max=root.scrollHeight-innerHeight;
+    return Math.max(0,Math.min(max,r.top+scrollY-Math.max(16,(innerHeight-r.height)/2)))};
+  var stop=function(){if(!running)return;running=false;cancelAnimationFrame(raf);root.style.scrollBehavior=was;
+    ['wheel','touchstart','keydown','pointerdown'].forEach(function(t){removeEventListener(t,stop,true)})};
+  var go=function(){
+    if(matchMedia('(prefers-reduced-motion: reduce)').matches){root.style.scrollBehavior='auto';scrollTo(0,target());root.style.scrollBehavior=was;light();return}
     root.style.scrollBehavior='auto';
-    var stops=[['header.top',0,900],['#about',1300,900],['#building',1100,800],['#free',1100,800],['.close',1300,1100]];
-    var targetY=function(sel){var el=document.querySelector(sel);if(!el)return 0;var max=root.scrollHeight-innerHeight;
-      var y=sel==='header.top'?0:el.getBoundingClientRect().top+scrollY-Math.max(24,(innerHeight-el.offsetHeight)/2);return Math.max(0,Math.min(max,y))};
-    var ease=function(t){return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2};
-    ['wheel','touchstart','keydown','pointerdown'].forEach(function(t){addEventListener(t,interrupt,{capture:true,passive:true})});
-    var i=0;
-    function next(){if(!running)return;if(i>=stops.length){open();return}
-      var s=stops[i++],from=scrollY,to=targetY(s[0]),dur=s[1],t0=0;
-      if(!dur||Math.abs(to-from)<4){timer=setTimeout(next,s[2]);return}
-      (function step(ts){if(!running)return;if(!t0)t0=ts;var p=Math.min(1,(ts-t0)/dur);scrollTo(0,from+(to-from)*ease(p));
-        if(p<1)raf=requestAnimationFrame(step);else timer=setTimeout(next,s[2])})(performance.now())}
-    scrollTo(0,0);(document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(function(){timer=setTimeout(next,250)});
-  }).catch(function(){});
+    ['wheel','touchstart','keydown','pointerdown'].forEach(function(t){addEventListener(t,stop,{capture:true,passive:true})});
+    var from=scrollY,to=target(),dur=1200,t0=0,ease=function(t){return 1-Math.pow(1-t,3)};
+    (function step(ts){if(!running)return;if(!t0)t0=ts;var p=Math.min(1,(ts-t0)/dur);scrollTo(0,from+(to-from)*ease(p));
+      if(p<1)raf=requestAnimationFrame(step);else{stop();light()}})(performance.now());
+    setTimeout(light,dur+50); // lights up even if they stopped the scroll on the way
+  };
+  (document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(function(){setTimeout(go,150)});
 })();
 </script>
 </body>

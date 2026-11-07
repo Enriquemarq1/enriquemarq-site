@@ -9,10 +9,12 @@
 /youtube  https://www.youtube.com/@enriquemarq-0  302
 /youtube/  https://www.youtube.com/@enriquemarq-0  302
 # /me was his story page until November 5, 2026; it and everything under it land on the one page.
-# the free resources: the one page with its tour, then the card (assets/free/resources.json)
-/free/ai-video-editing  /?free=ai-video-editing  302
-/free/ai-video-editing/  /?free=ai-video-editing  302
-/free  /?free=latest  302
-/free/  /?free=latest  302
+# old free-resource addresses (Nov 7 morning) land where /free-ai-guides does
+/free/ai-video-editing  /?free=guides  302
+/free/ai-video-editing/  /?free=guides  302
+/free-ai-guides  /?free=guides  302
+/free-ai-guides/  /?free=guides  302
+/free  /?free=guides  302
+/free/  /?free=guides  302
 /me  /  301
 /me/*  /  301
