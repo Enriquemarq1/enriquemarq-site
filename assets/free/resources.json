@@ -1,0 +1,14 @@
+[
+  {
+    "slug": "ai-video-editing",
+    "kick": "Free guide · AI video editing",
+    "title": "Build your own AI video editor",
+    "line": "Copy one prompt and Claude Code builds your AI editor room and tools for you.",
+    "img": "/assets/free/ai-video-editing.webp",
+    "imgWidth": 720,
+    "imgHeight": 405,
+    "alt": "The video: Claude edits 10x better",
+    "href": "https://getnave.app/guides/ai-video-editing/",
+    "cta": "Get the free guide"
+  }
+]

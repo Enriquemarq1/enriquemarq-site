@@ -255,6 +255,22 @@ footer .btn{height:38px;font-size:13.5px;font-weight:500}
 .close-card .acts{margin-top:20px}
 @media (max-width:640px){.close-card{padding:44px 18px 30px}.close h2{font-size:28px}.close-hand{font-size:20px}}
 .follow-close{justify-content:center;margin-top:22px;padding-top:18px;border-top:1px dashed #C9DDF3}
+/* Free resource tour (Nov 7): /free/<slug> opens this page, scrolls it top to bottom, then opens the resource card. Data: /assets/free/resources.json */
+.free-chip{position:fixed;left:50%;bottom:max(18px,env(safe-area-inset-bottom));z-index:40;transform:translateX(-50%);margin:0;height:48px;padding:0 18px 0 14px;white-space:nowrap}
+.free-chip[hidden]{display:none}
+.free-veil{position:fixed;inset:0;z-index:50;display:grid;place-items:center;padding:18px;background:rgba(11,36,71,.28);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);opacity:0;transition:opacity .35s}
+.free-veil.on{opacity:1}
+.free-veil[hidden]{display:none}
+.free-card{position:relative;width:min(440px,100%);max-height:calc(100dvh - 36px);overflow:auto;padding:18px 18px 16px;border:1px solid var(--line);border-radius:20px;background:#fff;box-shadow:0 30px 70px -24px rgba(11,36,71,.55);text-align:center;transform:translateY(14px) scale(.98);transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.free-veil.on .free-card{transform:none}
+.free-card img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:12px;border:1px solid var(--line)}
+.free-card .kick{margin-top:16px}
+.free-card h2{margin:6px 0 0;font:850 24px/1.15 var(--sans);letter-spacing:-.03em;color:var(--dark)}
+.free-card p{margin:8px auto 0;max-width:30em;font-size:15.5px;line-height:1.55;color:var(--text)}
+.free-card .btn-main{display:flex;justify-content:center;width:100%;height:52px;margin-top:18px;font-size:16px}
+.free-keep{display:inline-flex;align-items:center;justify-content:center;min-height:46px;margin-top:6px;padding:0 14px;border:0;background:none;font:500 14.5px/1 var(--sans);color:var(--soft);cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.free-keep:hover{color:var(--ink)}
+@media (prefers-reduced-motion:reduce){.free-veil,.free-card{transition:none}}
 </style>
 </head>
 <body>
@@ -295,7 +311,7 @@ footer .btn{height:38px;font-size:13.5px;font-weight:500}
       <p>I enjoy building things with AI and getting them in front of the right people.</p>
       <p>Right now that looks like three things. I'm building <a href="https://getnave.app"><img class="lg" src="/assets/nave-mark.svg" alt="" width="20" height="20">Nave</a>, the best AI content team in the world. It runs the content for my own brand and for several brands I work with.</p>
       <p>I run <a href="https://www.skool.com/agentic-content-lab/about"><span class="lg lg-lab" aria-hidden="true"></span>Agentic Content Lab</a>, where I help founders and creators set up the same AI content system I use, so they start posting more relevant content every week, consistently, and the people who need them can find them. I'm in there every day.</p>
-      <p>And I'm head of content for a few brands, including <a href="https://zernio.link/enrique" rel="sponsored noopener"><img class="lg lg-round" src="/assets/stack/zernio.png" alt="" width="20" height="20">Zernio</a>, a $5M/year SaaS. That adds up to me making 500+ pieces a month across multiple platforms, my own brand included, all handled by me with Nave.</p>
+      <p>And I'm head of content for a few brands, including <a href="https://zernio.link/enrique" rel="sponsored noopener"><img class="lg lg-round" src="/assets/stack/zernio.png" alt="" width="20" height="20">Zernio</a>, a $5M/year SaaS. I've made over 500 pieces of content a month across several brands, as one person, all with Nave.</p>
       <p class="peek-host">When I'm not glued to my PC with a dozen AI agents running, you'll find me playing Valorant, the best <button class="peek" type="button" aria-expanded="false" aria-controls="valo" aria-label="Valorant, my favorite game"><svg class="emo" viewBox="0 0 40 26" aria-hidden="true"><path d="M11 3h18c5.5 0 8.6 4 9.6 10.5.8 5.6-.9 9.5-4.3 9.5-2.6 0-4-1.8-5.4-4.2H11.1C9.7 21.2 8.3 23 5.7 23 2.3 23 .6 19.1 1.4 13.5 2.4 7 5.5 3 11 3z" fill="#7DBDFB" stroke="#0B2447" stroke-width="2" stroke-linejoin="round"/><path d="M8.5 10.5v6M5.5 13.5h6" stroke="#0B2447" stroke-width="2.2" stroke-linecap="round"/><circle cx="29" cy="11" r="1.9" fill="#0B2447"/><circle cx="32.6" cy="14.6" r="1.9" fill="#0B2447"/><circle cx="25.4" cy="14.6" r="1.9" fill="#FFFFFF" stroke="#0B2447" stroke-width="1.2"/></svg></button> game in the world right now, or chilling with the people I care about <svg class="emo emo-leaf" viewBox="0 0 30 30" aria-hidden="true"><g fill="#7DBDFB" stroke="#0B2447" stroke-width="1.8" stroke-linejoin="round"><path d="M15 13c-3.5-1-7.5-3.5-6.6-7.2.8-3 4.6-3 5.6-.6 1-2.4 4.8-2.4 5.6.6.9 3.7-3.1 6.2-4.6 7.2z"/><path d="M14 15c-1 3.5-3.5 7.5-7.2 6.6-3-.8-3-4.6-.6-5.6-2.4-1-2.4-4.8.6-5.6 3.7-.9 6.2 3.1 7.2 4.6z"/><path d="M16 15c1 3.5 3.5 7.5 7.2 6.6 3-.8 3-4.6.6-5.6 2.4-1 2.4-4.8-.6-5.6-3.7-.9-6.2 3.1-7.2 4.6z"/></g><path d="M15 15c.6 4.5 2 8.5 4.5 12" fill="none" stroke="#0B2447" stroke-width="2" stroke-linecap="round"/></svg>
         <span class="pop valo" id="valo" role="tooltip" hidden>
           <span class="valo-top"><img src="/assets/valorant/valorant-logo.svg" alt="Valorant" width="1035" height="697"></span>
@@ -426,6 +442,55 @@ footer .btn{height:38px;font-size:13.5px;font-weight:500}
     pk.addEventListener('click',function(e){e.stopPropagation();if(!hover){pop.classList.contains('on')?shut():open()}});
     document.addEventListener('click',function(e){if(!pop.contains(e.target)&&e.target!==pk)shut()});
     document.addEventListener('keydown',function(e){if(e.key==='Escape')shut()});}
+})();
+</script>
+<script>
+// Free resource tour (Nov 7). /free/<slug> lands here as /?free=<slug> (/free alone: ?free=latest, the newest).
+// A short top-to-bottom tour pauses on who he is, then the resource card opens. Any wheel, touch, key or click stops it
+// at once and leaves the chip to open the card. Reduced motion: no scrolling, the card opens straight away.
+(function(){
+  var q=new URLSearchParams(location.search).get('free'); if(!q) return;
+  fetch('/assets/free/resources.json').then(function(r){return r.json()}).then(function(list){
+    var res=q==='latest'?list[0]:(list.filter(function(x){return x.slug===q})[0]||list[0]); if(!res) return;
+    var esc=function(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;')};
+    var chip=document.createElement('button');chip.type='button';chip.className='btn btn-glass free-chip';
+    chip.innerHTML='<span class="gico" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M2.5 3.2c1.8-.6 3.6-.4 5.5.8 1.9-1.2 3.7-1.4 5.5-.8v9.4c-1.8-.6-3.6-.4-5.5.8-1.9-1.2-3.7-1.4-5.5-.8z"/><path d="M8 4v9.4"/></svg></span><span>Skip to the free guide</span>';
+    var veil=document.createElement('div');veil.className='free-veil';veil.hidden=true;
+    veil.innerHTML='<div class="free-card" role="dialog" aria-modal="true" aria-labelledby="free-t">'+
+      '<img width="'+res.imgWidth+'" height="'+res.imgHeight+'" alt="'+esc(res.alt)+'">'+
+      '<span class="kick">'+esc(res.kick)+'</span><h2 id="free-t">'+esc(res.title)+'</h2><p>'+esc(res.line)+'</p>'+
+      '<a class="btn btn-main"><span class="lab" aria-hidden="true"></span>'+esc(res.cta)+'</a>'+
+      '<button class="free-keep" type="button">Keep exploring</button></div>';
+    veil.querySelector('img').setAttribute('src',res.img);veil.querySelector('.btn-main').setAttribute('href',res.href);
+    document.body.appendChild(chip);document.body.appendChild(veil);
+    var cta=veil.querySelector('.btn-main'),keep=veil.querySelector('.free-keep'),last=null;
+    var root=document.documentElement,running=true,raf=0,timer=0,was=root.style.scrollBehavior;
+    var open=function(){stop();chip.hidden=true;last=document.activeElement;veil.hidden=false;requestAnimationFrame(function(){veil.classList.add('on')});cta.focus({preventScroll:true})};
+    var close=function(){veil.classList.remove('on');setTimeout(function(){veil.hidden=true},300);chip.hidden=false;chip.lastChild.textContent='The free guide';if(last&&last.focus)last.focus({preventScroll:true})};
+    chip.addEventListener('click',open);keep.addEventListener('click',close);
+    veil.addEventListener('click',function(e){if(e.target===veil)close()});
+    document.addEventListener('keydown',function(e){if(!veil.hidden&&e.key==='Escape')close()});
+    function stop(){if(!running)return;running=false;cancelAnimationFrame(raf);clearTimeout(timer);root.style.scrollBehavior=was;
+      ['wheel','touchstart','keydown','pointerdown'].forEach(function(t){removeEventListener(t,interrupt,true)});
+      if(veil.hidden)chip.lastChild.textContent='Open the free guide'}
+    function interrupt(e){if(e.target&&e.target.closest&&(e.target.closest('.free-chip')||e.target.closest('.free-veil')))return;stop()}
+    if(matchMedia('(prefers-reduced-motion: reduce)').matches){open();return}
+
+    // the tour: stops on his photo and line, About, Building now, Free, and the ONE PERSON close
+    root.style.scrollBehavior='auto';
+    var stops=[['header.top',0,900],['#about',1300,900],['#building',1100,800],['#free',1100,800],['.close',1300,1100]];
+    var targetY=function(sel){var el=document.querySelector(sel);if(!el)return 0;var max=root.scrollHeight-innerHeight;
+      var y=sel==='header.top'?0:el.getBoundingClientRect().top+scrollY-Math.max(24,(innerHeight-el.offsetHeight)/2);return Math.max(0,Math.min(max,y))};
+    var ease=function(t){return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2};
+    ['wheel','touchstart','keydown','pointerdown'].forEach(function(t){addEventListener(t,interrupt,{capture:true,passive:true})});
+    var i=0;
+    function next(){if(!running)return;if(i>=stops.length){open();return}
+      var s=stops[i++],from=scrollY,to=targetY(s[0]),dur=s[1],t0=0;
+      if(!dur||Math.abs(to-from)<4){timer=setTimeout(next,s[2]);return}
+      (function step(ts){if(!running)return;if(!t0)t0=ts;var p=Math.min(1,(ts-t0)/dur);scrollTo(0,from+(to-from)*ease(p));
+        if(p<1)raf=requestAnimationFrame(step);else timer=setTimeout(next,s[2])})(performance.now())}
+    scrollTo(0,0);(document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(function(){timer=setTimeout(next,250)});
+  }).catch(function(){});
 })();
 </script>
 </body>
