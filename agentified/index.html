@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Agentified Founders: Build your AI marketing workspace · Enrique Marq</title>
-<meta name="description" content="Build your AI marketing workspace with Enrique Marq: two weeks, four live sessions, up to five founders. By application.">
+<meta name="description" content="Build your AI marketing workspace with Enrique Marq: a 3-day live build, five founders per round. By application.">
 <meta name="robots" content="noindex">
 <link rel="canonical" href="https://enriquemarq.com/agentified/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://enriquemarq.com/agentified/">
 <meta property="og:title" content="Agentified Founders: Build your AI marketing workspace">
-<meta property="og:description" content="Two weeks, four live sessions, up to five founders. By application.">
+<meta property="og:description" content="A 3-day live build, five founders per round. By application.">
 <meta property="og:image" content="https://enriquemarq.com/assets/share.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#FFFFFF">
@@ -18,259 +18,452 @@
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg?v=sig2">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=sig2">
 <link rel="preload" href="/assets/fonts/hanken-grotesk-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/fraunces-600.woff2" as="font" type="font/woff2" crossorigin>
 <style>
 @font-face{font-family:"Hanken Grotesk";src:url(/assets/fonts/hanken-grotesk-var.woff2) format("woff2");font-weight:100 900;font-display:swap}
 @font-face{font-family:"DM Mono";src:url(/assets/fonts/dm-mono-400.woff2) format("woff2");font-weight:400;font-display:swap}
-@font-face{font-family:"Patrick Hand";src:url(/assets/fonts/patrick-hand.woff2) format("woff2");font-weight:400;font-display:swap}
-:root{--ink:#0B2447;--dark:#0B1220;--text:#4A5768;--soft:#76839A;--faint:#9DA9B8;--line:#E3EBF4;--wash:#F3F8FE;--blue:#3F8EE6;--deep:#2D72C6;--sky:#7DBDFB;--lab:#61AEFA;
-  --sans:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;--mono:"DM Mono",ui-monospace,Consolas,monospace;--hand:"Patrick Hand","Segoe Print",cursive;--bar:60px}
+@font-face{font-family:"Fraunces";src:url(/assets/fonts/fraunces-600.woff2) format("woff2");font-weight:600;font-display:swap}
+:root{--ink:#0B1220;--text:#3B4451;--soft:#6B7686;--line:#E6EBF1;--paper:#F5F7FA;--blue:#61AEFA;--blue-ink:#1E5E9C;
+  --sans:"Hanken Grotesk",system-ui,sans-serif;--mono:"DM Mono",ui-monospace,monospace;--serif:"Fraunces",Georgia,serif}
 *{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
-body{margin:0;color:var(--text);font:400 16px/1.7 var(--sans);-webkit-font-smoothing:antialiased;background:#fff;overflow-x:hidden}
-a{color:inherit}img,svg{display:block}p{margin:0}ul,ol{margin:0;padding:0;list-style:none}
-h1,h2,h3{margin:0;font-weight:600;color:var(--ink)}
-:focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:8px}
-.skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:#fff;padding:10px 14px;border-radius:10px;z-index:20}.skip:focus{left:8px}
-.mono{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
-.wrap{max-width:760px;margin:0 auto;padding:0 24px}
-section[id],.thanks{scroll-margin-top:calc(var(--bar) + 12px)}
+html,body{margin:0;background:#fff;color:var(--text);font:400 19px/1.6 var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1240px;margin:0 auto;padding:0 48px}
+.label{font:400 12px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--soft)}
+.label b{font-weight:400;color:var(--ink)}
+/* placeholder copy: words still open with Enrique */
+.review{background:var(--ink);color:#C9D3E0;font:400 12px/1 var(--mono);letter-spacing:.06em;text-align:center;padding:10px 16px}
+.review .ph{color:#fff}
 
-/* review build: a quiet band, and placeholder lines underlined so nothing unfinished passes as final */
-.review{background:#FFF8E1;color:#6B5200;font:400 12.5px/1.5 var(--mono);text-align:center;padding:8px 16px;border-bottom:1px solid #F3E3A8}
-.is-review .ph{text-decoration:underline dashed #E0B400 1.5px;text-underline-offset:4px}
+/* bar: three steps */
+.bar{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:750;color:var(--ink);font-size:16px;letter-spacing:-.01em}
+.ship{width:30px;height:20px;background:var(--blue);-webkit-mask:url(/assets/voyager-mask.png) center/contain no-repeat;mask:url(/assets/voyager-mask.png) center/contain no-repeat}
+.steps{display:flex;gap:6px}
+.steps a{display:flex;align-items:center;gap:10px;padding:10px 16px;border-radius:999px;font-size:15px;font-weight:550;color:var(--text)}
+.steps a span{font:400 11px/1 var(--mono);color:var(--soft)}
+.steps a.on{color:var(--ink);background:var(--paper)}
+.btn{display:inline-flex;align-items:center;gap:12px;background:var(--ink);color:#fff;border-radius:999px;font-weight:650;letter-spacing:-.005em}
+.btn i{width:8px;height:8px;background:var(--blue);display:block}
+.bar .btn{padding:12px 22px;font-size:15px}
+.btn.big{padding:20px 34px;font-size:18px}
 
-/* the bar: his name on the left, the three steps on the right; it stays at the top */
-.bar{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.86);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color .2s}
-.bar.lined{border-bottom-color:var(--line)}
-.bar-in{max-width:1040px;margin:0 auto;height:var(--bar);padding:0 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-.who{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--dark);font-weight:650;font-size:15px;white-space:nowrap}
-.who img{width:32px;height:32px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 2px #fff,0 0 0 3px var(--line)}
-.steps{display:flex;align-items:center;gap:4px;padding:4px;border-radius:14px;background:var(--wash);box-shadow:inset 0 0 0 1px var(--line)}
-.steps a{display:flex;align-items:center;gap:8px;height:38px;padding:0 14px;border-radius:10px;text-decoration:none;font-size:14px;font-weight:600;color:var(--soft);white-space:nowrap;transition:background .15s,color .15s}
-.steps a b{display:grid;place-items:center;width:20px;height:20px;border-radius:50%;font:500 11px/1 var(--mono);background:#fff;color:var(--soft);box-shadow:inset 0 0 0 1px var(--line)}
-.steps a:hover{color:var(--ink)}
-.steps a.on{background:#fff;color:var(--ink);box-shadow:0 1px 0 var(--line),0 6px 14px -10px rgba(11,36,71,.5)}
-.steps a.on b{background:var(--lab);color:#fff;box-shadow:none}
-.steps a.go{background:var(--ink);color:#fff}
-.steps a.go b{background:rgba(255,255,255,.18);color:#fff;box-shadow:none}
-.steps a.go.on{background:#12315c}
+/* hero */
+.hero{padding:52px 0 0;text-align:center;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:0;background:
+  linear-gradient(var(--line) 1px,transparent 1px) 0 0/56px 56px,linear-gradient(90deg,var(--line) 1px,transparent 1px) 0 0/56px 56px;
+  -webkit-mask:radial-gradient(70% 60% at 50% 0,#000 0,transparent 75%);mask:radial-gradient(70% 60% at 50% 0,#000 0,transparent 75%);opacity:.7}
+.hero .wrap{position:relative}
+h1{margin:34px auto 0;max-width:1000px;color:var(--ink);font-weight:800;font-size:92px;line-height:.98;letter-spacing:-.05em;text-wrap:balance}
+.ai{white-space:nowrap}
+.i-mark{display:inline-block;width:.29em;height:1.16em;vertical-align:baseline;margin:0 .005em 0 .01em;overflow:visible}
+.sub{text-wrap:balance;max-width:780px;margin:24px auto 0;font-size:21px;line-height:1.5;color:var(--text)}
+.cta{margin-top:30px;display:flex;flex-direction:column;align-items:center;gap:14px}
+.cta small{font-size:14px;color:var(--soft)}
+.facts{margin:18px auto 0;display:flex;justify-content:center;gap:0;font:400 13px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink)}
+.facts span{padding:0 22px;border-left:1px solid var(--line)}
+.facts span:first-child{border:0}
 
-/* hero, in his banner's look: white grid, his blue from both sides */
-.hero{position:relative;padding:76px 0 64px;text-align:center;overflow:hidden}
-.hero::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
-  background:radial-gradient(ellipse 560px 380px at 50% 46%,rgba(255,255,255,.97),rgba(255,255,255,0) 100%),
-  linear-gradient(90deg,rgba(125,189,251,.5) 0%,rgba(172,216,247,.22) 14%,rgba(255,255,255,0) 32%,rgba(255,255,255,0) 68%,rgba(172,216,247,.22) 86%,rgba(125,189,251,.5) 100%),
-  linear-gradient(rgba(11,18,32,.055) 1px,transparent 1px) 0 -10px/56px 56px,linear-gradient(90deg,rgba(11,18,32,.055) 1px,transparent 1px) -6px 0/56px 56px;
-  -webkit-mask-image:linear-gradient(180deg,#000 60%,transparent 100%);mask-image:linear-gradient(180deg,#000 60%,transparent 100%)}
-.kick{display:inline-flex;align-items:center;gap:8px;padding:6px 12px 6px 8px;border-radius:999px;background:rgba(255,255,255,.85);box-shadow:0 0 0 1px var(--line);color:var(--soft)}
-.kick .v{width:22px;height:15px;background:var(--lab);-webkit-mask:url(/assets/voyager-mask.png) center/contain no-repeat;mask:url(/assets/voyager-mask.png) center/contain no-repeat}
-.kick strong{color:var(--ink);font-weight:400}
-h1{margin:22px auto 0;max-width:660px;font-size:56px;font-weight:850;line-height:1.08;letter-spacing:-.045em;color:var(--dark);text-wrap:balance}
-h1 .b{background:linear-gradient(180deg,#6DB0F6,#3580DA);-webkit-background-clip:text;background-clip:text;color:transparent}
-.sub{margin:20px auto 0;max-width:560px;font-size:18.5px;line-height:1.6;color:#3A4450;text-wrap:pretty}
-.facts{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:26px}
-.facts li{padding:7px 13px;border-radius:999px;background:#fff;box-shadow:0 0 0 1px var(--line);font-size:14px;font-weight:600;color:var(--ink)}
-.acts{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px;margin-top:30px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;height:50px;padding:0 24px;border:0;border-radius:14px;font:600 16px/1 var(--sans);text-decoration:none;cursor:pointer;transition:background .15s,box-shadow .15s,transform .15s}
-.btn-main{background:var(--ink);color:#fff;box-shadow:0 12px 26px -12px rgba(11,36,71,.7)}
-.btn-main:hover{background:#12315c;transform:translateY(-1px)}
-.btn-main svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.btn-glass{color:var(--ink);background:rgba(255,255,255,.75);box-shadow:0 0 0 1px var(--line),0 8px 20px -14px rgba(11,36,71,.4)}
-.btn-glass:hover{background:#fff;transform:translateY(-1px)}
-.calm{margin-top:16px;font-size:14px;color:var(--soft)}
+/* the stage: real app + him on camera */
+.stage{position:relative;max-width:1180px;margin:46px auto 0}
+.window{border-radius:18px;overflow:hidden;background:#fff;border:1px solid #DCE3EC;box-shadow:0 1px 0 #fff inset,0 40px 80px -30px rgba(11,18,32,.28),0 12px 30px -12px rgba(11,18,32,.12)}
+.window .chrome{height:38px;display:flex;align-items:center;gap:8px;padding:0 16px;border-bottom:1px solid var(--line);background:#FAFBFD}
+.window .chrome i{width:10px;height:10px;border-radius:50%;background:#DDE3EA}
+.window .chrome span{margin-left:14px;font:400 11px/1 var(--mono);letter-spacing:.1em;color:var(--soft);text-transform:uppercase}
+.stage .window img{width:100%}
+.stage .window{height:620px}
+.cam{position:absolute;left:-56px;top:-34px;width:340px;border-radius:20px;overflow:hidden;box-shadow:0 30px 60px -20px rgba(11,18,32,.45);border:4px solid #fff;text-align:left}
+.cam img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:52% 30%}
+.cam .play{position:absolute;left:18px;bottom:16px;display:flex;align-items:center;gap:10px;color:#fff;font-size:14px;font-weight:600;text-shadow:0 1px 8px rgba(0,0,0,.5)}
+.cam .play b{width:38px;height:38px;border-radius:50%;background:#fff;display:grid;place-items:center}
+.cam .play b:after{content:"";border-left:11px solid var(--ink);border-top:7px solid transparent;border-bottom:7px solid transparent;margin-left:3px}
+.tagr{position:absolute;right:-28px;top:120px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 18px;box-shadow:0 20px 40px -20px rgba(11,18,32,.3);text-align:left;font-size:14px;line-height:1.35;color:var(--ink);font-weight:600}
+.tagr .label{display:block;margin-bottom:6px;font-size:10px}
+.fade{position:absolute;left:0;right:0;bottom:0;height:160px;background:linear-gradient(transparent,#fff)}
+
+/* proof */
+.proof{border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:0;background:#fff;position:relative;z-index:2}
+.proof .wrap{display:grid;grid-template-columns:1.25fr 1fr 1.35fr;gap:0}
+.proof .p{padding:44px 40px;border-left:1px solid var(--line)}
+.proof .p:first-child{border-left:0;padding-left:0}
+.num{font:600 54px/1 var(--serif);letter-spacing:-.03em;color:var(--ink);display:flex;align-items:center;gap:14px}
+.num .to{font:400 22px/1 var(--sans);color:var(--blue)}
+.proof p{margin:14px 0 0;font-size:15px;line-height:1.5;color:var(--soft)}
+.proof .logo{display:inline-flex;align-items:center;gap:8px;font-weight:700;color:var(--ink);font-size:14px;margin-bottom:16px}
+.proof .logo img{width:22px;height:22px;border-radius:5px}
+.thumbs{display:flex;gap:10px;margin-bottom:16px}
+.thumbs figure{margin:0;position:relative;width:33%}
+.thumbs img{border-radius:8px;aspect-ratio:16/9;object-fit:cover}
+.thumbs figcaption{margin-top:7px;font:600 20px/1 var(--serif);color:var(--ink)}
 
 /* sections */
-.part{padding:72px 0 8px}
-.part+.part{border-top:1px solid var(--line);margin-top:56px}
-.label{display:flex;align-items:center;gap:10px;color:var(--faint)}
-.label b{display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--wash);box-shadow:inset 0 0 0 1px var(--line);color:var(--deep);font:500 12px/1 var(--mono)}
-h2{margin-top:14px;font-size:38px;font-weight:850;line-height:1.15;letter-spacing:-.035em;color:var(--dark);text-wrap:balance}
-.lead{margin-top:14px;max-width:620px;font-size:17.5px;line-height:1.65;color:#3A4450}
-h3.sub-h{margin-top:48px;font-size:21px;font-weight:750;letter-spacing:-.02em;color:var(--dark)}
+section.s{padding:140px 0}
+.kicker{display:flex;align-items:center;gap:14px}
+.kicker .n{font:400 12px/1 var(--mono);color:#fff;background:var(--ink);border-radius:999px;padding:7px 11px;letter-spacing:.08em}
+h2{margin:22px 0 0;color:var(--ink);font-weight:800;font-size:68px;line-height:1.02;letter-spacing:-.045em;text-wrap:balance}
+h2 .dim{color:#A7B1BE}
+.lead{font-size:22px;line-height:1.55;max-width:640px;margin:26px 0 0}
 
-.pains{display:grid;gap:10px;margin-top:22px}
-.pains li{position:relative;padding:16px 18px 16px 50px;border-radius:14px;background:var(--wash);box-shadow:inset 0 0 0 1px var(--line);font-size:16px;line-height:1.55;color:#3A4450}
-.pains li::before{content:"";position:absolute;left:18px;top:21px;width:16px;height:16px;border-radius:50%;box-shadow:inset 0 0 0 1.5px var(--faint)}
-.turn{margin-top:22px;font:400 23px/1.3 var(--hand);color:var(--dark);transform:rotate(-1deg)}
+/* problem */
+.prob{display:grid;grid-template-columns:1.05fr 1fr;gap:96px;align-items:start}
+.vs{border-top:2px solid var(--ink)}
+.vs .row{display:grid;grid-template-columns:150px 1fr 1fr;gap:24px;padding:24px 0;border-bottom:1px solid var(--line);font-size:17px;line-height:1.45}
+.vs .row .k{font:400 11px/1.6 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--soft);padding-top:3px}
+.vs .row .old{color:#8C96A3}
+.vs .row .new{color:var(--ink);font-weight:600}
+.vs .head{font:400 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;padding:16px 0}
+.vs .head .new{color:var(--blue-ink)}
+.closing{margin-top:34px;font:600 30px/1.25 var(--serif);color:var(--ink);letter-spacing:-.02em}
 
-.gets{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}
-.get{padding:22px 20px 20px;border:1px solid var(--line);border-radius:18px;background:#fff}
-.get.main{border-color:#CFE3F8;background:linear-gradient(180deg,#F3F9FF,#fff)}
-.get i{display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:#DCEEFF;box-shadow:inset 0 0 0 1.5px var(--ink),2px 2px 0 var(--ink),3.5px 3.5px 0 var(--blue)}
-.get i svg{width:22px;height:22px;fill:var(--sky);stroke:var(--ink);stroke-width:1.4;stroke-linejoin:round;stroke-linecap:round}
-.get h4{margin:16px 0 0;font-size:17px;line-height:1.35;font-weight:750;letter-spacing:-.01em;color:var(--dark)}
-.get p{margin-top:8px;font-size:15px;line-height:1.6}
-.feel{margin-top:22px;padding:20px 22px;border-radius:16px;border:1px dashed #C9DDF3;font-size:16.5px;line-height:1.6;color:#3A4450}
-.feel b{color:var(--ink)}
+/* method */
+.method{background:var(--paper)}
+.loop{display:flex;gap:10px;margin-top:40px;align-items:center;font:400 12px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink)}
+.loop i{flex:0 0 40px;height:1px;background:var(--ink);position:relative}
+.loop i:after{content:"";position:absolute;right:0;top:-3px;border-left:6px solid var(--ink);border-top:3.5px solid transparent;border-bottom:3.5px solid transparent}
+.loop b{font-weight:400;padding:10px 14px;border:1px solid #C9D3DF;border-radius:999px;background:#fff}
+.part{display:grid;grid-template-columns:400px 1fr;gap:72px;align-items:center;margin-top:110px}
+.part:nth-of-type(even){grid-template-columns:1fr 400px}
+.part:nth-of-type(even) .copy{order:2}
+.part .idx{font:600 120px/.8 var(--serif);color:transparent;-webkit-text-stroke:1.5px #C2CCD8;letter-spacing:-.04em}
+.part h3{margin:26px 0 0;font-size:36px;line-height:1.1;letter-spacing:-.035em;color:var(--ink);font-weight:800}
+.part p{margin:16px 0 0;font-size:18px}
+.part .week{margin-top:22px;display:inline-block}
+.shot{border-radius:16px;overflow:hidden;border:1px solid #D7DFE9;background:#fff;box-shadow:0 30px 60px -30px rgba(11,18,32,.3)}
+.shot img{width:100%}
+.shot.crop{height:480px}
+.shot.crop img{height:100%;object-fit:cover;object-position:0 0}
+.cap{margin-top:12px;font:400 11px/1.5 var(--mono);letter-spacing:.08em;color:var(--soft);text-transform:uppercase}
 
-/* the two weeks */
-.weeks{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px}
-.week{padding:18px;border-radius:18px;background:var(--wash);box-shadow:inset 0 0 0 1px var(--line)}
-.week>span{display:block;padding:0 4px 10px;color:var(--soft)}
-.sess+.sess{margin-top:10px}
-.sess{padding:16px 16px 15px;border-radius:13px;background:#fff;box-shadow:0 0 0 1px var(--line)}
-.sess small{display:block;font:400 11px/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--deep)}
-.sess h4{margin:6px 0 0;font-size:16.5px;line-height:1.35;font-weight:750;color:var(--dark)}
-.sess p{margin-top:6px;font-size:14.5px;line-height:1.55}
-.fmt{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:16px;font-size:14.5px;color:var(--soft)}
-.fmt span{display:inline-flex;align-items:center;gap:7px}
-.fmt span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--lab)}
+/* offer */
+.offer{display:grid;grid-template-columns:1fr 1.05fr;gap:0;border:1px solid var(--line);border-radius:28px;overflow:hidden;margin-top:64px}
+.offer .him{position:relative;min-height:760px;background:#0B1220}
+.offer .him img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:46% 30%}
+.offer .him .q{position:absolute;left:36px;right:36px;bottom:36px;color:#fff}
+.offer .him .q p{margin:0;font:600 28px/1.25 var(--serif);letter-spacing:-.01em;text-shadow:0 2px 20px rgba(0,0,0,.4)}
+.offer .him .q .label{color:#C9D6E6;margin-top:16px;display:block}
+.offer .him:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(5,8,14,.85))}
+.offer .him .q{z-index:2}
+.offer .deal{padding:56px 56px 52px}
+.price{display:flex;align-items:flex-end;gap:18px;margin-top:18px}
+.price .amt{font:600 112px/.85 var(--serif);letter-spacing:-.05em;color:var(--ink)}
+.price .per{font-size:16px;line-height:1.4;color:var(--soft);padding-bottom:6px}
+.incl{list-style:none;margin:36px 0 0;padding:0;border-top:1px solid var(--line)}
+.incl li{display:grid;grid-template-columns:28px 1fr;gap:12px;padding:15px 0;border-bottom:1px solid var(--line);font-size:17px;color:var(--ink)}
+.incl li:before{content:"";width:9px;height:9px;background:var(--blue);margin-top:9px}
+.rounds{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px}
+.rounds div{border:1px solid var(--line);border-radius:14px;padding:16px 18px;font-size:15px;color:var(--ink);font-weight:600}
+.rounds .label{display:block;margin-bottom:8px;font-size:10px}
+.deal .cta{align-items:flex-start;margin-top:34px}
+.path{display:flex;gap:8px;margin-top:22px;flex-wrap:wrap;font:400 12px/1 var(--mono);letter-spacing:.06em;color:var(--soft)}
+.path span{padding:8px 0}
+.path span:not(:last-child):after{content:"→";margin-left:8px;color:#B8C2CE}
+footer{padding:60px 0 80px;text-align:center;font-size:13px;color:var(--soft)}
 
-.fit{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}
-.fit>div{padding:20px;border-radius:16px;border:1px solid var(--line)}
-.fit>div.yes{border-color:#CFE3F8;background:linear-gradient(180deg,#F3F9FF,#fff)}
-.fit h4{margin:0;font-size:15px;font-weight:750;color:var(--dark)}
-.fit li{position:relative;margin-top:10px;padding-left:24px;font-size:15px;line-height:1.55}
-.fit li::before{position:absolute;left:0;top:0;font-weight:700}
-.fit .yes li::before{content:"✓";color:var(--deep)}
-.fit .no li::before{content:"–";color:var(--faint)}
+/* phone */
+@media (max-width:760px){
+  html,body{font-size:17px}
+  .wrap{padding:0 22px}
+  .review{font-size:10.5px;line-height:1.4}
+  .bar .wrap{height:58px}
+  .brand .t{display:none}
+  .steps{gap:2px}
+  .steps a{padding:8px 9px;font-size:13px;gap:5px}
+  .steps a.apply-step{display:none}
+  .bar .btn{padding:10px 16px;font-size:14px}
+  .hero{padding:52px 0 0}
+  h1{font-size:50px;line-height:1;letter-spacing:-.05em}
+  .sub{font-size:18px;margin-top:22px}
+  .cta{margin-top:30px}
+  .btn.big{padding:18px 30px;font-size:17px}
+  .facts{flex-wrap:wrap;gap:10px 0;font-size:11px}
+  .facts span{padding:0 12px}
+  .stage{margin-top:44px}
+  .stage .window{height:300px}
+  .window .chrome{height:28px}
+  .cam{position:relative;left:auto;bottom:auto;width:auto;margin:-70px 18px 0;border-width:3px}
+  .tagr{display:none}
+  .fade{display:none}
+  .proof .wrap{grid-template-columns:1fr}
+  .proof .p{padding:30px 0;border-left:0;border-top:1px solid var(--line)}
+  .proof .p:first-child{border-top:0}
+  .num{font-size:42px}
+  section.s{padding:84px 0}
+  h2{font-size:40px}
+  .lead{font-size:18px}
+  .prob{grid-template-columns:1fr;gap:44px}
+  .vs .row{grid-template-columns:1fr 1fr;gap:6px 16px;font-size:15px}
+  .vs .row .k{grid-column:1/-1}
+  .vs .head span:first-child{display:none}
+  .closing{font-size:24px}
+  .loop{flex-wrap:wrap;gap:8px;font-size:10.5px}
+  .loop i{flex-basis:16px}
+  .part,.part:nth-of-type(even){grid-template-columns:1fr;gap:28px;margin-top:70px}
+  .part:nth-of-type(even) .copy{order:0}
+  .part .idx{font-size:80px}
+  .part h3{font-size:28px}
+  .shot.crop{height:300px}
+  .offer{grid-template-columns:1fr;border-radius:22px}
+  .offer .him{min-height:440px}
+  .offer .him .q p{font-size:22px}
+  .offer .deal{padding:34px 24px}
+  .price .amt{font-size:84px}
+  .rounds{grid-template-columns:1fr}
+}
 
-.me{display:grid;grid-template-columns:120px 1fr;gap:24px;align-items:start;margin-top:22px}
-.me img{width:120px;height:120px;border-radius:24px;object-fit:cover;box-shadow:0 0 0 4px #fff,0 0 0 5px var(--line),0 16px 30px -18px rgba(11,36,71,.55)}
-.me p+p{margin-top:12px}
-.me b{color:var(--ink);font-weight:650}
-.proof{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:20px}
-.proof li{padding:16px;border-radius:14px;background:#fff;box-shadow:0 0 0 1px var(--line)}
-.proof strong{display:block;font-size:22px;font-weight:850;letter-spacing:-.03em;color:var(--dark);line-height:1.2}
-.proof span{display:block;margin-top:4px;font-size:13.5px;line-height:1.45;color:var(--soft)}
-
-.price{position:relative;margin-top:22px;padding:30px 28px 28px;border-radius:24px;border:1px solid #CFE3F8;overflow:hidden;
-  background:radial-gradient(ellipse 70% 80% at 50% 40%,rgba(255,255,255,.97),rgba(255,255,255,0)),
-  linear-gradient(90deg,rgba(125,189,251,.42),rgba(172,216,247,.15) 24%,rgba(255,255,255,0) 42%,rgba(255,255,255,0) 58%,rgba(172,216,247,.15) 76%,rgba(125,189,251,.42)),
-  linear-gradient(rgba(11,18,32,.05) 1px,transparent 1px) 0 0/28px 28px,linear-gradient(90deg,rgba(11,18,32,.05) 1px,transparent 1px) 0 0/28px 28px,#fff;
-  box-shadow:0 30px 60px -44px rgba(28,78,142,.6)}
-.price-top{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px}
-.amount{font-size:52px;font-weight:850;letter-spacing:-.045em;line-height:1;color:var(--dark)}
-.amount small{margin-left:6px;font-size:16px;font-weight:600;letter-spacing:0;color:var(--soft)}
-.seats{padding:7px 12px;border-radius:999px;background:#fff;box-shadow:0 0 0 1px var(--line);font-size:14px;font-weight:600;color:var(--ink)}
-.incl{display:grid;gap:9px;margin-top:22px}
-.incl li{position:relative;padding-left:28px;font-size:15.5px;line-height:1.5;color:#3A4450}
-.incl li::before{content:"";position:absolute;left:0;top:3px;width:18px;height:18px;border-radius:6px;background:#DCEEFF url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.3l2.6 2.5L12 5.4' fill='none' stroke='%230B2447' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/14px no-repeat;box-shadow:inset 0 0 0 1px #BCD9F5}
-.rounds{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}
-.rounds li{padding:13px 15px;border-radius:13px;background:rgba(255,255,255,.9);box-shadow:0 0 0 1px var(--line)}
-.rounds small{display:block;font:400 11px/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--faint)}
-.rounds b{display:block;margin-top:3px;font-size:15.5px;color:var(--dark)}
-.price .acts{justify-content:flex-start;margin-top:24px}
-
-.faq{margin-top:20px;border-top:1px solid var(--line)}
-.faq details{border-bottom:1px solid var(--line)}
-.faq summary{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:60px;padding:14px 0;cursor:pointer;list-style:none;font-size:16.5px;font-weight:650;color:var(--dark)}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"";flex:none;width:12px;height:12px;border-right:2px solid var(--soft);border-bottom:2px solid var(--soft);transform:rotate(45deg) translate(-3px,-3px);transition:transform .2s}
-.faq details[open] summary::after{transform:rotate(225deg) translate(-3px,-3px)}
-.faq details p{padding:0 0 18px;font-size:15.5px;line-height:1.65}
-
-/* apply */
-.path{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:22px;counter-reset:p}
-.path li{position:relative;padding:14px 14px 13px;border-radius:13px;background:var(--wash);box-shadow:inset 0 0 0 1px var(--line);font-size:14px;line-height:1.4;color:var(--ink);font-weight:600}
-.path li small{display:block;margin-bottom:4px;font:400 11px/1.3 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--faint)}
-.path li.here{background:#fff;box-shadow:0 0 0 1.5px var(--lab),0 10px 22px -16px rgba(63,142,230,.7)}
-.path li.here small{color:var(--deep)}
-.form{margin-top:24px;padding:28px;border-radius:24px;background:#fff;border:1px solid var(--line);box-shadow:0 30px 60px -48px rgba(11,36,71,.55)}
-.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.field{display:block;margin-top:18px}
-.row .field{margin-top:0}
-.field>span{display:block;font-size:15px;font-weight:650;color:var(--dark)}
-.field>small{display:block;margin-top:2px;font-size:13.5px;line-height:1.45;color:var(--soft)}
-.field input,.field textarea{display:block;width:100%;margin-top:8px;padding:13px 14px;border:1px solid #D6E2EF;border-radius:12px;background:#FBFDFF;font:400 16px/1.5 var(--sans);color:var(--dark);transition:border-color .15s,box-shadow .15s,background .15s}
-.field textarea{min-height:96px;resize:vertical}
-.field input:focus,.field textarea:focus{outline:none;border-color:var(--lab);background:#fff;box-shadow:0 0 0 4px rgba(97,174,250,.18)}
+/* ownership */
+.own{margin-top:120px}
+.own-in{background:var(--ink);color:#C5CFDB;border-radius:28px;padding:80px 72px;display:grid;grid-template-columns:.95fr 1.25fr;gap:56px;align-items:center;position:relative;overflow:hidden}
+.own-in:before{content:"";position:absolute;right:-200px;top:-200px;width:700px;height:700px;background:radial-gradient(closest-side,rgba(97,174,250,.22),transparent);pointer-events:none}
+.own h2{color:#fff;font-size:54px}
+.own h2 .blue{color:var(--blue)}
+.own .label{color:#8FA0B5}
+.own .lead{color:#C5CFDB;font-size:20px}
+.honest{margin:22px 0 0;font-size:14px;color:#8FA0B5}
+.own-viz{display:grid;grid-template-columns:150px 40px 1fr;align-items:center;position:relative}
+.rent{display:flex;flex-direction:column;gap:7px}
+.rent .before,.converge .before{font:400 10px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:#56637A;font-style:normal;margin-bottom:4px}
+.rent span{font:400 11px/1 var(--mono);letter-spacing:.06em;color:#5F6C80;border:1px dashed #2E394B;border-radius:9px;padding:8px 10px;display:flex;justify-content:space-between}
+.rent span:after{content:"$/mo";color:#4F5C70}
+.own-viz .arrow{height:2px;background:var(--blue);margin:0 8px;position:relative}
+.own-viz .arrow:after{content:"";position:absolute;right:-2px;top:-5px;border-left:9px solid var(--blue);border-top:6px solid transparent;border-bottom:6px solid transparent}
+.mine{position:relative}
+.mine .window{border-color:#2A3446;box-shadow:0 0 0 1px rgba(97,174,250,.35),0 30px 80px -20px rgba(97,174,250,.45)}
+.mine .badge{position:absolute;top:-14px;right:-10px;background:var(--blue);color:var(--ink);font:400 12px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;padding:9px 12px;border-radius:999px}
+.who{margin-top:26px;display:grid;gap:8px;font-size:15px;color:var(--text)}
+.who div{display:flex;align-items:center;gap:12px}
+.who b{flex:0 0 118px;text-align:center;color:var(--ink);font-weight:650;font-size:13px;background:#fff;border:1px solid #D5DEE8;border-radius:999px;padding:6px 0}
+.who b.ai-e{background:var(--ink);color:#fff;border-color:var(--ink)}
+.part .label{display:block;margin-top:24px}
+.soon{font-style:normal;margin-left:10px;color:var(--blue-ink);background:#E3F0FE;border-radius:999px;padding:5px 9px;font-size:10px}
+.part h3{margin-top:12px}
+.steps em{font-style:normal}.steps .s{display:none}
+@media (max-width:760px){
+  .steps .l{display:none}.steps .s{display:inline}
+  .hero{padding-top:34px}
+  .hero > .wrap > .label{font-size:10px;letter-spacing:.12em}
+  h1{margin-top:26px;font-size:46px}
+  .sub{font-size:17px}
+  .window .chrome span{display:none}
+  .facts span{border:0}
+  .stage{margin-top:34px}
+  .price{flex-direction:column;align-items:flex-start;gap:10px}
+  .price .per br{display:none}
+  .own{margin-top:70px;padding:0}
+  .own-in{border-radius:0;padding:56px 22px;grid-template-columns:1fr;gap:40px}
+  .own h2{font-size:38px}
+  .own-viz{grid-template-columns:1fr;gap:18px}
+  .rent{flex-direction:row;flex-wrap:wrap}
+  .rent span{font-size:10.5px;padding:8px 9px}
+  .rent span:after{display:none}
+  .own-viz .arrow{width:2px;height:28px;margin:0 auto}
+  .own-viz .arrow:after{right:-5px;top:auto;bottom:-6px;border-left:6px solid transparent;border-right:6px solid transparent;border-top:9px solid var(--blue);border-bottom:0}
+  .who{font-size:13px}
+}
+/* ---- site build additions (v2): review marks, the form, the thank-you ---- */
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:#fff;padding:10px 14px;border-radius:10px;z-index:30}.skip:focus{left:8px}
+:focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:8px}
+html{scroll-behavior:smooth}
+section[id],#apply-form,.thanks{scroll-margin-top:84px}
+.ph{text-decoration:none}
+.is-review .ph{text-decoration:underline dashed rgba(97,174,250,.85) 1.5px;text-underline-offset:.22em;text-decoration-skip-ink:none}
+.is-review .ph-box{outline:2px dashed rgba(97,174,250,.85);outline-offset:5px}
+.cam .play{pointer-events:none}
+.bar .btn i,.btn i{flex:none}
+.offer .deal .cta .btn,.form .btn{border:0;cursor:pointer;font-family:var(--sans)}
+/* the form, in the page's editorial look: ruled fields, no boxes for the sake of boxes */
+.apply-wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:72px;margin-top:110px;align-items:start}
+.apply-wrap h3{margin:14px 0 0;font-size:40px;line-height:1.05;letter-spacing:-.04em;color:var(--ink);font-weight:800}
+.apply-wrap .side p{margin:16px 0 0;font-size:17px}
+.apply-wrap .side .path{margin-top:26px}
+.form{border-top:2px solid var(--ink)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:0 28px}
+.field{display:block;padding:22px 0 20px;border-bottom:1px solid var(--line)}
+.field>span{display:block;font-size:17px;font-weight:650;color:var(--ink);letter-spacing:-.01em}
+.field>small{display:block;margin-top:3px;font-size:14.5px;line-height:1.45;color:var(--soft)}
+.field input,.field textarea{display:block;width:100%;margin-top:12px;padding:12px 14px;border:1px solid #D7DFE9;border-radius:12px;background:var(--paper);font:400 17px/1.5 var(--sans);color:var(--ink);transition:border-color .15s,box-shadow .15s,background .15s}
+.field textarea{min-height:92px;resize:vertical}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--blue);background:#fff;box-shadow:0 0 0 4px rgba(97,174,250,.2)}
 .field.bad input,.field.bad textarea{border-color:#D9534F;box-shadow:0 0 0 4px rgba(217,83,79,.1)}
-.field .err{display:none;margin-top:6px;font-size:13.5px;color:#B23A36}
+.field .err{display:none;margin-top:8px;font-size:14px;font-style:normal;color:#B23A36}
 .field.bad .err{display:block}
 .hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;overflow:hidden}
-.send{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:24px}
-.send .btn{min-width:220px}
-.send .btn[disabled]{opacity:.6;cursor:progress;transform:none}
-.fine{font-size:13.5px;line-height:1.5;color:var(--soft)}
-.oops{display:none;margin-top:16px;padding:12px 14px;border-radius:12px;background:#FDF0EF;color:#8E2E2A;font-size:14.5px}
+.send{display:flex;flex-wrap:wrap;align-items:center;gap:18px;margin-top:30px}
+.send .btn[disabled]{opacity:.6;cursor:progress}
+.fine{font-size:14px;line-height:1.5;color:var(--soft)}
+.oops{display:none;margin-top:18px;padding:12px 14px;border-radius:12px;background:#FDF0EF;color:#8E2E2A;font-size:15px}
 .oops.on{display:block}
-.thanks{display:none;margin-top:24px;padding:34px 28px;border-radius:24px;border:1px solid #CFE3F8;background:linear-gradient(180deg,#F3F9FF,#fff);text-align:center}
+.thanks{display:none;border-top:2px solid var(--ink);padding:40px 0 10px}
 .thanks.on{display:block}
-.thanks .ok{display:grid;place-items:center;width:56px;height:56px;margin:0 auto;border-radius:16px;background:#DCEEFF;box-shadow:inset 0 0 0 1.5px var(--ink),2px 2px 0 var(--ink),3.5px 3.5px 0 var(--blue)}
-.thanks .ok svg{width:26px;height:26px;fill:none;stroke:var(--ink);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
-.thanks h3{margin-top:18px;font-size:28px;font-weight:850;letter-spacing:-.03em;color:var(--dark)}
-.thanks>p{margin:10px auto 0;max-width:480px;font-size:16.5px;line-height:1.6;color:#3A4450}
-.next{display:grid;gap:10px;max-width:460px;margin:22px auto 0;text-align:left}
-.next li{display:flex;gap:12px;align-items:flex-start;padding:14px 16px;border-radius:14px;background:#fff;box-shadow:0 0 0 1px var(--line);font-size:15px;line-height:1.5}
-.next li b{display:grid;place-items:center;flex:none;width:24px;height:24px;border-radius:50%;background:var(--wash);box-shadow:inset 0 0 0 1px var(--line);font:500 12px/1 var(--mono);color:var(--deep)}
-.next li strong{color:var(--dark)}
-.thanks .acts{margin-top:22px}
-.btn-wait{background:var(--wash);color:var(--soft);box-shadow:inset 0 0 0 1px var(--line);cursor:default}
-.sent-note{margin-top:14px;font:400 12px/1.5 var(--mono);color:#8A6D00}
-
-footer{margin-top:88px;padding:28px 0 40px;border-top:1px solid var(--line);text-align:center;font-size:13.5px;color:var(--faint)}
-footer a{color:var(--soft);text-decoration:none;font-weight:600}
-footer a:hover{color:var(--ink)}
-
+.thanks h3{margin:12px 0 0;font-size:44px;line-height:1.05;letter-spacing:-.04em;color:var(--ink);font-weight:800}
+.thanks>p{margin:16px 0 0;font-size:18px;max-width:560px}
+.thanks .cta{align-items:flex-start;margin-top:26px}
+.thanks .small{font-size:15px;color:var(--soft)}
+.btn-wait{background:var(--paper);color:var(--soft);border:1px solid var(--line);cursor:default}
+.sent-note{margin-top:16px;font:400 12px/1.5 var(--mono);letter-spacing:.04em;color:var(--blue-ink)}
 @media (max-width:760px){
-  .kick{display:inline-block;max-width:100%;border-radius:16px;padding:7px 14px;line-height:1.7;text-align:center}
-  .kick .v{display:inline-block;vertical-align:-3px;margin-right:6px}
-  :root{--bar:62px}
-  .bar-in{height:var(--bar);gap:8px;padding:0 10px}
-  .who{flex:none;font-size:0;gap:0;padding:4px}.who img{width:36px;height:36px}
-  .steps{flex:1;display:grid;grid-template-columns:1.15fr 1fr .8fr;gap:2px;padding:3px}
-  .steps a{justify-content:center;gap:5px;height:44px;padding:0 4px;font-size:13px}
-  .steps a b{width:17px;height:17px;font-size:10px}
-  .review{font-size:11.5px;padding:6px 12px}
-  .wrap{padding:0 20px}
-  .hero{padding:48px 0 44px}
-  h1{font-size:40px}
-  .sub{font-size:17px}
-  .part{padding:56px 0 4px}.part+.part{margin-top:40px}
-  h2{font-size:30px}
-  .lead{font-size:16.5px}
-  .gets,.weeks,.fit,.proof,.rounds{grid-template-columns:1fr}
-  .path{grid-template-columns:1fr 1fr}
-  .me{grid-template-columns:1fr;gap:18px}
-  .me img{width:88px;height:88px;border-radius:20px}
-  .row{grid-template-columns:1fr;gap:0}.row .field{margin-top:18px}.row .field:first-child{margin-top:0}
-  .form{padding:22px 18px}
-  .price{padding:26px 20px 22px}
-  .amount{font-size:44px}
-  .send .btn,.acts .btn{width:100%}
-  .thanks{padding:28px 18px}
+  section[id],#apply-form,.thanks{scroll-margin-top:70px}
+  .apply-wrap{grid-template-columns:1fr;gap:30px;margin-top:70px}
+  .apply-wrap h3{font-size:32px}
+  .row2{grid-template-columns:1fr}
+  .send .btn{width:100%;justify-content:center}
+  .thanks h3{font-size:34px}
 }
-@media (max-width:440px){.steps a b{display:none}}
-@media (max-width:370px){
-  .steps a{font-size:12.5px;padding:0 2px}
-  h1{font-size:35px}
+
+/* ---- v2 copy sections (PAGE-COPY-V2): hero lines, benefits, agentified, story, offer weight, steps, FAQ, close ---- */
+.brand{min-height:44px}
+.btn-wait{padding:18px 30px;font-size:17px}
+.sub .sub1{font-weight:650;color:var(--ink)}
+.sub2{max-width:700px;margin:12px auto 0;font-size:17px;line-height:1.5;color:var(--soft);text-wrap:balance}
+.prob .closing{font-size:24px;max-width:520px}
+.num>span{white-space:nowrap}
+.proof .p:first-child .num{font-size:46px;flex-wrap:wrap;gap:4px 14px}
+.benefits{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:96px}
+.benefits li{padding:30px 28px 30px 0;font-size:16px;line-height:1.5;color:var(--text)}
+.benefits li+li{padding-left:28px;border-left:1px solid var(--line)}
+.benefits b{display:block;margin-bottom:8px;font-size:19px;line-height:1.25;letter-spacing:-.02em;color:var(--ink);font-weight:750}
+.agentified{margin-top:120px}
+.ag-h{font-size:52px;max-width:980px}
+.ag-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;margin-top:48px;align-items:start}
+.def{margin:0;padding:0 0 0 22px;border-left:3px solid var(--blue);font:600 24px/1.35 var(--serif);color:var(--ink);letter-spacing:-.01em}
+.def cite{display:block;margin-top:14px;font-style:normal}
+.ag-grid .lead{font-size:19px}
+.vs.ba .row{grid-template-columns:1fr 1fr}
+.agentified>.closing{margin-top:44px}
+.who b{flex-basis:118px}
+.after4{margin-top:90px;max-width:820px}
+.next-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:72px;margin-top:80px;padding-top:56px;border-top:1px solid #DCE3EC}
+.going p,.for p{margin:16px 0 0;font-size:18px}
+.for h3{margin:16px 0 0;font-size:30px;line-height:1.12;letter-spacing:-.035em;color:var(--ink);font-weight:800}
+.for .not{font-size:16px;color:var(--soft)}
+.for .not b{display:inline-block;margin-right:8px;font:400 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink)}
+.story{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px;margin-top:22px;align-items:start}
+.story-text p{margin:0 0 18px;font-size:19px}
+.moment-open{margin-top:28px;padding:18px 20px;border-radius:14px;background:var(--paper)}
+.moment-open .label{display:block;margin-bottom:10px;color:var(--blue-ink)}
+.story-text .moment{margin:0;font:600 24px/1.35 var(--serif);color:var(--ink);letter-spacing:-.01em}
+.round-h{margin-top:120px}
+.per .team{display:block}
+.deal .under{margin:14px 0 0;font-size:15px;color:var(--soft)}
+.bonus,.guar{margin-top:24px;padding:18px 20px;border-radius:14px;background:var(--paper)}
+.bonus ul{margin:10px 0 0;padding-left:18px;font-size:16px;color:var(--ink)}
+.bonus li+li{margin-top:6px}
+.guar b{font-size:18px;color:var(--ink);letter-spacing:-.01em}
+.guar p{margin:8px 0 0;font-size:15.5px}
+.four{list-style:none;margin:88px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:2px solid var(--ink)}
+.four li{padding:24px 24px 0 0;font-size:16px;line-height:1.5}
+.four li+li{padding-left:24px;border-left:1px solid var(--line)}
+.four span{display:block;margin-bottom:12px;font:600 40px/1 var(--serif);color:transparent;-webkit-text-stroke:1.2px #B5C0CD}
+.four b{color:var(--ink)}
+.apply-wrap{grid-template-columns:1fr 1.15fr}
+.faq{border-top:2px solid var(--ink)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px;padding:16px 0;cursor:pointer;list-style:none;font-size:17px;font-weight:650;color:var(--ink)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:"+";flex:none;font:400 22px/1 var(--mono);color:var(--soft)}
+.faq details[open] summary:after{content:"–"}
+.faq details p{margin:0;padding:0 0 20px;font-size:16px;line-height:1.6}
+.open-inline{font-style:italic;color:var(--blue-ink)}
+.closer{margin-top:120px;padding:72px 40px;border-radius:28px;background:var(--ink);text-align:center;position:relative;overflow:hidden}
+.closer:before{content:"";position:absolute;left:50%;top:-220px;width:700px;height:500px;transform:translateX(-50%);background:radial-gradient(closest-side,rgba(97,174,250,.25),transparent);pointer-events:none}
+.closer p{position:relative;max-width:760px;margin:0 auto;font:600 38px/1.2 var(--serif);color:#fff;letter-spacing:-.02em;text-wrap:balance}
+.closer .btn{position:relative;margin-top:30px;background:#fff;color:var(--ink);padding:20px 34px;font-size:18px}
+@media (max-width:760px){
+  .steps a{min-height:44px}.brand{min-width:44px;justify-content:center}
+  .sub2{font-size:15.5px}
+  .benefits{grid-template-columns:1fr;margin-top:56px}
+  .benefits li,.benefits li+li{padding:22px 0;border-left:0}
+  .benefits li+li{border-top:1px solid var(--line)}
+  .agentified{margin-top:72px}
+  .ag-h{font-size:34px}
+  .ag-grid{grid-template-columns:1fr;gap:36px;margin-top:30px}
+  .def{font-size:20px}
+  .vs.ba .row{gap:6px 16px}
+  .after4{margin-top:60px}
+  .next-grid{grid-template-columns:1fr;gap:44px;margin-top:56px;padding-top:40px}
+  .for h3{font-size:26px}
+  .story{grid-template-columns:1fr;gap:26px}
+  .story-text p{font-size:17px}
+  .story-text .moment{font-size:20px}
+  .round-h{margin-top:72px}
+  .four{grid-template-columns:1fr;margin-top:56px}
+  .four li,.four li+li{padding:20px 0;border-left:0}
+  .four li+li{border-top:1px solid var(--line)}
+  .four span{font-size:32px;margin-bottom:8px}
+  .closer{margin-top:72px;padding:48px 22px;border-radius:22px}
+  .closer p{font-size:26px}
+  .closer .btn{width:100%;justify-content:center}
+  .apply-wrap{grid-template-columns:1fr;gap:56px}
+  .vs.ba .head span:first-child{display:inline}
 }
-/* the copy (Nov 17): voice, open points, the close */
-.is-review .ph-box{outline:2px dashed #E0B400;outline-offset:4px;border-radius:14px}
-.open-tag{color:#8A6D00;margin-bottom:8px}
-.open-inline{font-style:italic;color:#8A6D00}
-.voice{margin-top:40px;padding:26px 24px;border-radius:20px;background:var(--wash);box-shadow:inset 0 0 0 1px var(--line)}
-.voice h3{font-size:24px;font-weight:850;letter-spacing:-.03em;color:var(--dark)}
-.voice>p{margin-top:10px;font-size:16.5px;line-height:1.65;color:#3A4450}
-.hand-line{margin-top:16px!important;font:400 23px/1.3 var(--hand)!important;color:var(--dark)!important;transform:rotate(-1deg)}
-.voice .acts,.me .acts{justify-content:flex-start;margin-top:18px}
-.sess .left{margin-top:8px;padding-top:8px;border-top:1px dashed var(--line);color:var(--ink)}
-.sess .left b{display:block;font:400 11px/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin-bottom:2px}
-.open-lines{display:grid;gap:6px;margin-top:12px;font-size:14.5px}
-.fit{margin-top:40px}
-.soft{margin-top:14px;font-size:15px;color:var(--soft)}
-.soft a{color:var(--deep);font-weight:600}
-.me{margin-top:48px}
-.me picture{display:block;width:max-content}
-.me h3{font-size:24px;font-weight:850;letter-spacing:-.03em;color:var(--dark);margin-bottom:10px}
-.price h2{margin:0;font:400 12px/1.5 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--deep)}
-.price .amount{margin-top:8px}
-.price .under{margin-top:10px;max-width:520px;font-size:15px;color:var(--soft)}
-.seats-line{margin-top:12px;font-size:14.5px;color:var(--soft)}
-.need{margin-top:8px;font-size:14.5px;color:var(--soft)}
-.guarantee{margin-top:28px;padding:20px 22px;border-radius:16px;background:#FFFCF0}
-.guarantee p+p{margin-top:8px;font-size:15px}
-.guarantee b{color:var(--dark)}
-.path{grid-template-columns:repeat(2,1fr)}
-.path li{font-weight:400;color:#3A4450}
-.path li b{color:var(--dark);font-weight:700}
-.faq{margin-top:40px}
-.thanks .small{margin:16px auto 0;max-width:440px;font-size:14.5px;color:var(--soft)}
-.closer{margin-top:56px;padding:40px 24px;border-radius:24px;text-align:center;border:1px solid #CFE3F8;
-  background:radial-gradient(ellipse 60% 70% at 50% 45%,rgba(255,255,255,.96),rgba(255,255,255,0)),linear-gradient(90deg,rgba(125,189,251,.45),rgba(255,255,255,0) 38%,rgba(255,255,255,0) 62%,rgba(125,189,251,.45)),#fff}
-.closer p{max-width:520px;margin:0 auto;font-size:24px;font-weight:850;line-height:1.3;letter-spacing:-.03em;color:var(--dark);text-wrap:balance}
-@media (max-width:760px){.path{grid-template-columns:1fr}.voice{padding:22px 18px}.closer p{font-size:21px}.voice .acts,.me .acts{justify-content:center}}
+/* ---- lead's review, Nov 17 (75 -> finished): hero, proof, screens, rhythm ---- */
+.sub{margin-top:26px}
+.sub .sub1{display:block;font-size:30px;line-height:1.25;font-weight:700;letter-spacing:-.02em;color:var(--ink)}
+.sub2{max-width:640px;margin:14px auto 0;font-size:18.5px;line-height:1.5;color:var(--text)}
+.stage{margin-top:44px;margin-bottom:96px}
+.stage .window.hero-win{height:auto}
+.hero-win{position:relative}
+.hero-win img{width:100%;height:auto}
+.hero-win .fade{display:block;position:absolute;left:0;right:0;bottom:0;height:120px;background:linear-gradient(rgba(255,255,255,0),#fff)}
+.outcomes{list-style:none;margin:26px 0 0;padding:0 0 0 250px;display:flex;justify-content:flex-end;gap:34px;font-size:16px;font-weight:650;color:var(--ink)}
+.outcomes li{display:flex;align-items:center;gap:10px}
+.outcomes li:before{content:"";width:9px;height:9px;background:var(--blue)}
+.cam{left:-64px;top:auto;bottom:-70px;width:280px;border:4px solid #fff;border-radius:18px;box-shadow:0 26px 50px -22px rgba(11,18,32,.5),0 0 0 1px rgba(11,18,32,.08)}
+.cam img{height:auto;aspect-ratio:16/10;object-fit:cover;object-position:50% 40%}
+.tagr{top:-22px;right:-26px}
+.proof .wrap{grid-template-columns:1fr 1fr 1fr}
+.proof .num,.proof .p:first-child .num{font-size:50px;flex-wrap:nowrap;gap:12px}
+.proof .logo{min-height:22px}
+section.s{padding:104px 0}
+.benefits{margin-top:64px}
+.agentified{margin-top:88px}
+.own{margin-top:88px}
+.part{margin-top:84px}
+.shot{border-radius:16px}
+.shot.crop{height:520px}
+.shot.crop img{object-position:0 0}
+.after4{margin-top:64px}
+.next-grid{margin-top:56px;padding-top:48px}
+.round-h{margin-top:88px}
+.four{margin-top:64px}
+.apply-wrap{margin-top:64px}
+.closer{margin-top:80px}
+@media (max-width:760px){
+  .sub .sub1{font-size:23px}
+  .sub2{font-size:16.5px}
+  .stage{margin-bottom:56px}
+  .outcomes{padding:0;justify-content:center;flex-wrap:wrap;gap:10px 18px;font-size:14px;margin-top:18px}
+  .cam{position:relative;left:auto;bottom:auto;width:auto;margin:18px 6px 0}
+  .tagr{display:none}
+  .proof .wrap{grid-template-columns:1fr}
+  .proof .num,.proof .p:first-child .num{font-size:40px}
+  section.s{padding:72px 0}
+  .benefits{margin-top:44px}
+  .agentified,.own{margin-top:60px}
+  .part{margin-top:56px}
+  .shot.crop{height:340px}
+  .round-h{margin-top:60px}
+  .four,.apply-wrap{margin-top:48px}
+  .closer{margin-top:56px}
+}
+/* ---- 3-day format (Nov 17, final) ---- */
+.day2 .two-shots{display:grid;gap:26px}
+.who{grid-template-columns:auto}
+.run{margin-top:84px;padding:36px 40px;border-radius:22px;background:#fff;border:1px solid #DCE3EC}
+.run h3{margin:0;font-size:30px;line-height:1.1;letter-spacing:-.035em;color:var(--ink);font-weight:800}
+.run ul{list-style:none;margin:20px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:16px 40px}
+.run li{position:relative;padding-left:22px;font-size:17px;line-height:1.5}
+.run li:before{content:"";position:absolute;left:0;top:9px;width:9px;height:9px;background:var(--blue)}
+.soon-block{display:inline-block;margin:10px 0 0 0!important}
+.close-date{margin:12px 0 0;font-size:14.5px;color:var(--soft)}
+.bonus ul{padding-left:18px}
+@media (max-width:760px){
+  .run{margin-top:56px;padding:26px 20px}
+  .run h3{font-size:24px}
+  .run ul{grid-template-columns:1fr}
+}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 </style>
 </head>
@@ -278,210 +471,279 @@ footer a:hover{color:var(--ink)}
 <a class="skip" href="#build">Skip to the page</a>
 <div class="review" role="note">Review version for Enrique. Underlined lines and dashed boxes are open points (hover for which). The form is live.</div>
 
-<header class="bar" id="bar">
-  <div class="bar-in">
-    <a class="who" href="/" aria-label="Enrique Marq, home"><img src="/assets/me/enrique-192.jpg" alt="" width="32" height="32">Enrique Marq</a>
-    <nav class="steps" aria-label="On this page">
-      <a href="#build" data-step="build"><b>1</b>What you build</a>
-      <a href="#how" data-step="how"><b>2</b>How it works</a>
-      <a href="#apply" data-step="apply" class="go"><b>3</b>Apply</a>
-    </nav>
-  </div>
-</header>
+<header class="bar" id="bar"><div class="wrap">
+  <a class="brand" href="#top" aria-label="Agentified Founders, back to the top"><span class="ship"></span><span class="t">Agentified Founders</span></a>
+  <nav class="steps" aria-label="On this page">
+    <a href="#build" data-step="build"><span>01</span><em class="l">What you build</em><em class="s">Build</em></a>
+    <a href="#how" data-step="how"><span>02</span><em class="l">How it works</em><em class="s">How</em></a>
+    <a class="apply-step" href="#apply" data-step="apply"><span>03</span>Apply</a>
+  </nav>
+  <a class="btn" href="#apply">Apply <i></i></a>
+</div></header>
 
-<main>
-  <div class="hero">
-    <div class="wrap">
-      <span class="kick mono"><span class="v" aria-hidden="true"></span><strong>Agentified Founders</strong> · Founding round · For founders and their teams</span>
-      <h1>Build your AI <span class="b">marketing workspace.</span></h1>
-      <p class="sub">Two weeks, live with me. You and your team set up one place where AI makes your content, posts it everywhere and turns comments and DMs into leads, sounding like you.</p>
-      <ul class="facts">
-        <li>4 live sessions</li><li>5 founders per round</li><li>Starts <span class="ph">Dec 8–19</span></li>
-      </ul>
-      <div class="acts">
-        <a class="btn btn-main" href="#apply-form">Apply <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-      </div>
-      <p class="calm">Short application, then a 15-minute call with me.</p>
+<main id="top">
+<section class="hero"><div class="wrap">
+  <div class="label"><b>Agentified Founders</b> · Founding round · For founders and their teams</div>
+  <h1>Build your <span class="ai">A<svg class="i-mark" viewBox="0 0 10 40" aria-hidden="true" overflow="visible"><defs><linearGradient id="beama" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#61AEFA" stop-opacity=".55"/><stop offset="1" stop-color="#61AEFA" stop-opacity="0"/></linearGradient><filter id="gla" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="1.1" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter><mask id="shipa" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="-4" y="-11" width="18" height="12"><image href="/assets/voyager-mask.png" x="-4" y="-11" width="18" height="12" preserveAspectRatio="xMidYMid meet"/></mask></defs><polygon points="3.4,-1.5 6.6,-1.5 10.2,20 -0.2,20" fill="url(#beama)" opacity="0.55"/><g fill="#61AEFA" ><rect x="1.8" y="20.2" width="6.4" height="19.8"/><rect x="7.00" y="17.60" width="2.3" height="2.3" opacity="1.0" transform="rotate(14 8.15 18.75)"/><rect x="1.80" y="17.60" width="2.3" height="2.3" opacity="1.0" transform="rotate(-14 2.95 18.75)"/><rect x="4.40" y="17.60" width="2.3" height="2.3" opacity="1.0" transform="rotate(-14 5.55 18.75)"/><rect x="4.75" y="15.00" width="2.3" height="2.3" opacity="0.9" transform="rotate(8 5.90 16.15)"/><rect x="2.15" y="15.00" width="2.3" height="2.3" opacity="0.9" transform="rotate(-14 3.30 16.15)"/><rect x="5.10" y="12.40" width="2.3" height="2.3" opacity="0.8" transform="rotate(-14 6.25 13.55)"/><rect x="2.50" y="12.40" width="2.3" height="2.3" opacity="0.8" transform="rotate(-14 3.65 13.55)"/><rect x="2.85" y="9.80" width="2.3" height="2.3" opacity="0.65" transform="rotate(-14 4.00 10.95)"/><rect x="5.80" y="7.20" width="2.3" height="2.3" opacity="0.5" transform="rotate(14 6.95 8.35)"/><rect x="6.15" y="4.60" width="2.3" height="2.3" opacity="0.35" transform="rotate(-8 7.30 5.75)"/><rect x="-4" y="-11" width="18" height="12" mask="url(#shipa)"/></g></svg><span class="sr">I</span></span> marketing workspace.</h1>
+  <p class="sub"><b class="sub1">One workspace. Your whole marketing running. Yours to keep.</b></p>
+  <p class="sub2"><span class="ph" title="Open: subhead line 2 (recommended), or one of the four benefit lines">Everything your business knows lives in it, so your AI employees sound like you from the first post.</span></p>
+  <div class="cta"><a class="btn big btn-main" href="#apply">Apply <i></i></a></div>
+  <div class="facts"><span>3 days</span><span>live with me</span><span>5 founders per round</span><span class="ph" title="Open: dates">starts Dec 9</span></div>
+
+  <div class="stage">
+    <div class="window hero-win"><div class="chrome"><i></i><i></i><i></i><span>Nave · Enrique's workspace · Pipeline</span></div><picture><source media="(max-width:760px)" srcset="/assets/agentified/hero-board-phone.webp" width="804" height="740"><img src="/assets/agentified/hero-board.webp" alt="Enrique's Pipeline in Nave: his pieces in Plan, Media and Ready, each with its next step and his AI agent on it" width="1228" height="740" fetchpriority="high"></picture><div class="fade"></div></div>
+    <ul class="outcomes" aria-label="What your AI employees do"><li>Makes your content</li><li>Posts everywhere</li><li>Turns DMs into leads</li></ul>
+    <div class="cam"><img src="/assets/agentified/enrique-cam.webp" alt="Enrique at his desk" width="1000" height="625"><div class="play"><b></b><span class="ph" title="Open: the 2-minute video, until he records it">Video coming</span></div></div>
+    <div class="tagr"><span class="label">Yours to keep</span>Your brain, your files,<br>your AI employees</div>
+  </div>
+</div></section>
+
+<section class="proof" aria-label="Proof"><div class="wrap">
+  <div class="p">
+    <div class="logo">One person, multiple brands</div>
+    <div class="num"><span class="ph" title="Open: confirm the number">40 to 50</span><span class="to">posts a week</span></div>
+    <p>Made with my AI employees, across multiple brands, as one person. That included the full marketing of two service businesses: five platforms and their websites' search.</p>
+  </div>
+  <div class="p">
+    <div class="logo"><img src="/assets/stack/zernio.png" alt="" width="22" height="22">Zernio · YouTube content</div>
+    <div class="num">$45K<span class="to">/mo →</span>$5M<span class="to">/yr</span></div>
+    <p>I ran their YouTube content while they grew from $45K a month to $5M a year.</p>
+  </div>
+  <div class="p">
+    <div class="logo">On YouTube</div>
+    <div class="num">42K<span class="to">·</span>25K<span class="to">·</span>12K</div>
+    <p>Views on my videos showing how I build it.</p>
+  </div>
+</div></section>
+
+<section class="s" id="build"><div class="wrap prob">
+  <div>
+    <div class="kicker"><span class="n">01</span><span class="label">What you build</span></div>
+    <h2>You know AI is the shift. <span class="dim">Your marketing still runs the old way.</span></h2>
+    <p class="lead">Your business works and people see you. It just doesn't turn into clients the way it should.</p>
+    <p class="closing ph" title="Open: he liked &quot;Stop renting seven tools…&quot;; kept as the before">Seven tools that don't connect with each other, and you holding them together.</p>
+  </div>
+  <div>
+    <div class="vs">
+      <div class="row head"><span></span><span class="old">Today</span><span class="new">In your workspace</span></div>
+      <div class="row"><span class="k">AI</span><span class="old">ChatGPT for a few things</span><span class="new">AI employees that know your business</span></div>
+      <div class="row"><span class="k">Your team</span><span class="old">Nobody knows how to use it</span><span class="new">Everyone works from the same brain</span></div>
+      <div class="row"><span class="k">Content</span><span class="old">Goes out when someone has time</span><span class="new">One recording, a week of posts</span></div>
+      <div class="row"><span class="k">Follow-up</span><span class="old">DMs sit unanswered</span><span class="new">Every DM becomes a lead</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <ul class="benefits">
+    <li><b>Explain your business once.</b> It lives in your workspace, so you never start a new chat from zero again.</li>
+    <li><b>It sounds like you.</b> Your AI employees read who you are and how you talk before they write a word.</li>
+    <li><b>The work stops waiting on you.</b> Your team and your AI employees run it from the same brain, and you keep the work only you can do.</li>
+    <li><b>One place to work from.</b> Your brain, your content, your channels and your leads, together.</li>
+  </ul>
+</div>
+
+<div class="wrap agentified">
+  <div class="ag-head">
+    <span class="label">What "agentified" means</span>
+    <h2 class="ag-h">Agentified means your work is rebuilt so AI employees do the defined jobs, next to you.</h2>
+  </div>
+  <div class="ag-grid">
+    <div>
+      <blockquote class="def">"The restructuring of workflows, software, or entire organizations, so that autonomous, goal-oriented AI agents handle defined tasks alongside, or on behalf of a human."<cite class="label">Enrique Marq</cite></blockquote>
+      <p class="lead">You decide how your marketing should run. Your AI employees take the jobs that repeat every week: cutting the video, writing for each platform, scheduling, sorting the DMs. You and your team keep the decisions, the taste and the people.</p>
+    </div>
+    <div class="vs ba">
+      <div class="row head"><span class="old">Before</span><span class="new">After, agentified</span></div>
+      <div class="row"><span class="old">Your business lives in your head.</span><span class="new">One shared brain everyone works from.</span></div>
+      <div class="row"><span class="old">Seven tools that don't talk to each other.</span><span class="new">One workspace you own.</span></div>
+      <div class="row"><span class="old">Every new chat starts from zero.</span><span class="new">Your AI employees know your business before they start.</span></div>
+      <div class="row"><span class="old">You do the work, or it doesn't get done.</span><span class="new">AI employees do the defined jobs. You approve what goes out.</span></div>
+      <div class="row"><span class="old">Your team waits for you to explain.</span><span class="new">Your team learns to build its own skills and AI employees.</span></div>
+    </div>
+  </div>
+  <p class="closing">In three days you learn to build it, and to run your marketing with your AI employees inside it.</p>
+</div>
+
+<div class="wrap own">
+  <div class="own-in">
+    <div class="own-copy">
+      <span class="label">Yours to keep</span>
+      <h2>The one place <span class="blue">your marketing runs from.</span></h2>
+      <p class="lead">Your brain, your content, your channels and your leads, in one workspace you own. You and your team work from it every day with your AI employees, and it keeps working after the three days.</p>
+      <p class="honest">You bring your AI subscription and your social accounts. The rest lives in your workspace.</p>
+    </div>
+    <div class="own-viz" aria-hidden="true">
+      <div class="rent"><em class="before">Before</em><span>Scheduler</span><span>Inbox</span><span>CRM</span><span>Page builder</span><span>Video editor</span><span>Notes</span><span>Link in bio</span></div>
+      <div class="arrow"></div>
+      <div class="mine"><div class="window"><div class="chrome"><i></i><i></i><i></i><span>Your workspace</span></div><img src="/assets/agentified/own-home.webp" alt="" loading="lazy"></div><span class="badge">Yours</span></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="s method" id="how"><div class="wrap">
+  <div class="kicker"><span class="n">02</span><span class="label">How it works</span></div>
+  <h2>Three days. <span class="dim">You, your team and your AI employees, building it together.</span></h2>
+  <p class="lead">Three days, two hours a day, live with me. We build your workspace on your real business, the way I built mine. Bring someone from your team.</p>
+
+  <div class="part">
+    <div class="copy">
+      <div class="idx">1</div><span class="label">Day 1 · Your brain</span>
+      <h3>Everything your business knows, in one place.</h3>
+      <p>Who you are, what you sell, how you talk and who buys. Every AI employee reads it first, so everything sounds like you.</p>
+      <div class="who"><div><b>People</b>You decide what's true</div><div><b class="ai-e">AI employees</b>They keep it current</div></div>
+    </div>
+    <div><div class="shot crop"><img src="/assets/agentified/s1-brain.webp" alt="Enrique's Business Brain: his business memory, his content memory and the map" loading="lazy"></div><div class="cap">Real screen · Enrique's Business Brain</div></div>
+  </div>
+
+  <div class="part day2">
+    <div class="copy">
+      <div class="idx">2</div><span class="label">Day 2 · Your content and your channels</span>
+      <h3>One recording becomes a week of content, posted everywhere.</h3>
+      <p>You record once. Your AI employees cut it and write it for every platform. You approve the final cut.</p>
+      <p>Every platform on one calendar. Your team sees what goes out and when.</p>
+      <div class="who"><div><b>People</b>You record and approve</div><div><b class="ai-e">AI employees</b>They cut, write and design</div><div><b>Your team</b>Sets the week</div><div><b class="ai-e">AI employees</b>They schedule and post</div></div>
+    </div>
+    <div class="two-shots">
+      <div><div class="shot"><img src="/assets/agentified/s2-piece.webp" alt="One of Enrique's pieces: his agent cutting the recording, and the AI projects that worked on it" loading="lazy"></div><div class="cap">Real screens · your content: one piece's workflow, the agent's step and the team on it</div></div>
+      <div><div class="shot"><img src="/assets/agentified/s3-channels.webp" alt="Enrique's calendar: pieces published Nov 7 and 8 on YouTube, TikTok and LinkedIn, and posts going out on TikTok, YouTube and Instagram" loading="lazy"></div><div class="cap">Real screens · your channels: Enrique's calendar, Nov 7 and 8, posted on four platforms</div></div>
     </div>
   </div>
 
-  <div class="wrap">
-        <section class="part" id="build" aria-labelledby="build-h">
-      <p class="label mono"><b>1</b>What you build</p>
-      <h2 id="build-h">You know AI is the shift. Your marketing still runs the old way.</h2>
-      <p class="lead">Your business works. You like running it. And this is probably your week:</p>
-      <ul class="pains">
-        <li>You use ChatGPT for a few things, and that's about it.</li>
-        <li>Your team doesn't know how to use AI either.</li>
-        <li>Content goes out when someone has time. Some weeks it doesn't go out at all.</li>
-        <li>Your tools, your ads and your funnel are patched together.</li>
-        <li>Someone comments or sends a DM, and nobody follows up.</li>
+  <div class="part">
+    <div class="copy">
+      <div class="idx">3</div><span class="label">Day 3 · Your leads, and running it</span><em class="soon ph soon-block" title="Open: will the Leads place be ready by day 3 of round 1?">Being built now</em>
+      <h3>DMs and comments turn into leads.</h3>
+      <p>Every message lands in one inbox. Each lead gets a card, a next step and a follow-up, so nobody slips through.</p>
+      <p>Then you learn to add a skill or an AI employee, and you plan your next 30 days.</p>
+      <div class="who"><div><b>People</b>You take the calls</div><div><b class="ai-e">AI employees</b>They sort and follow up</div></div>
+    </div>
+    <div><div class="shot"><img src="/assets/agentified/s4-leads.webp" alt="Leads board, mock-up with sample leads: new leads and calls booked" loading="lazy"></div><div class="cap">Mock-up · the Leads place with sample leads · being built for the founding round</div></div>
+  </div>
+
+  <div class="run">
+    <h3>How the three days run.</h3>
+    <ul>
+      <li>Before we start: a short setup list and one video of 10 to 20 minutes from you. About an hour.</li>
+      <li>Each day: I show the step on my own workspace, you build it on yours while I go around the room.</li>
+      <li>Your round's private room: every recording, and one place to ask me questions.</li>
+      <li>Thirty days later: one more call to look at what your workspace made and what to build next.</li>
+    </ul>
+  </div>
+
+  <p class="closing after4">After day 3 you leave knowing how to run your marketing with your AI employees, and how to add new ones.</p>
+
+  <div class="next-grid">
+    <div class="going">
+      <span class="label">Where this is going</span>
+      <p>Today your workspace runs on your computer, and you and one team member learn to work in it. Next, it moves online with accounts for your whole team, so everyone works and chats in the same place, next to the AI employees they build. Founding members get it first.</p>
+    </div>
+    <div class="for">
+      <span class="label">Who it's for</span>
+      <h3>For founders with a business that works, and their teams.</h3>
+      <p>Coaches, educators, info businesses and marketing service businesses, usually somewhere between $10K and $500K a month. What matters more than the type of business: you show up as yourself, you build your own thing, and you're optimistic about technology.</p>
+      <p class="not"><b>Not for</b> You're starting from zero, or you want AI to run everything with nobody checking.</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="s" id="apply"><div class="wrap">
+  <div class="kicker"><span class="n">03</span><span class="label">Apply</span></div>
+
+  <div class="story">
+    <div>
+      <h2>I built the workspace I needed first.</h2>
+    </div>
+    <div class="story-text">
+      <p>I was running content for multiple brands as one person. With my agents, I was making 40 to 50 posts a week.</p>
+      <p>I'd ended too many weeks frustrated, knowing what needed to go out and still missing it. So I built the workspace I needed: one place for my brain, my content, my channels and my leads, with my AI employees working next to me.</p>
+      <p>Now I run my own marketing from it every day, and I teach founders and their teams to build theirs.</p>
+      <div class="moment-open ph-box" title="Open: draft; his true agentified moment needed">
+        <span class="label">Open point · draft, not your words yet</span>
+        <p class="moment">"When my agents were making 40 to 50 posts a week with me, I saw it: one person with the right workspace can run the marketing of a whole team."</p>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="round-h">Build it with me. <span class="dim">Five founders per round.</span></h2>
+  <div class="offer">
+    <div class="him"><img src="/assets/agentified/enrique-desk-2.webp" alt="Enrique" loading="lazy"><div class="q"><p class="ph" title="Open: his yes to the quote">"I run my own marketing this way, every day. In three days, you'll run yours."</p><span class="label">Enrique Marq · builds Nave</span></div></div>
+    <div class="deal">
+      <span class="label">Founding round</span>
+      <div class="price"><span class="amt">$1,000</span><span class="per">per founder<br><span class="team ph" title="Open: free or a price; the team seat price is open">A team member welcome</span></span></div>
+      <p class="under">Founding price. It goes up once members have results they agree to share.</p>
+      <ul class="incl">
+        <li>3 days live with me, two hours a day</li>
+        <li>Your AI marketing workspace, built with you and yours to keep</li>
+        <li>Your business brain: your story, offer, voice and customers</li>
+        <li>A week of content made from one recording</li>
+        <li>DMs and comments turned into leads</li>
+        <li>Your AI employees for content, channels and leads, and how to build more</li>
       </ul>
-      <p class="turn">So people see you, and it doesn't turn into clients.</p>
-
-      <h3 class="sub-h">In two weeks, you leave with three things working.</h3>
-      <div class="gets">
-        <article class="get main">
-          <i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 4.5c-2.3-1.6-6-1-6.6 2-1.8.4-2.7 2.3-1.9 4-1.2 1.2-.9 3.4.7 4.1-.1 2.3 2.2 3.8 4.3 2.9 1 1.4 2.6 1.6 3.5.8z"/><path d="M12 4.5c2.3-1.6 6-1 6.6 2 1.8.4 2.7 2.3 1.9 4 1.2 1.2.9 3.4-.7 4.1.1 2.3-2.2 3.8-4.3 2.9-1 1.4-2.6 1.6-3.5.8z"/><path d="M12 4.5v13.8" fill="none"/></svg></i>
-          <h4>Your AI marketing workspace, with your business brain in it</h4>
-          <p>One place where you and your team run your marketing with AI. It knows who you are, what you sell, how you talk and who your customers are. So everything it makes sounds like you.</p>
-        </article>
-        <article class="get">
-          <i aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3.5" y="6" width="12" height="12" rx="3"/><path d="M15.5 10.5l5-3v9l-5-3z"/></svg></i>
-          <h4>One recording, a week of content on every platform</h4>
-          <p>You record once. Your AI employees turn it into posts, clips and captions for every platform and schedule them. Your content goes out every week, even on the busy ones.</p>
-        </article>
-        <article class="get">
-          <i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v7a2.5 2.5 0 0 1-2.5 2.5H11l-4.5 4v-4h0A2.5 2.5 0 0 1 4 13.5z"/><path d="M8.5 10.2l2.2 2.1 4.6-4.4" fill="none"/></svg></i>
-          <h4>Comments and DMs turned into leads</h4>
-          <p class="ph" title="Open: confirm what the lead capture in Nave does today">When someone comments or messages you, it becomes a lead with a name, and you know who to follow up with. So attention starts turning into conversations, and conversations into clients.</p>
-        </article>
+      <div class="bonus">
+        <span class="label">Bonuses</span>
+        <ul><li>Every day recorded, so your team can watch it again</li><li>Your first month in the Lab</li><li>A check-in call 30 days after your round</li><li>First in line for the hosted workspace when it opens</li></ul>
       </div>
-      <p class="feel">Everything in one space. Your team using your AI skills. Your business brain in one place.</p>
-
-      <div class="voice">
-        <h3>Will it sound like me?</h3>
-        <p>That's the first thing we build. Before anything gets written, your workspace learns your story, your offer, your words and the things you'd never say. Your AI employees work from that, and you approve what goes out. You stay in charge.</p>
-        <p class="hand-line">AI should amplify you, never replace you.</p>
-        <div class="acts"><a class="btn btn-main" href="#apply-form">Apply <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
+      <div class="guar">
+        <b>Show up and build.</b>
+        <p>Come to all three days and do the setup. If by the end of day 3 your workspace isn't running with a week of content ready in your voice, tell me and I'll refund you in full.</p>
       </div>
-    </section>
+      <div class="rounds"><div><span class="label">Round 1</span><span class="ph" title="Open: dates and time">Dec 9, 10 and 11 · 11:00 am Pacific</span></div><div><span class="label">Round 2</span><span class="ph" title="Open: dates">Jan 13, 14 and 15</span></div></div>
+      <p class="close-date"><span class="ph" title="Open: the closing date">Applications close Dec 5.</span></p>
+      <div class="cta"><a class="btn big" href="#apply-form">Apply <i></i></a></div>
+    </div>
+  </div>
 
-        <section class="part" id="how" aria-labelledby="how-h">
-      <p class="label mono"><b>2</b>How it works</p>
-      <h2 id="how-h">Four live sessions. Two a week. You build on your real business.</h2>
-      <p class="lead">Each session is 90 minutes, live with me, with up to five founders in the room. Bring someone from your team. We build, you leave with it working, then you use it between sessions.</p>
-      <div class="weeks">
-        <div class="week"><span class="mono">Week 1</span>
-          <div class="sess"><small>Session 1</small><h4>Your workspace</h4><p>We set up your AI marketing workspace and build your business brain: who you are, your offer, your voice, your customers.</p><p class="left"><b>You leave with</b>A workspace that knows your business, ready for your team.</p></div>
-          <div class="sess"><small>Session 2</small><h4>Create</h4><p>You bring one recording. We turn it into a week of content that sounds like you.</p><p class="left"><b>You leave with</b>A week of posts, clips and captions, made from one recording.</p></div>
-        </div>
-        <div class="week"><span class="mono">Week 2</span>
-          <div class="sess"><small>Session 3</small><h4>Post everywhere</h4><p>We connect your platforms and schedule the week, so your team can run it without you doing it by hand.</p><p class="left"><b>You leave with</b>Every platform covered and scheduled.</p></div>
-          <div class="sess"><small>Session 4</small><h4>Turn attention into leads</h4><p>We set up how comments and DMs become leads, and how you follow up. Then we plan your <span class="ph" title="Open: 30 days">next 30 days</span>.</p><p class="left"><b>You leave with</b>Comments and DMs turned into leads, and a plan for what's next.</p></div>
-        </div>
-      </div>
-      <p class="fmt"><span>Live online</span><span>90 minutes</span><span>Up to 5 founders</span><span>One team member welcome</span></p>
-      <ul class="open-lines">
-        <li class="ph" title="Open: does he offer it, and where">Between sessions, you can message me with questions.</li>
-        <li class="ph" title="Open: are sessions recorded">Every session is recorded, so your team can watch it again.</li>
-      </ul>
+  <ol class="four">
+    <li><span>1</span><b>Apply.</b> Four short questions about your business.</li>
+    <li><span>2</span><b>15-minute call.</b> We see together if this round fits you.</li>
+    <li><span>3</span><b>Payment link.</b> If it fits, I send it after the call.</li>
+    <li><span>4</span><b>Round starts.</b> We build your brain on day 1.</li>
+  </ol>
 
-      <div class="fit">
-        <div class="yes"><h4>This is for you if…</h4><ul>
-          <li>You run a business that works, and you want AI to take it to the next level.</li>
-          <li>You already use AI a little, and you know there's a lot more there.</li>
-          <li>You want your team using AI with you, not only you.</li>
-          <li>You show up as yourself and you want your marketing to sound like you.</li>
-          <li>You're optimistic about technology, and you'd rather build than wait.</li>
-        </ul></div>
-        <div class="no"><h4>It's not for you if…</h4><ul>
-          <li>You're starting from zero, with no business or offer yet.</li>
-          <li>You want AI to run everything with nobody checking.</li>
-          <li>You want a course to watch on your own time. This is live, and you build in the room.</li>
-        </ul></div>
-      </div>
-      <p class="soft ph" title="Open: free AI guides or the Lab">Not ready yet? My <a href="/free-ai-guides">free AI guides</a> are a good place to start.</p>
-
-      <div class="me">
-        <picture class="ph-box" title="Open: which photo"><source type="image/webp" srcset="/assets/me/enrique-288.webp"><img src="/assets/me/enrique-288.jpg" alt="Enrique Marq" width="120" height="120"></picture>
-        <div>
-          <h3>Hi, I'm Enrique.</h3>
-          <p>I build my own business with AI every day, and Nave, the platform you'll build your workspace on, is mine.</p>
-          <p>I ran the YouTube content for Zernio while they grew from $45K a month to $5M a year.</p>
-          <p class="ph" title="Open: several brands or four brands">As one person, I've made 500+ pieces of content a month for several brands.</p>
-          <p>For a year and a half I worked inside a company next to founders and operators bringing AI into their businesses. I saw how real businesses grow, and where they get stuck.</p>
-          <p>My videos on editing with AI have been watched 42K, 25K and 12K times.</p>
-          <p>This is the founding round, so I'm building my own launch on the same system I'll teach you. You'll see it working on my business first.</p>
-          <p class="hand-line">AI amplifies one extremely capable person. And I want that person to be you.</p>
-          <div class="acts"><a class="btn btn-main" href="#apply-form">Apply <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
-        </div>
-      </div>
-    </section>
-
-        <section class="part" id="apply" aria-labelledby="apply-h">
-      <p class="label mono"><b>3</b>Apply</p>
-      <div class="price">
-        <h2 id="apply-h">Founding round</h2>
-        <p class="amount">$1,000</p>
-        <p class="under">Founding price, for the first two rounds. It goes up once members have results they agree to share.</p>
-        <ul class="incl">
-          <li>4 live sessions of 90 minutes with me, over two weeks</li>
-          <li>Your AI marketing workspace, set up with you in Nave</li>
-          <li>Your business brain: your story, offer, voice and customers</li>
-          <li>One recording turned into a week of content on every platform</li>
-          <li>Comments and DMs set up to become leads</li>
-          <li class="ph" title="Open: free, or a price">One team member in every session</li>
-        </ul>
-        <ul class="rounds">
-          <li><small>Round 1</small><b class="ph" title="Open: confirm dates and session times">Dec 8–19</b></li>
-          <li><small>Round 2</small><b class="ph" title="Open: confirm dates and session times">Jan 12–23</b></li>
-        </ul>
-        <p class="seats-line">5 founders each</p>
-        <p class="need ph" title="Open: the exact requirement for Nave">A computer, your social accounts, and an AI subscription you may already have.</p>
-        <div class="acts"><a class="btn btn-main" href="#apply-form">Apply <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
-      </div>
-
-      <div class="guarantee ph-box" title="Open: guarantee A, B or none">
-        <p class="mono open-tag">Open: guarantee A, B or none</p>
-        <p><b>A.</b> Come to the first two sessions and do the work between them. If you don't have a week of content ready in your voice by then, tell me and I'll refund you in full.</p>
-        <p><b>B.</b> We only start if we both agree on the call that this round fits your business. If it doesn't, I'll tell you, and you don't pay anything.</p>
-      </div>
-
-      <h3 class="sub-h">Four steps, and you're in.</h3>
-      <ol class="path">
-        <li class="here"><small>1</small><b>Apply.</b> Four short questions about your business.</li>
-        <li><small>2</small><b>Talk with me.</b> A 15-minute call to see if this round fits you.</li>
-        <li><small>3</small><b>Pay.</b> If it fits, I send you the payment link after the call.</li>
-        <li><small>4</small><b>Build.</b> Your round starts, and we set up your workspace in the first session.</li>
-      </ol>
-      <p class="seats-line ph" title="Open: confirm the waitlist line">5 founders per round. When a round is full, you go on the list for the next one.</p>
-
-      <div class="faq">
-        <details><summary>Do I need to be technical?</summary><p>No. You need to know your business. I set up the workspace with you in the room, and you leave knowing how to use it.</p></details>
-        <details><summary>Will it sound like me?</summary><p>Yes. Your voice is the first thing we build into your workspace, and you approve what goes out.</p></details>
-        <details><summary>How much time does it take?</summary><p>Two sessions a week of 90 minutes, for two weeks, plus <span class="ph" title="Open: how many hours between sessions">some time between sessions to use what we built</span>.</p></details>
-        <details><summary>Can I bring my team?</summary><p>Yes. Bring one person from your team to every session, so they can run it with you. <span class="ph open-inline">Open: team seat price.</span></p></details>
-        <details><summary>Can't I figure this out with ChatGPT on my own?</summary><p>You could try. <span class="ph" title="Open: true for him?">Most founders I talk to already use AI and still post when they have time.</span> Here you build the whole thing on your business, in two weeks, with someone who builds with it every day.</p></details>
-        <details><summary>What happens after the two weeks?</summary><p>Your workspace and everything you built stays yours. <span class="ph open-inline">Open: what continues after the round (Nave access, updates, the hosted workspace and its monthly price).</span></p></details>
-        <details><summary>Why do I have to apply?</summary><p>There are only five seats in each round. I want five founders I can help, so we talk first.</p></details>
-      </div>
-
+  <div class="apply-wrap">
+    <div class="faq">
+      <details><summary>What does "agentified" mean for my business?</summary><p>Your marketing is set up so AI employees take the jobs that repeat every week, and you and your team stay in charge of the decisions. You learn to build it and to run it.</p></details>
+      <details><summary>Do I need to be technical?</summary><p>No. You need to know your business. We build the workspace together over the three days, and you leave knowing how to use it and add to it.</p></details>
+      <details><summary>Will it sound like me?</summary><p>Yes. Your brain is the first thing we build, every AI employee reads it first, and you approve what goes out.</p></details>
+      <details><summary>What do I need to bring?</summary><p><span class="ph" title="Open: the exact subscription and whether Mac and Windows both work">A computer, your social accounts and an AI subscription for your AI employees to run on.</span></p></details>
+      <details><summary>Is the workspace mine?</summary><p>Yes. Your brain, your files and what you make stay yours, for good.</p></details>
+      <details><summary>Can I bring my team?</summary><p>Yes, one person from your team on all three days. Your whole team on accounts of their own comes with the hosted workspace, next. <span class="ph open-inline">Open: team seat price.</span></p></details>
+      <details><summary>Why apply instead of just paying?</summary><p>Five seats per round. I want five founders I can help, so we talk first.</p></details>
+    </div>
+    <div>
       <form class="form" id="apply-form" novalidate>
-        <div class="row">
+        <div class="row2">
           <label class="field" data-f="name"><span>Your name</span><input name="name" autocomplete="name" maxlength="120" required><em class="err">Your name, please.</em></label>
           <label class="field" data-f="email"><span>Your email</span><input name="email" type="email" autocomplete="email" inputmode="email" maxlength="254" required><em class="err">An email I can reach you at.</em></label>
         </div>
-        <label class="field" data-f="business"><span>Tell me about your business.</span><small>What do you sell, and who buys it?</small><textarea name="business" maxlength="2000" required></textarea><em class="err">A line or two is enough.</em></label>
-        <label class="field" data-f="team"><span>Who's on your team?</span><small>Who would come to the sessions with you?</small><textarea name="team" maxlength="2000" required></textarea><em class="err">Even "just me" works.</em></label>
-        <label class="field" data-f="ai_today"><span>How do you use AI today?</span><small>Any tools, any habits. A few lines is fine.</small><textarea name="ai_today" maxlength="2000" required></textarea><em class="err">A line or two is enough.</em></label>
+        <label class="field" data-f="business"><span>Tell me about your business.</span><small>What do you sell, who buys it, <span class="ph" title="Open: ask for revenue or not">and roughly what's your monthly revenue?</span></small><textarea name="business" maxlength="2000" required></textarea><em class="err">A line or two is enough.</em></label>
+        <label class="field" data-f="team"><span>Who's on your team?</span><small>Who would join the three days with you?</small><textarea name="team" maxlength="2000" required></textarea><em class="err">Even "just me" works.</em></label>
+        <label class="field" data-f="ai_today"><span>How do you use AI today?</span><small>Tools, habits, anything. A few lines is fine.</small><textarea name="ai_today" maxlength="2000" required></textarea><em class="err">A line or two is enough.</em></label>
         <label class="field" data-f="marketing_goal"><span>What do you want your marketing to do?</span><small>Think about the next 90 days.</small><textarea name="marketing_goal" maxlength="2000" required></textarea><em class="err">A line or two is enough.</em></label>
         <label class="hp" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label>
         <div class="send">
-          <button class="btn btn-main" type="submit" id="send">Apply</button>
-          <p class="fine ph" title="Open: true? which reply time">I read every application and reply within two days.</p>
+          <button class="btn big" type="submit" id="send">Apply <i></i></button>
         </div>
         <p class="oops" id="oops" role="alert"></p>
       </form>
 
       <div class="thanks" id="thanks" tabindex="-1" aria-live="polite">
-        <span class="ok" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.3L19 7.5"/></svg></span>
         <h3>Got it, <span id="first">there</span>.</h3>
         <p>Thanks for applying to Agentified Founders. The next step is a 15-minute call with me, to see if this round fits your business.</p>
-        <div class="acts"><span class="btn btn-wait ph" aria-disabled="true" title="Open: booking link">Pick a time</span></div>
-        <p class="small">After the call, if it's a fit, I'll send you the payment link and your seat is yours.</p>
+        <div class="cta"><span class="btn btn-wait ph" aria-disabled="true" title="Open: booking link">Pick a time</span><small class="small">If it's a fit, I'll send you the payment link after the call.</small></div>
         
       </div>
-
-      <div class="closer" id="close">
-        <p>Your marketing, run with AI, in your voice, with your team. Five seats per round.</p>
-        <div class="acts"><a class="btn btn-main" href="#apply-form">Apply <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
-      </div>
-    </section>
+    </div>
   </div>
-</main>
 
-<footer><div class="wrap">© 2026 Enrique Marq · <a href="/">enriquemarq.com</a></div></footer>
+  <div class="closer">
+    <p>One workspace, your whole marketing running, yours to keep. Five founders per round.</p>
+    <a class="btn big" href="#apply-form">Apply <i></i></a>
+  </div>
+</div></section>
+</main>
+<footer>© 2026 Enrique Marq · <a href="/">enriquemarq.com</a></footer>
 
 <script>
 // The form. Mode and endpoint come from the OFFER constant in scripts/build.mjs.
@@ -489,16 +751,16 @@ footer a:hover{color:var(--ink)}
 //   live:   one insert into public.offer_applications (insert-only; the page can never read it back).
 var APPLY = {mode: 'live', endpoint: 'https://xadknhmtkgsdeyaaeamz.supabase.co/rest/v1/offer_applications', key: 'sb_publishable_oVQzfl2Rk30GfCrMUfdmEg_pI6XLQkW', offer: 'founding-round'};
 (function(){
-  // the bar: a line under it once you scroll, and the step you're in lit up
-  var bar=document.getElementById('bar'),links=[].slice.call(document.querySelectorAll('.steps a'));
-  var onScroll=function(){bar.classList.toggle('lined',scrollY>8)};addEventListener('scroll',onScroll,{passive:true});onScroll();
-  var ids=['build','how','apply'],secs=ids.map(function(i){return document.getElementById(i)});
+  // the bar: the step you're in lit up
+  var links=[].slice.call(document.querySelectorAll('.steps a[data-step]'));
+  var secs=['build','how','apply'].map(function(i){return document.getElementById(i)});
   var spy=function(){var y=innerHeight*0.35,cur='';secs.forEach(function(s){if(s.getBoundingClientRect().top<=y)cur=s.id});
     if(innerHeight+scrollY>=document.documentElement.scrollHeight-4)cur='apply';
     links.forEach(function(a){var on=a.dataset.step===cur;a.classList.toggle('on',on);if(on)a.setAttribute('aria-current','true');else a.removeAttribute('aria-current')})};
   addEventListener('scroll',spy,{passive:true});addEventListener('resize',spy);spy();
 
   var form=document.getElementById('apply-form'),send=document.getElementById('send'),oops=document.getElementById('oops'),thanks=document.getElementById('thanks');
+  var label=send.innerHTML;
   var fields=['name','email','business','team','ai_today','marketing_goal'];
   var val=function(n){return (form.elements[n].value||'').trim()};
   var okEmail=function(e){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)&&e.length<=254};
@@ -518,7 +780,7 @@ var APPLY = {mode: 'live', endpoint: 'https://xadknhmtkgsdeyaaeamz.supabase.co/r
     send.disabled=true;send.textContent='Sending…';
     fetch(APPLY.endpoint,{method:'POST',headers:{'Content-Type':'application/json',apikey:APPLY.key,Prefer:'return=minimal'},body:JSON.stringify(body)})
       .then(function(r){if(r.status===201||r.status===204)return done();throw r})
-      .catch(function(){send.disabled=false;send.textContent='Apply';
+      .catch(function(){send.disabled=false;send.innerHTML=label;
         oops.textContent='That didn’t go through. Your answers are still here: try again in a minute, or email hey@enriquemarq.com.';oops.classList.add('on')});
   });
 })();
